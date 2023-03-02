@@ -4,27 +4,50 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../stylesheets/main.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 	<title>Document</title>
+	<script src="https://kit.fontawesome.com/7765d9206b.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="../stylesheets/main.css">
 </head>
 <body>
 	<div class="header-preview-wrapper">
-		<div class="header">
-			<img class="logo" src="../stylesheets/images/logo.png" alt="">
-				<div class="header__nav-profile-wrapper">
-					<nav class="header__nav nav">
-						<a class="nav__section" href="#">Главная</a>
-						<a class="nav__section" href="#">Программы обучения</a>
-						<a class="nav__section" href="#">Преподаватели</a>
-						<a class="nav__section" href="#">Раздел 4</a>
-					</nav>
-
-						<img class="profile_icon" src="../stylesheets/images/profile_icon.svg" alt="">
-
+		<header>
+			<div class="navbar">
+				<img src="../stylesheets/images/svgg.svg" alt="" class="mainlogo">
+				<ul class="links">
+					<li><a href="hero">Главная</a></li>
+					<li><a href="hero">Программы обучения</a></li>
+					<li><a href="hero">Преподаватели</a></li>
+				</ul>
+				<img src="../stylesheets/images/profile_icon.svg" alt="" class="profile">
+				<div class="toggle_btn">
+					<i class="fa-solid fa-bars"></i>
 				</div>
-		</div>
+			</div>
+
+
+			<div class="dropdown_menu">
+				<li><a href="hero">Главная</a></li>
+				<li><a href="hero">Программы обучения</a></li>
+				<li><a href="hero">Преподаватели</a></li>
+				<li><a href="#" class="action_btn">Личный кабинет</a></li>
+<!--				<img src="../stylesheets/images/profile_icon.svg" alt="" class="profile1">-->
+			</div>
+		</header>
+<!--		<div class="header">-->
+<!--			<img class="logo" src="../stylesheets/images/logo.png" alt="">-->
+<!--				<div class="header__nav-profile-wrapper">-->
+<!--					<nav class="header__nav nav">-->
+<!--						<a class="nav__section" href="#">Главная</a>-->
+<!--						<a class="nav__section" href="#">Программы обучения</a>-->
+<!--						<a class="nav__section" href="#">Преподаватели</a>-->
+<!--						<a class="nav__section" href="#">Раздел 4</a>-->
+<!--					</nav>-->
+
+<!--						<img class="profile_icon" src="../stylesheets/images/profile_icon.svg" alt="">-->
+
+<!--				</div>-->
+<!--		</div>-->
 		<section class="preview">
 			<div class="preview-wrapper">
 				<div class="preview-wrapper__school-title">Передовая IT-школа</div>
@@ -33,7 +56,7 @@
 			</div>
 		</section>
 	</div>
-	<section class="about-us"> 
+	<section class="about-us">
 			<div class="about-us__title">
 				О нас
 			</div>
@@ -84,7 +107,7 @@
 					<div class="level_icon">
 						<img class="icon__image" src="../stylesheets/images/prepare-levels-icon-img1.png" alt="">
 					</div>
-					<div class="level_body">	
+					<div class="level_body">
 						<div class="level__title">
 							Базовый
 						</div>
@@ -97,7 +120,7 @@
 					<div class="level_icon icon_middle_level">
 						<img class="icon__image " src="../stylesheets/images/prepare-levels-icon-img2.png" alt="">
 					</div>
-					<div class="level_body">	
+					<div class="level_body">
 						<div class="level__title">
 							Средний
 						</div>
@@ -110,7 +133,7 @@
 					<div class="level_icon icon_high_level">
 						<img class="icon__image" src="../stylesheets/images/prepare-levels-icon-img3.png" alt="">
 					</div>
-					<div class="level_body">	
+					<div class="level_body">
 						<div class="level__title">
 							Продвинутый
 						</div>
@@ -149,5 +172,21 @@
 				</div>
 			</div>
 		</section>
+
+
+<script>
+	const togglebtn = document.querySelector(".toggle_btn")
+	const togglebtnicon = document.querySelector(".toggle_btn i")
+	const toggledropmenu = document.querySelector(".dropdown_menu")
+
+	togglebtn.onclick = function (){
+		toggledropmenu.classList.toggle('open')
+
+		togglebtnicon.classList = isOpen
+		? 'fa-solid fa-xmark'
+		: 'fa-solid fa-bars'
+
+	}
+</script>
 </body>
 </html>

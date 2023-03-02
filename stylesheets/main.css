@@ -5,6 +5,16 @@
   box-sizing: border-box;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Montserrat-Regular;
+    src: url(fonts/Montserrat-Regular.ttf);
+}
 
 html {
   box-sizing: inherit;
@@ -48,6 +58,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: 'Montserrat', sans-serif;
+	background-image: url("images/bg.jpg");
 }
 
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
@@ -82,7 +93,7 @@ a {
 	text-decoration: none;
 }
 
-/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+ Удаляем все анимации и переходы для людей, которые предпочитай их не использовать
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -92,12 +103,15 @@ a {
   }
 }
 
+
+
 /* HEADER */
 
 .header-preview-wrapper {
 	width: 100%;
-	height:80rem;
-	background-image: url(/stylesheets/images/preview_background.png);
+	height:100rem;
+	background-image: url(/stylesheets/images/top-bg.png);
+	background-size: 100%;
 	background-repeat: no-repeat;
 	color: #FFFFFF;
 }
@@ -418,7 +432,7 @@ a {
 	align-items: center;
 	width: 10rem;
 	height: 10rem;
-	background: #0050FF;;
+	background: #0050FF;
 	border-radius: 50%;
 }
 
@@ -442,4 +456,149 @@ a {
 .basic-diogram__part3{
 	width: 8.8rem;
 	height: 31.3rem;
+}
+
+
+.links li{
+	margin-top: 2rem;
+	list-style: none;
+
+}
+.dropdown_menu li{
+	margin-top: 2rem;
+	list-style: none;
+}
+.dropdown_menu li a{
+	text-decoration: none;
+	color: #FFFFFF;
+	font-size: 1.6rem;
+}
+.links li a{
+	text-decoration: none;
+	color: #FFFFFF;
+	font-size: 1.6rem;
+}
+.links li a:hover{
+	color: #2167FF;
+}
+
+header{
+	position: relative;
+	padding: 0 2rem;
+}
+
+.navbar{
+	width: 100%;
+	height: 6rem;
+	max-width: 120rem;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.mainlogo{
+	height: 5rem;
+}
+.links a{
+	padding-top: 5rem;
+	font-size: 1.6rem;
+	font-weight: 500;
+	font-family: Montserrat-Regular;
+}
+.navbar .links{
+	display: flex;
+	gap: 5rem;
+}
+
+.navbar .toggle_btn{
+	margin-top: 2rem;
+	color: #FFFFFF;
+	font-size: 3rem;
+	cursor: pointer;
+	display: none;
+}
+
+.profile{
+	margin-top: 2rem;
+	width: 5.6rem;
+}
+.profile1{
+	margin-top: 2rem;
+	width: 5.6rem;
+}
+
+
+
+
+
+
+
+.action_btn{
+	background-color: #0050FF;
+	color: #FFFFFF;
+	padding: 0.5rem 1rem;
+	border: none;
+	outline: none;
+	border-radius: 2rem;
+	font-size: 2rem;
+	cursor: pointer;
+	justify-content: center;
+	text-align: center;
+}
+
+.dropdown_menu.open{
+	height: 24rem;
+}
+
+.dropdown_menu{
+	display: none;
+
+	height: 0;
+	position: absolute;
+	right: 5rem;
+	top: 6rem;
+	width: 30rem;
+	background:rgba(255,255,255,0.1);
+	backdrop-filter: blur(15px);
+	border-radius: 1rem;
+	overflow: hidden;
+	transition: height 0.2s cubic-bezier(0.175,0.885,0.32,1.275);
+}
+
+.dropdown_menu .action_btn{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.dropdown_menu li{
+	padding: 0.7rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@media (max-width: 992px) {
+	.navbar .links,
+	.navbar .action_btn,
+	.profile{
+		display: none;
+	}
+
+	.navbar .toggle_btn{
+		display:block;
+	}
+
+	.dropdown_menu{
+		display: block;
+	}
+
+}
+
+@media (max-width: 576px) {
+	.dropdown_menu{
+		left: 2rem;
+		width: unset;
+	}
 }
