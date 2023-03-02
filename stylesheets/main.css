@@ -5,6 +5,18 @@
   box-sizing: border-box;
 }
 
+
+html {
+  box-sizing: inherit;
+  font-size: calc(100vw / 1920 * 10); }
+  @media (max-width: 1024px) {
+    html {
+      font-size: calc(100vw / 1920 * 10); } }
+	@media (max-width: 600px) {
+		html {
+		  font-size: calc(100vw / 1400 * 10); } }
+
+
 /* Убираем внутренние отступы */
 ul[class],
 ol[class] {
@@ -50,10 +62,6 @@ a:not([class]) {
 }
 
 /* Упрощаем работу с изображениями */
-img {
-  max-width: 100%;
-  display: block;
-}
 
 /* Указываем понятную периодичность в потоке данных у article*/
 article > * + * {
@@ -88,14 +96,14 @@ a {
 
 .header-preview-wrapper {
 	width: 100%;
-	height:800px;
+	height:80rem;
 	background-image: url(/stylesheets/images/preview_background.png);
 	background-repeat: no-repeat;
 	color: #FFFFFF;
 }
 
 .header {
-	height: 100px;
+	height: 10rem;
 	display: flex;
 	width: 100%;
 	justify-content: space-around;
@@ -105,8 +113,8 @@ a {
 .logo {
 	display: flex;
 	align-items: center;
-	/* width: 20%; */
-	height: 50px;
+	width: 40rem;
+	height: 5rem;
 }
 
 .header__nav-profile-wrapper {
@@ -120,23 +128,23 @@ a {
 	width: 70%;
 	display: flex;
 	justify-content: space-around;
-	height: 43px;
+	height: 4.3rem;
     align-items: end;
 }
 
 .nav__section{
 	font-style: normal;
 	font-weight: 500;
-	font-size: 16px;
-	line-height: 20px;
+	font-size: 1.6rem;
+	line-height: 2rem;
 	color: #FFFFFF;
 }
 
 .profile_icon {
 	display: flex;
 	align-items: center;
-	width: 56px;
-	height: 52px;
+	width: 5rem;
+	height: 5rem;
 }
 
 /* PREVIEW */
@@ -149,7 +157,7 @@ a {
 }
 
 .preview-wrapper {
-	height: 240px;
+	height: 24rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -159,35 +167,35 @@ a {
 .preview-wrapper__school-title {
 	font-style: normal;
 	font-weight: 500;
-	font-size: 16px;
-	line-height: 20px;
+	font-size: 1.6rem;
+	line-height: 2rem;
 }
 
 .preview-wrapper__h3 {
 	font-style: normal;
 	font-weight: 800;
-	font-size: 48px;
-	line-height: 64px;
+	font-size: 4.8rem;
+	line-height: 6.4rem;
 	text-align: center;
 }
 
 .preview-wrapper__button {
-	width: 312px;
-	height: 58px;
+	width: 31.2rem;
+	height: 5.8rem;
 	background: #0050FF;
-	border-radius: 30px;
+	border-radius: 3rem;
 	border-color: #0050FF;
 	font-style: normal;
 	font-weight: 500;
-	font-size: 25px;
-	line-height: 30px;
+	font-size: 2.5rem;
+	line-height: 3rem;
 	color: #FFFFFF;
 }
 
 /* ABOUT US */
 
 .about-us {
-	height: 629px;
+	height: 62.9rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -197,7 +205,7 @@ a {
 .about-us__title {
 	font-style: normal;
 	font-weight: 800;
-	font-size: 100px;
+	font-size: 10rem;
 	line-height: 134.09%;
 	text-align: center;
 	color: #162831;
@@ -207,7 +215,7 @@ a {
 	width: 45%;
 	font-style: normal;
 	font-weight: 500;
-	font-size: 25px;
+	font-size: 2.5rem;
 	line-height: 134.09%;
 	text-align: center;
 	color: rgba(22, 40, 49, 0.8);
@@ -227,7 +235,7 @@ a {
 .indecator__number {
 	font-style: normal;
 	font-weight: 800;
-	font-size: 96.0137px;
+	font-size: 9.7rem;
 	line-height: 134.09%;
 	text-align: center;
 	color: #162831;
@@ -236,7 +244,7 @@ a {
 .indicatior__text {
 	font-style: normal;
 	font-weight: 500;
-	font-size: 24.0034px;
+	font-size: 2.5rem;
 	line-height: 134.09%;
 	text-align: center;
 	color: rgba(22, 40, 49, 0.8);
@@ -245,7 +253,7 @@ a {
 /* PREPARE LEVELS */
 
 .prepare-levels {
-	height: 933px;
+	height: 93.3rem;
 	display: flex;
 	flex-direction: column;
 	justify-content:space-around;
@@ -256,7 +264,7 @@ a {
 .prepare-levels__title {
 	font-style: normal;
 	font-weight: 800;
-	font-size: 100px;
+	font-size: 10rem;
 	line-height: 134.09%;
 	text-align: center;
 	color: #162831;
@@ -270,26 +278,32 @@ a {
 
 .level {
 	position: relative;
-	width: 367px;
-	height: 367px;
+	width: 36.7rem;
+	height: 36.7rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-	border: 5px solid #162831;
-	border-radius: 20px;
+	border: 0.5rem solid #162831;
+	border-radius: 2rem;
 }
 
 .level_icon {
 	position: absolute;
-	bottom: 293px;
+	bottom: 29.3rem;
 	display: flex;
-	width: 159px;
-    height: 159px;
+	width: 16rem;
+    height: 16rem;
 	background-image: url(/stylesheets/images/prepare-levels_icon-back1.png);
+	background-repeat: no-repeat;
 	border-radius: 50%;
 	justify-content: center;
 	align-items: center;
+	z-index: 999;
+}
+.icon__image{
+	width: 8.5rem;
+	height: 7.4rem;
 }
 
 .icon_middle_level {
@@ -301,18 +315,18 @@ a {
 }
 
 .level_body {
-	width: 321px;
+	width: 32rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	gap: 40px;
+	gap: 4rem;
 }
 
 .level__title {
 	font-style: normal;
 	font-weight: 800;
-	font-size: 35px;
+	font-size: 3.5rem;
 	line-height: 134.09%;
 }
 
@@ -320,7 +334,7 @@ a {
 {
 	font-style: normal;
 	font-weight: 500;
-	font-size: 25px;
+	font-size: 2.5rem;
 	line-height: 134.09%;
 	text-align: center;
 	color: rgba(22, 40, 49, 0.8);
@@ -329,19 +343,19 @@ a {
 /* ABOUT BASIC LEVEL */
 
 .about-basic-level {
-	height: 889px;
+	height: 89rem;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	background: #1c1533;
+	background: #162831;
 }
 
 .about-basic-level__basic-diogram {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	width: 600px;
-    height: 600px;
+	width: 60rem;
+    height: 60rem;
 	border-radius: 50%;
 	background: #FFFFFF;
 }
@@ -354,7 +368,7 @@ a {
 }
 
 .about-basic-level__basic-description {
-	height: 600px;
+	height: 60rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -363,7 +377,7 @@ a {
 .basic-description__title {
 	font-style: normal;
 	font-weight: 800;
-	font-size: 144.763px;
+	font-size: 14.5rem;
 	line-height: 134.09%;
 	color: #FFFFFF;
 }
@@ -373,7 +387,7 @@ a {
 {
 	font-style: normal;
 	font-weight: 500;
-	font-size: 25px;
+	font-size: 2.5rem;
 	line-height: 134.09%;
 	text-align: justify;
 	color: #FFFFFF;
@@ -385,15 +399,15 @@ a {
 
 .basic-description__lower-part-wrapper {
 	display: flex;
-	gap: 20px;
+	gap: 2rem;
 }
 
 .lower-part-wrapper__button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 129px;
-	height: 129px;
+	width: 13rem;
+	height: 13rem;
 	background: #2167FF;
 	border-radius: 50%;
 }
@@ -402,8 +416,8 @@ a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 101px;
-	height: 101px;
+	width: 10rem;
+	height: 10rem;
 	background: #0050FF;;
 	border-radius: 50%;
 }
@@ -411,7 +425,21 @@ a {
 .lower-part-wrapper__text {
 	font-style: normal;
 	font-weight: 800;
-	font-size: 92.2918px;
+	font-size: 10rem;
 	line-height: 134.09%;
 	color: #FFFFFF;
+}
+
+
+.basic-diogram__part1{
+	width: 8.8rem;
+	height: 10rem;
+}
+.basic-diogram__part2{
+	width: 8.8rem;
+	height: 20.7rem;
+}
+.basic-diogram__part3{
+	width: 8.8rem;
+	height: 31.3rem;
 }
