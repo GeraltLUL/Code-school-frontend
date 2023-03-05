@@ -5,19 +5,39 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Document</title>
+	<link rel="shortcut icon" href="../stylesheets/images/page_logo.svg" type="image/x-icon">
+	<title>Школа::КОДА</title>
 	<script src="https://kit.fontawesome.com/7765d9206b.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="../stylesheets/main.css">
+
+	<script src="../node_modules/panelsnap/lib/panelsnap.umd.js" defer></script>
+<!--	<script src="../node_modules/panelsnap/lib/panelsnap.esm.js" defer></script>-->
+<!--	<script src="../node_modules/panelsnap/lib/panelsnap.cjs.js" defer></script>-->
+
+	<script src="../libs/gsap/gsap.min.js" defer></script>
+	<script src="../libs/gsap/ScrollTrigger.min.js" defer></script>
+	<script src="../libs/gsap/ScrollSmoother.min.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+	<script src="../js/app.js" defer></script>
+
+
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			new PanelSnap();
+		});
+	</script>
+
 </head>
-<body>
-	<div class="header-preview-wrapper">
+<body class="bd">
+	<section class="header-preview-wrapper">
 		<header>
 			<div class="navbar">
 				<img src="../stylesheets/images/svgg.svg" alt="" class="mainlogo">
 				<ul class="links">
-					<li><a href="hero">Главная</a></li>
-					<li><a href="hero">Программы обучения</a></li>
-					<li><a href="hero">Преподаватели</a></li>
+					<li id="hub"><a href="hero">Главная</a></li>
+					<li id="edu"><a href="hero">Программы обучения</a></li>
+					<li id="others"><a href="hero">Преподаватели</a></li>
 				</ul>
 				<img src="../stylesheets/images/profile_icon.svg" alt="" class="profile">
 				<div class="toggle_btn">
@@ -31,32 +51,18 @@
 				<li><a href="hero">Программы обучения</a></li>
 				<li><a href="hero">Преподаватели</a></li>
 				<li><a href="#" class="action_btn">Личный кабинет</a></li>
-<!--				<img src="../stylesheets/images/profile_icon.svg" alt="" class="profile1">-->
 			</div>
 		</header>
-<!--		<div class="header">-->
-<!--			<img class="logo" src="../stylesheets/images/logo.png" alt="">-->
-<!--				<div class="header__nav-profile-wrapper">-->
-<!--					<nav class="header__nav nav">-->
-<!--						<a class="nav__section" href="#">Главная</a>-->
-<!--						<a class="nav__section" href="#">Программы обучения</a>-->
-<!--						<a class="nav__section" href="#">Преподаватели</a>-->
-<!--						<a class="nav__section" href="#">Раздел 4</a>-->
-<!--					</nav>-->
-
-<!--						<img class="profile_icon" src="../stylesheets/images/profile_icon.svg" alt="">-->
-
-<!--				</div>-->
-<!--		</div>-->
 		<section class="preview">
 			<div class="preview-wrapper">
 				<div class="preview-wrapper__school-title">Передовая IT-школа</div>
-				<h3 class="preview-wrapper__h3">Мы создаем будущих<br>специалистов</h3>
+				<h3 class="preview-wrapper__h3">Мы создаем <span class="multiText">будущих специалистов</span></h3>
 				<button class="preview-wrapper__button button">&lt;/&gt;</button>
 			</div>
 		</section>
-	</div>
+	</section>
 	<section class="about-us">
+		<div class="wp">
 			<div class="about-us__title">
 				О нас
 			</div>
@@ -77,7 +83,7 @@
 						16
 					</div>
 					<div class="indicatior__text">
-						лет успешной<br>работы
+						лет работы
 					</div>
 				</div>
 				<div class="score__indicator">
@@ -93,85 +99,118 @@
 						9+
 					</div>
 					<div class="indicatior__text">
-						крупных IT компаний<br>партнеров
+						компаний<br>партнеров
 					</div>
 				</div>
 			</div>
-		</section>
-		<section class="prepare-levels">
-			<div class="prepare-levels__title">
-				Уровни подготовки
-			</div>
-			<div class="prepare-levels__levels">
-				<div class="level">
-					<div class="level_icon">
-						<img class="icon__image" src="../stylesheets/images/prepare-levels-icon-img1.png" alt="">
-					</div>
-					<div class="level_body">
-						<div class="level__title">
-							Базовый
-						</div>
-						<div class="level_description">
-							основы<br>алгоритмизации и<br>программирования
-						</div>
-					</div>
+		</div>
+	</section>
+	<section class="prepare-levels">
+		<div class="prepare-levels__title">
+			Уровни подготовки
+		</div>
+		<div class="prepare-levels__levels" >
+			<div class="level active" id="level__1">
+				<div class="level_icon">
+					<svg class="icon__image"  viewBox="0 0 85 74" xmlns="http://www.w3.org/2000/svg" >
+						<path d="M45.9682 65.7091C45.2062 66.0566 44.3451 66.1102 43.547 65.8597L16.0775 54.1553C12.0134 52.8798 13.0239 48.6387 17.2265 49.3086L46.9408 51.0339C47.7662 51.1655 48.5159 51.5981 49.049 52.2503L52.703 57.362C53.2652 59.5789 53.0251 60.6284 51.4692 62.7516L45.9682 65.7091Z" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M42.5 4.30895C21.3739 4.30895 4.25 21.6624 4.25 43.0663C4.25 53.7016 8.4748 63.333 15.3219 70.3383L12.3031 73.3713C4.69967 65.5922 0 54.8833 0 43.0663C0 19.2804 19.0289 0 42.5 0C65.9711 0 85 19.2804 85 43.0663C85 55.2054 80.0409 66.1743 72.0698 74L69.1133 70.9045C76.2922 63.8565 80.75 53.9907 80.75 43.0663C80.75 21.6624 63.6261 4.30895 42.5 4.30895Z"/>
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M40.3751 15.081V4.30862L44.6251 4.30859V15.081H40.3751Z" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M69.5011 71.2445L61.7509 63.3867L64.756 60.3398L72.5063 68.1974L69.5011 71.2445Z" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M21.5085 22.6981L13.9951 15.0812L17.0003 12.0342L24.5137 19.6512L21.5085 22.6981Z" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M71.5801 38.7803H82.2051V43.0892H71.5801V38.7803Z" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M2.23633 38.7803H12.8614V43.0892H2.23633V38.7803Z" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M60.7452 19.3904L68.496 11.5332L71.5009 14.5803L63.7502 22.4375L60.7452 19.3904Z" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M21.6693 63.8223L13.919 71.6803L10.9138 68.6334L18.6639 60.7754L21.6693 63.8223Z" />
+					</svg>
 				</div>
-				<div class="level">
-					<div class="level_icon icon_middle_level">
-						<img class="icon__image " src="../stylesheets/images/prepare-levels-icon-img2.png" alt="">
+				<div class="level_body">
+					<div class="level__title">
+						Базовый
 					</div>
-					<div class="level_body">
-						<div class="level__title">
-							Средний
-						</div>
-						<div class="level_description">
-							программирование на<br>языках высокого<br>уровня
-						</div>
-					</div>
-				</div>
-				<div class="level">
-					<div class="level_icon icon_high_level">
-						<img class="icon__image" src="../stylesheets/images/prepare-levels-icon-img3.png" alt="">
-					</div>
-					<div class="level_body">
-						<div class="level__title">
-							Продвинутый
-						</div>
-						<div class="level_description">
-							специальные<br>разделы<br>программирования
-						</div>
+					<div class="level_description">
+						основы<br>алгоритмизации и<br>программирования
 					</div>
 				</div>
 			</div>
-		</section>
-		<section class="about-basic-level">
-			<div class="about-basic-level__basic-diogram">
-				<div class="basic-diagram-wrapper">
-						<img class="basic-diogram__part1" src="../stylesheets/images/about-basic-level-scale1.png" alt="">
-						<img class="basic-diogram__part2" src="../stylesheets/images/about-basic-level-scale2.png" alt="">
-						<img class="basic-diogram__part3" src="../stylesheets/images/about-basic-level-scale3.png" alt="">
+			<div class="level" id="level__2">
+				<div class="level_icon icon_middle_level">
+					<svg class="icon__image" viewBox="0 0 85 74"  xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M42.5 4.18346C21.3739 4.18346 4.25 21.0315 4.25 41.812C4.25 52.1377 8.4748 61.4885 15.3219 68.2898L12.3031 71.2345C4.69967 63.6819 0 53.285 0 41.812C0 18.7189 19.0289 0 42.5 0C65.9711 0 85 18.7189 85 41.812C85 53.5977 80.0409 64.2471 72.0698 71.8449L69.1133 68.8395C76.2922 61.9968 80.75 52.4184 80.75 41.812C80.75 21.0315 63.6261 4.18346 42.5 4.18346Z"/>
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M40.375 14.6422V4.18361L44.625 4.18359V14.6422H40.375Z" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M69.5025 69.1691L61.752 61.5402L64.7571 58.582L72.5074 66.2108L69.5025 69.1691Z" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M21.5085 22.037L13.9951 14.6418L17.0003 11.6836L24.5137 19.0788L21.5085 22.037Z" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M71.5801 37.6514H82.2051V41.8348H71.5801V37.6514Z" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M2.2373 37.6514H12.8624V41.8348H2.2373V37.6514Z" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M60.7451 18.8256L68.4958 11.1973L71.501 14.1556L63.7501 21.784L60.7451 18.8256Z" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M21.6686 61.964L13.9183 69.5932L10.9131 66.635L18.6632 59.0059L21.6686 61.964Z" />
+						<path d="M36.0233 68.6054C35.5172 67.9511 35.2709 67.1373 35.3312 66.3171L40.3666 37.4085C40.673 33.2318 44.9764 33.2698 45.2828 37.4466L50.3429 66.3171C50.403 67.1373 50.1569 67.9511 49.6507 68.6054L45.5654 73.2311C43.5626 74.2569 42.5001 74.2569 40.1084 73.2311L36.0233 68.6054Z" />
+					</svg>
 				</div>
-			</div>
-			<div class="about-basic-level__basic-description">
-				<div class="basic-description__title">Базовый</div>
-				<div class="basic-description__upper-text">
-					<span class="upper-text__blue-text">Что изучается:</span>
-					Базовые алгоритмические конструкции,<br>
-					понятия типов данных, основы построения и описания<br>
-					алгоритмов, решение простейших задач
-				</div>
-				<div class="basic-description__lower-text">
-					<span class="upper-text__blue-text">На кого рассчитано:</span> учащиеся 4-8 классов, практически<br>
-					не знакомые с информатикой
-				</div>
-				<div class="basic-description__lower-part-wrapper">
-					<div class="lower-part-wrapper__button">
-							<img class="inside-circle" src="../stylesheets/images/about-basic-level-button-triangle.png" alt="">
+				<div class="level_body" >
+					<div class="level__title">
+						Средний
 					</div>
-					<div class="lower-part-wrapper__text">Подробнее</div>
+					<div class="level_description">
+						программирование на<br>языках высокого<br>уровня
+					</div>
 				</div>
 			</div>
-		</section>
+			<div class="level" id="level__3">
+				<div class="level_icon icon_high_level">
+					<svg class="icon__image" viewBox="0 0 85 74" xmlns="http://www.w3.org/2000/svg">
+						<path d="M35.1619 52.7998C35.673 52.1297 36.4078 51.6717 37.2285 51.512L66.8992 48.7368C71.0772 47.9235 72.1537 52.1478 68.1343 53.5616L41.1136 66.2133C40.3244 66.4908 39.4621 66.4669 38.689 66.1454L33.0926 63.378C31.5675 61.69 31.2925 60.6494 31.6801 58.0336L35.1619 52.7998Z" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M42.5 4.30895C21.3739 4.30895 4.25 21.6624 4.25 43.0663C4.25 53.7016 8.4748 63.333 15.3219 70.3383L12.3031 73.3713C4.69967 65.5922 0 54.8833 0 43.0663C0 19.2804 19.0289 0 42.5 0C65.9711 0 85 19.2804 85 43.0663C85 55.2054 80.0409 66.1743 72.0698 74L69.1133 70.9045C76.2922 63.8565 80.75 53.9907 80.75 43.0663C80.75 21.6624 63.6261 4.30895 42.5 4.30895Z" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M40.375 15.081V4.30862L44.625 4.30859V15.081H40.375Z" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M69.5025 71.2445L61.752 63.3867L64.7571 60.3398L72.5076 68.1974L69.5025 71.2445Z" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M21.5085 22.6981L13.9951 15.0812L17.0003 12.0342L24.5137 19.6512L21.5085 22.6981Z" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M71.5801 38.7803H82.2051V43.0892H71.5801V38.7803Z" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M2.2373 38.7803H12.8624V43.0892H2.2373V38.7803Z" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M60.7451 19.3904L68.4958 11.5332L71.501 14.5803L63.7501 22.4375L60.7451 19.3904Z" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M21.6686 63.8223L13.9183 71.6803L10.9131 68.6334L18.6632 60.7754L21.6686 63.8223Z" />
+					</svg>
+				</div>
+				<div class="level_body">
+					<div class="level__title">
+						Продвинутый
+					</div>
+					<div class="level_description">
+						специальные<br>разделы<br>программирования
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="about-basic-level">
+		<div class="about-basic-level__basic-diogram">
+			<div class="basic-diagram-wrapper">
+				<img class="basic-diogram__part1" src="../stylesheets/images/about-basic-level-scale1.png" alt="">
+				<img class="basic-diogram__part2" src="../stylesheets/images/about-basic-level-scale2.png" alt="">
+				<img class="basic-diogram__part3" src="../stylesheets/images/about-basic-level-scale3.png" alt="">
+			</div>
+		</div>
+		<div class="about-basic-level__basic-description">
+			<div class="basic-description__title">Базовый</div>
+			<div class="basic-description__upper-text">
+				<span class="upper-text__blue-text">Что изучается:</span>
+				Базовые алгоритмические конструкции,<br>
+				понятия типов данных, основы построения и описания<br>
+				алгоритмов, решение простейших задач
+			</div>
+			<div class="basic-description__lower-text">
+				<span class="upper-text__blue-text">На кого рассчитано:</span> учащиеся 4-8 классов, практически<br>
+				не знакомые с информатикой
+			</div>
+			<div class="basic-description__lower-part-wrapper">
+				<div class="lower-part-wrapper__button">
+					<img class="inside-circle" src="../stylesheets/images/about-basic-level-button-triangle.png" alt="">
+				</div>
+				<div class="lower-part-wrapper__text">Подробнее</div>
+			</div>
+		</div>
+	</section>
+
+
 
 
 <script>

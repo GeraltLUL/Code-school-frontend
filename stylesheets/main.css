@@ -5,15 +5,32 @@
   box-sizing: border-box;
 }
 
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+	--color-header: #0050FF;
+	--color-text: #3d535f;
+}
+
+body::-webkit-scrollbar {
+	display: none;
+}
+
+
+
 @font-face {
     font-family: Montserrat-Regular;
     src: url(fonts/Montserrat-Regular.ttf);
+}
+@font-face {
+	font-family: Montserrat-Bold;
+	src: url(fonts/Montserrat-Bold.ttf);
 }
 
 html {
@@ -53,12 +70,17 @@ dd {
 
 /* Выставляем основные настройки по-умолчанию для body */
 body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-  font-family: 'Montserrat', sans-serif;
+	overflow-y: auto;
+	scroll-snap-type: y mandatory;
+  	min-height: 100vh;
+  	scroll-behavior: smooth;
+  	text-rendering: optimizeSpeed;
+  	line-height: 1.5;
+	font-family: Montserrat-Regular;
 	background-image: url("images/bg.jpg");
+}
+body > *{
+	scroll-snap-align: start;
 }
 
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
@@ -104,25 +126,39 @@ a {
 }
 
 
+/*.mn{*/
+/*	padding: 0;*/
+/*	!*overflow-y: scroll;*!*/
+/*	scroll-snap-type: y mandatory;*/
+/*}*/
+/*.header-preview-wrapper,*/
+/*about-us{*/
+/*	scroll-snap-align: start;*/
+/*	scroll-snap-stop: always;*/
+/*}*/
+
 
 /* HEADER */
 
+
 .header-preview-wrapper {
+	display: flex;
+	flex-direction: column;
 	width: 100%;
-	height:100rem;
+	height:100vh;
 	background-image: url(/stylesheets/images/top-bg.png);
-	background-size: 100%;
+	background-size: 110%;
 	background-repeat: no-repeat;
 	color: #FFFFFF;
 }
 
-.header {
-	height: 10rem;
-	display: flex;
-	width: 100%;
-	justify-content: space-around;
-	align-items:center;
-}
+/*.header {*/
+/*	height: 10rem;*/
+/*	display: flex;*/
+/*	width: 100%;*/
+/*	justify-content: space-around;*/
+/*	align-items:center;*/
+/*}*/
 
 .logo {
 	display: flex;
@@ -164,28 +200,33 @@ a {
 /* PREVIEW */
 
 .preview {
-	height: 87.2%;
+	margin: auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	/*background-color: red;*/
 }
 
 .preview-wrapper {
-	height: 24rem;
+	width: 40vw;
+	height: 15vw;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
+	/*background-color: red;*/
 }
 
 .preview-wrapper__school-title {
+	font-family: Montserrat-Regular;
 	font-style: normal;
 	font-weight: 500;
-	font-size: 1.6rem;
-	line-height: 2rem;
+	font-size: 1vw;
+	line-height: 1vw;
 }
 
 .preview-wrapper__h3 {
+	font-family: Montserrat-Regular;
 	font-style: normal;
 	font-weight: 800;
 	font-size: 4.8rem;
@@ -194,29 +235,59 @@ a {
 }
 
 .preview-wrapper__button {
-	width: 31.2rem;
-	height: 5.8rem;
+	list-style: none;
+	border: none;
+	font: inherit;
+	color: inherit;
+	background-color: transparent;
+	cursor: pointer;
+
+	width: 20vw;
+	height: 3vw;
 	background: #0050FF;
-	border-radius: 3rem;
+	border-radius: 2vw;
 	border-color: #0050FF;
+	font-family: Montserrat-Regular;
 	font-style: normal;
 	font-weight: 500;
-	font-size: 2.5rem;
-	line-height: 3rem;
+	font-size: 2vw;
+	line-height: 2vw;
 	color: #FFFFFF;
+	transition: 0.3s;
+}
+.preview-wrapper__button:hover {
+	color: #0050FF;
+	background-color: white;
+	transition: 0.3s;
 }
 
 /* ABOUT US */
 
+
+
 .about-us {
-	height: 62.9rem;
+	font-family: Montserrat-Regular;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
+	z-index: 999;
+	background-color: white;
+	/*background-color: red;*/
+}
+
+.wp{
+	/*background-color: #36D7D4;*/
+	padding: 5vw;
+	display: flex;
+	flex-direction: column;
 }
 
 .about-us__title {
+	opacity: 0;
+	font-family: Montserrat-Bold;
+	margin: auto;
 	font-style: normal;
 	font-weight: 800;
 	font-size: 10rem;
@@ -225,7 +296,15 @@ a {
 	color: #162831;
 }
 
+.multiText{
+	color: var(--color-header);
+	/*text-transform: capitalize;*/
+}
+
 .about-as__description {
+	margin: auto;
+	margin-top: 4vw;
+	margin-bottom: 4vw;
 	width: 45%;
 	font-style: normal;
 	font-weight: 500;
@@ -236,8 +315,10 @@ a {
 }
 
 .about-as__scores {
+	font-family: Montserrat-Bold;
+	margin: auto;
 	display: flex;
-	gap: 2%;
+	gap: 7vw;
 }
 
 .score__indicator {
@@ -247,6 +328,7 @@ a {
 }
 
 .indecator__number {
+
 	font-style: normal;
 	font-weight: 800;
 	font-size: 9.7rem;
@@ -256,9 +338,10 @@ a {
 }
 
 .indicatior__text {
+	font-family: Montserrat-Regular;
 	font-style: normal;
 	font-weight: 500;
-	font-size: 2.5rem;
+	font-size: 1.5vw;
 	line-height: 134.09%;
 	text-align: center;
 	color: rgba(22, 40, 49, 0.8);
@@ -267,7 +350,7 @@ a {
 /* PREPARE LEVELS */
 
 .prepare-levels {
-	height: 93.3rem;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content:space-around;
@@ -290,43 +373,20 @@ a {
 	gap: 15%;
 }
 
-.level {
-	position: relative;
-	width: 36.7rem;
-	height: 36.7rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	align-items: center;
-	border: 0.5rem solid #162831;
-	border-radius: 2rem;
-}
 
 .level_icon {
 	position: absolute;
 	bottom: 29.3rem;
 	display: flex;
 	width: 16rem;
-    height: 16rem;
-	background-image: url(/stylesheets/images/prepare-levels_icon-back1.png);
-	background-repeat: no-repeat;
+	height: 16rem;
+	background-color: #ECECEC;
 	border-radius: 50%;
 	justify-content: center;
 	align-items: center;
 	z-index: 999;
 }
-.icon__image{
-	width: 8.5rem;
-	height: 7.4rem;
-}
 
-.icon_middle_level {
-	background-image: url(/stylesheets/images/prepare-levels_icon-back2.png);
-}
-
-.icon_high_level {
-	background-image: url(/stylesheets/images/prepare-levels_icon-back3.png);
-}
 
 .level_body {
 	width: 32rem;
@@ -344,7 +404,7 @@ a {
 	line-height: 134.09%;
 }
 
-.level_description 
+.level_description
 {
 	font-style: normal;
 	font-weight: 500;
@@ -354,10 +414,44 @@ a {
 	color: rgba(22, 40, 49, 0.8);
 }
 
+.icon__image{
+	width: 8.5rem;
+	height: 7.4rem;
+	fill: #162831;
+}
+
+.level {
+	position: relative;
+	width: 20vw;
+	height: 20vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	border: 0.15vw solid #162831;
+	border-radius: 2rem;
+}
+.level.active {
+	border: 0.25vw solid #162831;
+}
+.level.active > .level_icon{
+	background-color: #162831;
+}
+.level.active > .level_icon > .icon__image{
+	fill: white;
+}
+
+
+
+
+
+
+
+
 /* ABOUT BASIC LEVEL */
 
 .about-basic-level {
-	height: 89rem;
+	height: 100vh;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -460,9 +554,16 @@ a {
 
 
 .links li{
-	margin-top: 2rem;
+	height: 100%;
+	padding: 1.4vw 0.5vw;
+	margin-top: 3vw;
 	list-style: none;
+	/*background-color: red;*/
 
+}
+
+#hub{
+	border-bottom: 0.15vw solid white;
 }
 .dropdown_menu li{
 	margin-top: 2rem;
@@ -477,27 +578,35 @@ a {
 	text-decoration: none;
 	color: #FFFFFF;
 	font-size: 1.6rem;
+	transition: 0.3s;
 }
-.links li a:hover{
-	color: #2167FF;
-}
+/*.links li a:hover{*/
+/*	color: #3a7aff;*/
+/*	transition: 0.3s;*/
+/*}*/
 
 header{
+	width: 99vw;
+	padding-bottom: 2vw;
 	position: relative;
-	padding: 0 2rem;
+	/*padding: 0 2rem;*/
+	/*background-color: #0050FF;*/
+	border-bottom: 0.02vw solid #A1A1A1;
 }
 
 .navbar{
-	width: 100%;
+	width: 100vw;
 	height: 6rem;
 	max-width: 120rem;
 	margin: 0 auto;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+
 }
 
 .mainlogo{
+	margin-top: 2vw;
 	height: 5rem;
 }
 .links a{
@@ -520,7 +629,7 @@ header{
 }
 
 .profile{
-	margin-top: 2rem;
+	margin-top: 4rem;
 	width: 5.6rem;
 }
 .profile1{
