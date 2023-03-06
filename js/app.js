@@ -15,11 +15,29 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 // });
 
 
+function activeLeft(){
+    // document.querySelector("#level__1").classList.toggle("active")
+    document.querySelector("#level__1").classList.add("active")
+    document.querySelector("#level__2").classList.remove("active")
+    document.querySelector("#level__3").classList.remove("active")
+}
+function activeMiddle(){
+    // document.querySelector("#level__1").classList.toggle("active")
+    document.querySelector("#level__2").classList.add("active")
+    document.querySelector("#level__1").classList.remove("active")
+    document.querySelector("#level__3").classList.remove("active")
+}
+function activeRight(){
+    // document.querySelector("#level__1").classList.toggle("active")
+    document.querySelector("#level__3").classList.add("active")
+    document.querySelector("#level__2").classList.remove("active")
+    document.querySelector("#level__1").classList.remove("active")
+}
 
 
 
 
-if (ScrollTrigger.isTouch !== 1) {
+// if (ScrollTrigger.isTouch !== 1) {
 
 
     gsap.fromTo(".about-us__title",{opacity:0, y:200}, {
@@ -45,8 +63,30 @@ if (ScrollTrigger.isTouch !== 1) {
         })
     })
 
+gsap.fromTo(".prepare-levels__title",{opacity:0, y:200}, {
+    scrollTrigger:".prepare-levels__title",
+    opacity:1, y:0,
+    delay:0.25,
+});
 
-}
+
+
+let itemsLvl = gsap.utils.toArray('.level')
+
+itemsLvl.forEach(item => {
+    gsap.fromTo(item, { opacity: 0, y: 200, scale:1 }, {
+        scrollTrigger:".prepare-levels__levels",
+        opacity:1, y:0, scale:1,
+        delay:0.15,
+
+    })
+})
+
+
+
+
+
+// }
 
 
 
