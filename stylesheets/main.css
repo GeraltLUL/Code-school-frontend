@@ -430,6 +430,8 @@ a {
 	align-items: center;
 	border: 0.15vw solid #162831;
 	border-radius: 2rem;
+	cursor: pointer;
+	transition: 0.25s;
 }
 .level.active {
 	border: 0.25vw solid #162831;
@@ -710,4 +712,10 @@ header{
 		left: 2rem;
 		width: unset;
 	}
+}
+
+
+.prepare-levels__levels > .level:hover{
+	/*scale: 1.1;*/
+	transition: 0.25s;
 }
