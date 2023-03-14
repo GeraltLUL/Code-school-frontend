@@ -457,7 +457,7 @@ a {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	background: #162831;
+	/*background: #162831;*/
 }
 
 .about-basic-level__basic-diogram {
@@ -468,7 +468,17 @@ a {
     height: 60rem;
 	border-radius: 50%;
 	background: #FFFFFF;
+	padding: 10rem;
 }
+
+.wrapper-diogram > svg{
+	margin-left:1rem;
+	margin-right: 1rem;
+}
+/*.left_b{*/
+/*	width:8vw;*/
+/*	height:10vw;*/
+/*}*/
 
 .basic-diagram-wrapper {
 	display: flex;
@@ -478,10 +488,11 @@ a {
 }
 
 .about-basic-level__basic-description {
-	height: 60rem;
+	height: 70vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+	background-color: red;
 }
 
 .basic-description__title {
@@ -631,6 +642,7 @@ header{
 }
 
 .profile{
+	cursor: pointer;
 	margin-top: 4rem;
 	width: 5.6rem;
 }
