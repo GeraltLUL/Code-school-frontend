@@ -10,9 +10,15 @@
 	<script src="https://kit.fontawesome.com/7765d9206b.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="../stylesheets/main.css">
 
-	<script src="../node_modules/panelsnap/lib/panelsnap.umd.js" defer></script>
+
+
+
+<!--	<script src="../node_modules/panelsnap/lib/panelsnap.umd.js" defer></script>-->
 <!--	<script src="../node_modules/panelsnap/lib/panelsnap.esm.js" defer></script>-->
 <!--	<script src="../node_modules/panelsnap/lib/panelsnap.cjs.js" defer></script>-->
+	<script src="../libs/panelsnap/lib/panelsnap.umd.js" defer></script>
+	<script src="../libs/panelsnap/lib/panelsnap.esm.js" defer></script>
+	<script src="../libs/panelsnap/lib/panelsnap.cjs.js" defer></script>
 
 	<script src="../libs/gsap/gsap.min.js" defer></script>
 	<script src="../libs/gsap/ScrollTrigger.min.js" defer></script>
@@ -20,13 +26,11 @@
 	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
 	<script src="../js/app.js" defer></script>
 
+	<link rel="stylesheet" href="../stylesheets/media.css">
 
 
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			new PanelSnap();
-		});
-	</script>
+
+
 
 </head>
 <body class="bd">
@@ -109,9 +113,14 @@
 		<div class="prepare-levels__title">
 			Уровни подготовки
 		</div>
+
+		<div class="m-prepare-levels">
+			!!SLIDER!!
+		</div>
+
 		<div class="prepare-levels__levels" >
 			<div class="level active" id="level__1" onclick="activeLeft()">
-				<div class="level_icon" >
+				<div class="level_icon" onclick="activeLeft()">
 					<svg class="icon__image"  viewBox="0 0 85 74" xmlns="http://www.w3.org/2000/svg" >
 						<path d="M45.9682 65.7091C45.2062 66.0566 44.3451 66.1102 43.547 65.8597L16.0775 54.1553C12.0134 52.8798 13.0239 48.6387 17.2265 49.3086L46.9408 51.0339C47.7662 51.1655 48.5159 51.5981 49.049 52.2503L52.703 57.362C53.2652 59.5789 53.0251 60.6284 51.4692 62.7516L45.9682 65.7091Z" />
 						<path fill-rule="evenodd" clip-rule="evenodd" d="M42.5 4.30895C21.3739 4.30895 4.25 21.6624 4.25 43.0663C4.25 53.7016 8.4748 63.333 15.3219 70.3383L12.3031 73.3713C4.69967 65.5922 0 54.8833 0 43.0663C0 19.2804 19.0289 0 42.5 0C65.9711 0 85 19.2804 85 43.0663C85 55.2054 80.0409 66.1743 72.0698 74L69.1133 70.9045C76.2922 63.8565 80.75 53.9907 80.75 43.0663C80.75 21.6624 63.6261 4.30895 42.5 4.30895Z"/>
@@ -124,11 +133,11 @@
 						<path fill-rule="evenodd" clip-rule="evenodd" d="M21.6693 63.8223L13.919 71.6803L10.9138 68.6334L18.6639 60.7754L21.6693 63.8223Z" />
 					</svg>
 				</div>
-				<div class="level_body">
-					<div class="level__title">
+				<div class="level_body" onclick="activeLeft()">
+					<div class="level__title" onclick="activeLeft()">
 						Базовый
 					</div>
-					<div class="level_description">
+					<div class="level_description" onclick="activeLeft()">
 						основы<br>алгоритмизации и<br>программирования
 					</div>
 				</div>
@@ -182,6 +191,7 @@
 		</div>
 	</section>
 	<section class="about-basic-level">
+		<a class="m-level-title">Базовый</a>
 		<div class="about-basic-level__basic-diogram">
 			<div class="wrapper-diogram">
 				<svg class="left_b" width="8.8rem" height="10rem" viewBox="0 0 88 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -195,7 +205,18 @@
 				</svg>
 			</div>
 		</div>
-		<div class="about-basic-level__basic-description">
+		<div class="about-basic-level__basic-description easy">
+			<h1>Базовый</h1>
+			<a><span class="sub-span"> Что изучается: </span> Базовые алгоритмические конструкции, понятия типов данных, основы построения и описания алгоритмов, решение простейших задач</a>
+			<a><span class="sub-span"> На кого рассчитано: </span> учащиеся 4-8 классов, практически не знакомые с информатикой</a>
+			<div class="more__btn">
+				<svg width="129" height="129" viewBox="0 0 129 129" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<circle cx="64.5" cy="64.5" r="64.5" fill="#2167FF"/>
+					<circle cx="64.5" cy="64.5" r="50.5" fill="#0050FF"/>
+					<path d="M89 64.5L52.25 85.7176L52.25 43.2824L89 64.5Z" fill="white"/>
+				</svg>
+				<a>Подробнее</a>
+			</div>
 <!--			<div class="basic-description__title">Базовый</div>-->
 <!--			<div class="basic-description__upper-text">-->
 <!--				<span class="upper-text__blue-text">Что изучается:</span>-->
@@ -213,6 +234,53 @@
 <!--				</div>-->
 <!--				<div class="lower-part-wrapper__text">Подробнее</div>-->
 <!--			</div>-->
+		</div>
+		<div class="about-basic-level__basic-description medium">
+			<h1>Средний</h1>
+			<a>
+				<span class="sub-span"> Что изучается: </span> Базовые алгоритмические конструкции, понятия типов данных, основы построения и описания алгоритмов, решение простейших задач
+			</a>
+			<a>
+				<span class="sub-span"> На кого рассчитано: </span> учащиеся 4-8 классов, практически не знакомые с информатикой
+			</a>
+			<div class="more__btn">
+				<svg width="129" height="129" viewBox="0 0 129 129" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<circle cx="64.5" cy="64.5" r="64.5" fill="#2167FF"/>
+					<circle cx="64.5" cy="64.5" r="50.5" fill="#0050FF"/>
+					<path d="M89 64.5L52.25 85.7176L52.25 43.2824L89 64.5Z" fill="white"/>
+				</svg>
+				<a>Подробнее</a>
+			</div>
+		</div>
+		<div class="about-basic-level__basic-description hard">
+			<h2 class="small-txt">Продвинутый</h2>
+			<a>
+				<span class="sub-span"> Что изучается: </span> Базовые алгоритмические конструкции, понятия типов данных, основы построения и описания алгоритмов, решение простейших задач
+			</a>
+			<a>
+				<span class="sub-span"> На кого рассчитано: </span> учащиеся 4-8 классов, практически не знакомые с информатикой
+			</a>
+			<div class="more__btn">
+				<svg width="129" height="129" viewBox="0 0 129 129" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<circle cx="64.5" cy="64.5" r="64.5" fill="#2167FF"/>
+					<circle cx="64.5" cy="64.5" r="50.5" fill="#0050FF"/>
+					<path d="M89 64.5L52.25 85.7176L52.25 43.2824L89 64.5Z" fill="white"/>
+				</svg>
+				<a>Подробнее</a>
+			</div>
+		</div>
+	</section>
+	<section class="staff">
+		<h1>Преподавательский состав</h1>
+		<div class="gal">Галерея/Что-то?????</div>
+	</section>
+	<section class="companies">
+		<h1>Наши парнеры</h1>
+		<div class="wrapper__cmp">
+			<div class="wrd"></div>
+<!--			<div class="wrd"><img src="../stylesheets/images/g8.png"></div>-->
+
+
 		</div>
 	</section>
 
@@ -232,6 +300,9 @@
 		: 'fa-solid fa-bars'
 
 	}
+
+
+
 </script>
 </body>
 </html>
