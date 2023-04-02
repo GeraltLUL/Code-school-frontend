@@ -1,0 +1,30 @@
+@media (max-width: 990px) {
+	.navbar .links,
+	.navbar .action_btn,
+	.profile{
+		display: none;
+	}
+
+	.navbar .toggle_btn{
+		display:block;
+	}
+
+	.dropdown_menu{
+		display: block;
+	}
+
+	/* .navbar {
+		justify-content: space-between;
+		max-width: 165rem;
+		height: 18rem;
+	}
+	*/
+	
+	.mainlogo {
+		height: 6rem;
+	}
+
+	.sandwich {
+		padding-top: 4rem;
+	} 
+}
