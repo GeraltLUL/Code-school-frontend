@@ -446,13 +446,6 @@ select {
 	fill: white;
 }
 
-
-
-
-
-
-
-
 /* ABOUT BASIC LEVEL */
 
 .about-basic-level {
@@ -730,8 +723,214 @@ header{
 	}
 }
 
-
 .prepare-levels__levels > .level:hover{
 	/*scale: 1.1;*/
 	transition: 0.25s;
+}
+
+/* TEACHING STAFF */
+
+.teachers{
+    /* position:absolute; */
+	background-color: #FFFFFF;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:500px;
+}
+.teachers h3{
+    /* position:absolute; */
+    top:20px;
+    left:180px;
+    font-family: 'Montserrat';
+    font-weight: 800;
+    font-size:75px;
+    text-align:center;
+    margin-top:0px;
+    margin-bottom: 0px;
+}
+.teachers_slider{
+    /* position:absolute; */
+	height: 100vh;
+    background-color:black;
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.teachers_slider div{   
+    width:380px;
+	height: 30vh;
+}
+.teachers_slider__even{  
+    background-color: #162831;
+}
+.teachers_slider__odd{  
+    background-color: #1E3743;
+}
+/* .teachers_button{
+    border-top: 5px solid #FFFFFF;
+    border-left: 5px solid #FFFFFF;
+    height: 13px;
+    width: 13px;
+    position:absolute;
+    top:200px;
+} */
+
+/* PARTNERS */
+
+.partners{
+	flex-direction: column;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+    height:100vh;
+    background-color:#FFFFFF;
+}
+
+.partners h3{
+    /* position:absolute; */
+    font-family: 'Montserrat';
+    font-weight: 800;
+    font-size:75px;
+}
+
+partners__icons-wrapper {
+	display: flex;
+	justify-content: space-around;
+}
+
+.circle{
+    position:absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    border: 5px solid #0050FF;
+}
+
+.ogetto{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width:230px;
+    height:230px;
+    background-color: #0050FF;
+    border-radius: 50%;
+    border:none;
+}
+
+
+.ogetto_second {
+	z-index: 100;
+	padding-bottom: 30px;
+}
+
+.software_country{
+    position: relative;
+    /* top:200px;
+    left:650px; */
+}
+.software_country .circle{
+    width:195px;
+    height:195px;
+}
+.software_country img{
+    position:absolute;
+    top:20px;
+    left:25px;
+    width:160px;
+    height:160px;
+}
+
+.cvision{
+    position:absolute;
+    left:1160px;
+    top:190px;
+}
+.cvision .circle{
+    width:225px;
+    height:225px;
+}
+.cvision img{
+    position:absolute;
+    width:170px;
+    height:110px;
+    left:33px;
+    top:65px;
+}
+
+.Inostudio{
+    position:absolute;
+    left:370px;
+    top:360px;
+}
+.Inostudio .circle{
+    width:230px;
+    height:230px;
+}
+.inostudio__logo_part img{
+    position:absolute;
+    top:-13px;
+    left:13px;
+    width:150px;
+    height:87px;
+}
+.inostudio__logo_part{
+    position:absolute;
+    top:85px;
+    left:28px;
+    height:60px;
+    width:180px;
+    background-color:#AB1B29;
+}
+
+.Dunice{
+    position:absolute;
+    left:695px;
+    top: 465px;
+}
+.Dunice .circle{
+    width:210px;
+    height:210px;
+}
+.Dunice img{
+    position:absolute;
+    top:40px;
+    left:45px;
+    width:130px;
+    height:130px;
+}
+
+.Liga{
+    position:absolute;
+    top:360px;
+    left:930px;
+}
+.Liga .circle{
+    width:205px;
+    height:205px;
+}
+.Liga img{
+    position:absolute;
+    top:35px;
+    width:170px;
+    height:150px;
+    left:25px;
+}
+
+.ITP{
+    position:absolute;
+    left:160px;
+    top:510px;
+}
+.ITP .circle{
+    width:195px;
+    height:195px;   
+}
+.ITP img{
+    position:absolute;
+    top:30px;
+    left:30px;
+    width:150px;
+    height:150px;
 }
