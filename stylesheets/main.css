@@ -1191,15 +1191,77 @@ header{
 
 .wrd{
 	position: absolute;
-	left: 5rem;
-	top: 5rem;
-	width: 10vw;
-	height: 10vw;
+	width: 15vw;
+	height: 15vw;
 	/*background-color: #0050FF;*/
 	/*border: #0050FF 0.5vw solid;*/
 	border-radius: 50%;
+	background-size: 22rem;
+	background-position: center;
+	user-select: none;
+	cursor: pointer;
 }
-.wrd > img{
-	width: 10vw;
-	height: 10vw;
+/*.wrd > img{*/
+/*	width: 10vw;*/
+/*	height: 10vw;*/
+/*	background-color: #0050FF;*/
+/*}*/
+
+#wrd1{
+	background-image: url("images/oggeto_logo.png");
+	background-repeat: no-repeat;
+
+	transition: 0.3s ease-in;
+
+	left: 5rem;
+	top: 4rem;
+}
+#wrd1:hover{
+	background-image: url("images/oggeto_logo_hover.png");
+	transition: 0.3s ease-in;
+	scale: 1.2;
+	/*background-size: 20rem;*/
+}
+
+#wrd2{
+	background-image: url("images/itp.png");
+	background-repeat: no-repeat;
+
+	transition: 0.3s ease-in;
+
+	left: 0;
+	top: 45rem;
+}
+#wrd2:hover{
+	background-image: url("images/itp_hover.png");
+	transition: 0.3s ease-in;
+	scale: 1.2;
+	/*background-size: 20rem;*/
+}
+
+#wrd3{
+	background-image: url("images/inostudio.png");
+	background-repeat: no-repeat;
+
+	transition: 0.3s ease-in;
+
+	left: 30rem;
+	top: 25rem;
+}
+#wrd3:hover{
+	background-image: url("images/inostudio_hover.png");
+	transition: 0.3s ease-in;
+	scale: 1.2;
+	/*background-size: 20rem;*/
+}
+
+#wrd4{
+	background-image: url("images/sftcountry.png");
+	background-repeat: no-repeat;
+
+
+	transition: 0.3s ease-in;
+
+	left: 55rem;
+	top: 9rem;
 }
