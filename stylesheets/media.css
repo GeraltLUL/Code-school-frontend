@@ -69,9 +69,10 @@
 
     .about-us__title{
         font-family: Montserrat-ExtraBold;
-        font-size: 12rem;
+        font-size: 10rem;
     }
     .about-as__description{
+        font-size: 2.3rem;
         font-family: Montserrat-Regular;
         font-weight: 1000;
         width: 45rem;
@@ -85,9 +86,10 @@
     }
     .indecator__number{
         text-align: right;
-        font-size: 11rem;
+        font-size: 8rem;
     }
     .indicatior__text{
+        font-size: 3.5rem;
         font-family: Montserrat-Regular;
         font-weight: 900;
     }
