@@ -1,0 +1,222 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+@media (max-width: 600px) {
+    html {
+        font-size: calc(100vw / 600 * 10); }
+
+    .mainlogo{
+        margin-left: 3rem;
+        margin-top: 4rem;
+    }
+
+    .about-us{
+        max-width: 100vw;
+        max-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    .prepare-levels{
+        max-width: 100vw;
+        max-height: 100vh;
+        overflow-x: hidden;
+    }
+
+
+    .toggle_btn{
+        position: absolute;
+        right: 5rem;
+        top: 1rem;
+    }
+
+    .header-preview-wrapper{
+        background-size: auto 100%;
+        background-position: -90rem;
+    }
+
+    header{
+        height: 10rem;
+    }
+
+    .preview-wrapper{
+        width: 50rem;
+        height: 50rem;
+        /*background-color: red;*/
+        /*transition: 1s;*/
+    }
+
+    .preview-wrapper__school-title{
+        font-size: 2.5rem;
+        margin-bottom: 5rem;
+    }
+
+
+    preview-wrapper__h3{
+    }
+
+    .preview-wrapper__button{
+        margin-top: 10rem;
+        width: 50rem;
+        height: 10rem;
+        border-radius: 5rem;
+        font-size: 5rem;
+    }
+
+
+    .about-us__title{
+        font-family: Montserrat-ExtraBold;
+        font-size: 10rem;
+    }
+    .about-as__description{
+        font-size: 2.3rem;
+        font-family: Montserrat-Regular;
+        font-weight: 1000;
+        width: 45rem;
+    }
+
+    .about-as__scores{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    .indecator__number{
+        text-align: right;
+        font-size: 8rem;
+    }
+    .indicatior__text{
+        font-size: 3.5rem;
+        font-family: Montserrat-Regular;
+        font-weight: 900;
+    }
+
+    .prepare-levels__levels{
+        display: none;
+    }
+
+    .prepare-levels__title{
+        /*background-color: red;*/
+    }
+
+    .container_sld{
+        display: block;
+    }
+
+
+    .prepare-levels__title{
+        font-size: 8rem;
+    }
+
+    .m-prepare-levels{
+
+        display: block;
+        margin-top: -20rem;
+        width: 45rem;
+        height: 60rem;
+        background-color: red;
+        color: white;
+        font-size: 5rem;
+        text-align: center;
+        font-family: Montserrat-Regular;
+    }
+
+
+
+    .about-basic-level{
+        flex-direction: column;
+    }
+
+    .about-basic-level__basic-description{
+        margin-top: -10rem;
+        width: 50rem;
+        height: 50rem;
+    }
+
+    .about-basic-level__basic-diogram{
+        margin-top: -10rem;
+        width: 50rem;
+        height: 50rem;
+        flex-direction: row;
+    }
+    .wrapper-diogram{
+        max-width: 100rem;
+        max-height: 100rem;
+        margin-top: -5rem;
+    }
+
+    .left_b{
+        width: 7rem;
+        height: 8rem;
+    }
+    .left_b > rect{
+        width: 40rem;
+        height: 50rem;
+    }
+    .mid_b{
+        width: 7rem;
+        height: 18rem;
+        /*display: none;*/
+    }
+    .mid_b > rect{
+        width: 40rem;
+        height: 50rem;
+    }
+    .right_b{
+        width: 7rem;
+        height: 28rem;
+        /*display: none;*/
+    }
+    .right_b > rect{
+        width: 40rem;
+        height: 90rem;
+    }
+    .m-level-title{
+        /*margin-top: 5rem;*/
+        font-family: Montserrat-Bold;
+        font-size: 8rem;
+        color: white;
+        display: block;
+    }
+
+    .about-basic-level__basic-description > h1 {
+        font-size: 10rem;
+    }
+
+    .about-basic-level__basic-description > a {
+        padding-bottom: 2rem;
+    }
+
+    .more__btn {
+        margin-top: 1rem;
+        border-radius: 15rem;
+        transition: 0.5s;
+        user-select: none;
+    }
+
+    .more__btn > a {
+        font-size: 5rem;
+    }
+
+    .small-txt{
+        font-family: Montserrat-ExtraBold;
+        font-size: 8rem;
+        color: white;
+        text-align: center;
+    }
+
+    .more__btn > svg {
+        width: 10rem;
+        height: 10rem;
+    }
+    .about-basic-level__basic-description{
+        margin-left: 1rem;
+    }
+    .about-basic-level__basic-description > h1{
+        display: none;
+    }
+
+}
