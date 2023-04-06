@@ -219,4 +219,8 @@
         display: none;
     }
 
+    .foot, .qst, .quotes, .companies{
+        display: none;
+    }
+
 }
