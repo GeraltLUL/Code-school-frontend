@@ -355,7 +355,24 @@ if(windowInnerWidth > 600 ){
 
 
 }
+else{
+    let peng = gsap.utils.toArray('.peng')
 
+    peng.forEach(item => {
+        item.addEventListener("mouseenter", () => {
+            gsap.to(item, {
+                backgroundPositionX:40,
+                duration: 1
+            });
+        });
+        item.addEventListener("mouseleave", () => {
+            gsap.to(item,  {
+                backgroundPositionX:80,
+                duration: 1
+            });
+        })
+    })
+}
 
 // if (ScrollTrigger.isTouch !== 1) {
 
