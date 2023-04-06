@@ -5,6 +5,13 @@
 * Browsers: last 4 version
 */
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /*@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";*/
 
 
@@ -567,6 +574,15 @@ a {
 	transition: 0.25s;
 
 
+	-webkit-user-select:none;
+
+
+	-moz-user-select:none;
+
+
+	-ms-user-select:none;
+
+
 	user-select:none;
 }
 .level.active {
@@ -618,6 +634,12 @@ a {
 	background: #FFFFFF;
 	padding: 10rem;
 
+	-webkit-user-select: none;
+
+	-moz-user-select: none;
+
+	-ms-user-select: none;
+
 	user-select: none;
 }
 
@@ -657,8 +679,12 @@ a {
 	-ms-flex-direction: column;
 	-ms-flex-pack: distribute;
 	justify-content: space-around;
-		/*background-color: red;*/
+	/*background-color: red;*/
+	-webkit-box-align: start;
+	-ms-flex-align: start;
 	align-items: start;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
 }
 .about-basic-level__basic-description > h1 {
@@ -676,8 +702,15 @@ a {
 }
 .more__btn {
 	margin-top: 2rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
 	flex-direction: row;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 	width: auto;
 	height: auto;
@@ -685,7 +718,15 @@ a {
 	border-radius: 15rem;
 	/*background-color: blueviolet;*/
 	cursor: url('images/link.cur'), pointer;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
 	transition: 0.5s;
+
+	-webkit-user-select: none;
+
+	-moz-user-select: none;
+
+	-ms-user-select: none;
 
 	user-select: none;
 }
@@ -693,6 +734,8 @@ a {
 	border-radius: 15rem;
 	background-color: white;
 	color: var(--color-header);
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
 	transition: 0.5s;
 }
 .more__btn > svg{
@@ -705,6 +748,8 @@ a {
 	margin-right: 3rem;
 	font-size: 10rem;
 	text-align: left;
+	-webkit-transition: 0.2s;
+	-o-transition: 0.2s;
 	transition: 0.2s;
 }
 
@@ -1130,12 +1175,18 @@ header{
 /*	transition: 2s;*/
 /*}*/
 .left_b > rect{
+	-webkit-transition: 1.5s;
+	-o-transition: 1.5s;
 	transition: 1.5s;
 }
 .mid_b > rect{
+	-webkit-transition: 1.5s;
+	-o-transition: 1.5s;
 	transition: 1.5s;
 }
 .right_b > rect{
+	-webkit-transition: 1.5s;
+	-o-transition: 1.5s;
 	transition: 1.5s;
 }
 
@@ -1147,9 +1198,18 @@ header{
 }
 
 .staff{
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 	height: 100vh;
 	width: 100vw;
@@ -1172,9 +1232,18 @@ header{
 }
 
 .companies{
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 	background-color: white;
 
@@ -1200,6 +1269,9 @@ header{
 	border-radius: 50%;
 	background-size: 22rem;
 	background-position: center;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 	cursor: url('images/link.cur'), pointer;
 	z-index: 2;
@@ -1214,6 +1286,10 @@ header{
 	background-image: url("images/oggeto_logo.png");
 	background-repeat: no-repeat;
 
+	-webkit-transition: 0.3s ease-in;
+
+	-o-transition: 0.3s ease-in;
+
 	transition: 0.3s ease-in;
 
 	left: 2vw;
@@ -1221,8 +1297,11 @@ header{
 }
 #wrd1:hover{
 	background-image: url("images/oggeto_logo_hover.png");
+	-webkit-transition: 0.3s ease-in;
+	-o-transition: 0.3s ease-in;
 	transition: 0.3s ease-in;
 	scale: 1.2;
+	-webkit-filter: drop-shadow(0 0 15px #0050FF);
 	filter: drop-shadow(0 0 15px #0050FF);
 	/*background-size: 20rem;*/
 }
@@ -1231,6 +1310,10 @@ header{
 	background-image: url("images/itp.png");
 	background-repeat: no-repeat;
 
+	-webkit-transition: 0.3s ease-in;
+
+	-o-transition: 0.3s ease-in;
+
 	transition: 0.3s ease-in;
 
 	left: 0;
@@ -1238,8 +1321,11 @@ header{
 }
 #wrd2:hover{
 	background-image: url("images/itp_hover.png");
+	-webkit-transition: 0.3s ease-in;
+	-o-transition: 0.3s ease-in;
 	transition: 0.3s ease-in;
 	scale: 1.2;
+	-webkit-filter: drop-shadow(0 0 15px #0050FF);
 	filter: drop-shadow(0 0 15px #0050FF);
 	/*background-size: 20rem;*/
 }
@@ -1247,6 +1333,8 @@ header{
 #wrd3{
 	background-image: url("images/inostudio.png");
 	background-repeat: no-repeat;
+	-webkit-transition: 0.3s ease-in;
+	-o-transition: 0.3s ease-in;
 	transition: 0.3s ease-in;
 
 	width: 17vw;
@@ -1258,8 +1346,11 @@ header{
 }
 #wrd3:hover{
 	background-image: url("images/inostudio_hover.png");
+	-webkit-transition: 0.3s ease-in;
+	-o-transition: 0.3s ease-in;
 	transition: 0.3s ease-in;
 	scale: 1.2;
+	-webkit-filter: drop-shadow(0 0 15px #0050FF);
 	filter: drop-shadow(0 0 15px #0050FF);
 	/*background-size: 20rem;*/
 }
@@ -1269,6 +1360,12 @@ header{
 	background-repeat: no-repeat;
 
 
+	-webkit-transition: 0.3s ease-in;
+
+
+	-o-transition: 0.3s ease-in;
+
+
 	transition: 0.3s ease-in;
 
 	left: 30vw;
@@ -1276,8 +1373,11 @@ header{
 }
 #wrd4:hover{
 	background-image: url("images/sftcountry_hover.png");
+	-webkit-transition: 0.3s ease-in;
+	-o-transition: 0.3s ease-in;
 	transition: 0.3s ease-in;
 	scale: 1.2;
+	-webkit-filter: drop-shadow(0 0 15px #0050FF);
 	filter: drop-shadow(0 0 15px #0050FF);
 	/*background-size: 20rem;*/
 }
@@ -1287,6 +1387,12 @@ header{
 	background-repeat: no-repeat;
 
 
+	-webkit-transition: 0.3s ease-in;
+
+
+	-o-transition: 0.3s ease-in;
+
+
 	transition: 0.3s ease-in;
 
 	left: 35vw;
@@ -1294,8 +1400,11 @@ header{
 }
 #wrd5:hover{
 	background-image: url("images/dunice_hover.png");
+	-webkit-transition: 0.3s ease-in;
+	-o-transition: 0.3s ease-in;
 	transition: 0.3s ease-in;
 	scale: 1.2;
+	-webkit-filter: drop-shadow(0 0 15px #0050FF);
 	filter: drop-shadow(0 0 15px #0050FF);
 	/*background-size: 20rem;*/
 }
@@ -1305,6 +1414,12 @@ header{
 	background-repeat: no-repeat;
 
 
+	-webkit-transition: 0.3s ease-in;
+
+
+	-o-transition: 0.3s ease-in;
+
+
 	transition: 0.3s ease-in;
 
 	left: 45vw;
@@ -1312,8 +1427,11 @@ header{
 }
 #wrd6:hover{
 	background-image: url("images/liga_hover.png");
+	-webkit-transition: 0.3s ease-in;
+	-o-transition: 0.3s ease-in;
 	transition: 0.3s ease-in;
 	scale: 1.2;
+	-webkit-filter: drop-shadow(0 0 15px #0050FF);
 	filter: drop-shadow(0 0 15px #0050FF);
 	/*background-size: 20rem;*/
 }
@@ -1326,6 +1444,10 @@ header{
 	height: 17vw;
 	background-size: 15vw;
 
+	-webkit-transition: 0.3s ease-in;
+
+	-o-transition: 0.3s ease-in;
+
 	transition: 0.3s ease-in;
 
 	left: 60vw;
@@ -1333,8 +1455,11 @@ header{
 }
 #wrd7:hover{
 	background-image: url("images/civlab_hover.png");
+	-webkit-transition: 0.3s ease-in;
+	-o-transition: 0.3s ease-in;
 	transition: 0.3s ease-in;
 	scale: 1.2;
+	-webkit-filter: drop-shadow(0 0 15px #0050FF);
 	filter: drop-shadow(0 0 15px #0050FF);
 	/*background-size: 20rem;*/
 }
@@ -1342,6 +1467,12 @@ header{
 .wrapper__cmp > svg{
 	position: absolute;
 	z-index: 1;
+}
+
+@-webkit-keyframes obj1 {
+	50%{
+		scale: 1.2;
+	}
 }
 
 @keyframes obj1 {
@@ -1357,6 +1488,8 @@ header{
 }
 .tr1 > svg{
 	position: absolute;
+	-webkit-transition: 3s;
+	-o-transition: 3s;
 	transition: 3s;
 }
 
@@ -1384,6 +1517,8 @@ header{
 
 .tr2 > svg{
 	position: absolute;
+	-webkit-transition: 3s;
+	-o-transition: 3s;
 	transition: 3s;
 }
 /*.tr2 > svg:hover{*/
@@ -1393,16 +1528,19 @@ header{
 /*}*/
 .tr2 > svg:nth-of-type(1){
 	top: -2vw;
+	-webkit-animation: obj1 8s linear infinite;
 	animation: obj1 8s linear infinite;
 }
 .tr2 > svg:nth-of-type(2){
 	left: 2vw;
 	top: -1.5vw;
+	-webkit-animation: obj1 5s linear infinite;
 	animation: obj1 5s linear infinite;
 }
 .tr2 > svg:nth-of-type(3){
 	left: 1vw;
 	top: 2vw;
+	-webkit-animation: obj1 6s linear infinite;
 	animation: obj1 6s linear infinite;
 }
 
@@ -1419,21 +1557,26 @@ header{
 /*}*/
 .tr3 > svg{
 	position: absolute;
+	-webkit-transition: 3s;
+	-o-transition: 3s;
 	transition: 3s;
 }
 
 .tr3 > svg:nth-of-type(1){
 	top: -2vw;
+	-webkit-animation: obj1 6s linear infinite;
 	animation: obj1 6s linear infinite;
 }
 .tr3 > svg:nth-of-type(2){
 	left: 4.5vw;
 	top: -1vw;
+	-webkit-animation: obj1 7s linear infinite;
 	animation: obj1 7s linear infinite;
 }
 .tr3 > svg:nth-of-type(3){
 	left: 1.3vw;
 	top: 1vw;
+	-webkit-animation: obj1 5s linear infinite;
 	animation: obj1 5s linear infinite;
 }
 
@@ -1445,21 +1588,26 @@ header{
 }
 .tr4 > svg{
 	position: absolute;
+	-webkit-transition: 3s;
+	-o-transition: 3s;
 	transition: 3s;
 }
 
 .tr4 > svg:nth-of-type(1){
 	top: -2vw;
+	-webkit-animation: obj1 6s linear infinite;
 	animation: obj1 6s linear infinite;
 }
 .tr4 > svg:nth-of-type(2){
 	left: 0vw;
 	top: -2vw;
+	-webkit-animation: obj1 7s linear infinite;
 	animation: obj1 7s linear infinite;
 }
 .tr4 > svg:nth-of-type(3){
 	left: -2.7vw;
 	top: -2vw;
+	-webkit-animation: obj1 5s linear infinite;
 	animation: obj1 5s linear infinite;
 }
 
@@ -1472,21 +1620,26 @@ header{
 }
 .tr5 > svg{
 	position: absolute;
+	-webkit-transition: 3s;
+	-o-transition: 3s;
 	transition: 3s;
 }
 
 .tr5 > svg:nth-of-type(1){
 	top: 0vw;
+	-webkit-animation: obj1 7s linear infinite;
 	animation: obj1 7s linear infinite;
 }
 .tr5 > svg:nth-of-type(2){
 	left: 4vw;
 	top: 1vw;
+	-webkit-animation: obj1 5s linear infinite;
 	animation: obj1 5s linear infinite;
 }
 .tr5 > svg:nth-of-type(3){
 	left: 1vw;
 	top: 3vw;
+	-webkit-animation: obj1 4s linear infinite;
 	animation: obj1 4s linear infinite;
 }
 
@@ -1499,45 +1652,76 @@ header{
 }
 .tr6 > svg{
 	position: absolute;
+	-webkit-transition: 3s;
+	-o-transition: 3s;
 	transition: 3s;
 }
 
 .tr6 > svg:nth-of-type(1){
 	top: 0vw;
+	-webkit-animation: obj1 4s linear infinite;
 	animation: obj1 4s linear infinite;
 }
 .tr6 > svg:nth-of-type(2){
 	left: 4vw;
 	top: 0.5vw;
+	-webkit-animation: obj1 5s linear infinite;
 	animation: obj1 5s linear infinite;
 }
 .tr6 > svg:nth-of-type(3){
 	left: 1vw;
 	top: 4vw;
+	-webkit-animation: obj1 7s linear infinite;
 	animation: obj1 7s linear infinite;
 }
 
 
 .quotes{
 	background-color: white;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 	font-size: 3vw;
 }
 .qst{
 	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 }
 
 .wrapper__qst{
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
+	-ms-flex-pack: distribute;
 	justify-content: space-around;
 	/*background-color: #AB1B29;*/
 	width: 80vw;
@@ -1555,8 +1739,14 @@ header{
 }
 
 .wrapper__qst_sub{
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
 	flex-direction: row;
+	-ms-flex-pack: distribute;
 	justify-content: space-around;
 }
 
@@ -1569,23 +1759,52 @@ header{
 	background-color: #0050FF;
 	font-size:4vw;
 	text-align: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 	font-family: Montserrat-Bold;
 	border: none;
 	cursor: url('images/link.cur'), pointer;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
 	transition: 0.5s;
 }
 
 /* Стиль для подсветки кнопки при наведении курсора */
 .offer_btn:hover{
+	-webkit-filter: drop-shadow(0 0 10px #0050FF);
 	filter: drop-shadow(0 0 10px #0050FF);
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
 	transition: 0.5s;
+}
+
+@-webkit-keyframes obj2 {
+	100%{
+		rotate: 360deg;
+	}
 }
 
 @keyframes obj2 {
 	100%{
 		rotate: 360deg;
+	}
+}
+@-webkit-keyframes obj3 {
+	25%{
+		rotate: 0deg;
+	}
+	50%{
+		rotate: 90deg;
+	}
+	75%{
+		rotate: -90deg;
+	}
+	100%{
+		rotate: 0deg;
 	}
 }
 @keyframes obj3 {
@@ -1614,16 +1833,19 @@ header{
 
 .trngl > svg:nth-of-type(1){
 	top: 0vw;
+	-webkit-animation: obj1 8s linear infinite;
 	animation: obj1 8s linear infinite;
 }
 .trngl > svg:nth-of-type(2){
 	left: 3vw;
 	top: -6vw;
+	-webkit-animation: obj1 10s linear infinite;
 	animation: obj1 10s linear infinite;
 }
 .trngl > svg:nth-of-type(3){
 	left: 9vw;
 	top: 2vw;
+	-webkit-animation: obj1 10s linear infinite;
 	animation: obj1 10s linear infinite;
 }
 
@@ -1631,6 +1853,7 @@ header{
 	position: absolute;
 	left: 90vw;
 	top: 5vw;
+	-webkit-animation: obj1 8s linear infinite;
 	animation: obj1 8s linear infinite;
 }
 
@@ -1646,6 +1869,24 @@ header{
 	background-position: right;
 	cursor: url('images/link.cur'), pointer;
 
+}
+
+@-webkit-keyframes obj5 {
+	0%{
+		rotate: 0deg;
+	}
+	25%{
+		rotate: -5deg;
+	}
+	50%{
+		rotate: 0deg;
+	}
+	70%{
+		rotate: 5deg;
+	}
+	100%{
+		rotate: 0deg;
+	}
 }
 
 @keyframes obj5 {
@@ -1666,15 +1907,25 @@ header{
 	}
 }
 .qst__svg:hover{
+	-webkit-animation: obj5 4s linear infinite;
 	animation: obj5 4s linear infinite;
 }
 
 
 
 .foot{
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 	overflow-x: hidden;
 }
