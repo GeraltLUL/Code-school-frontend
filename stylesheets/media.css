@@ -193,6 +193,7 @@
         font-size: 8rem;
         color: white;
         display: block;
+        margin-bottom: 6rem;
     }
 
     .about-basic-level__basic-description > h1 {
@@ -243,7 +244,270 @@
     }
 
 
-    .foot, .qst, .quotes, .companies{
+    /*Времянка*/
+    /*.header-preview-wrapper, .about-us, .prepare-levels, .about-basic-level, .staff, .companies{*/
+    /*    display: none;*/
+    /*}*/
+
+
+
+    .trr{
+        display: none;
+    }
+
+
+    .companies{
+        height: 200vh;
+    }
+    .companies > h1{
+        /*background-color: #36D7D4;*/
+        font-size: 6rem;
+    }
+    .wrapper__cmp{
+        /*background-color: red;*/
+        height: 180vh;
+    }
+    .wrd{
+        width: 25rem;
+        height: 25rem;
+        background-size: 25rem 25rem;
+        /*background-color: rebeccapurple;*/
+    }
+    #wrd2{
+        top: 27rem;
+        left: 27rem;
+        width: 20rem;
+        height: 20rem;
+        background-size: 20rem 20rem;
+    }
+    #wrd3{
+        top: 50rem;
+        left: 0rem;
+        width: 25rem;
+        height: 25rem;
+        background-size: 25rem 25rem;
+    }
+    #wrd4{
+        top: 80rem;
+        left: 25rem;
+        width: 22rem;
+        height: 22rem;
+        background-size: 20rem 20rem;
+    }
+    #wrd5{
+        top: 120rem;
+        left: 18rem;
+        width: 30rem;
+        height: 30rem;
+        background-size: 30rem 30rem;
+    }
+    #wrd6{
+        top: 160rem;
+        left: 2rem;
+        width: 25rem;
+        height: 25rem;
+        background-size: 25rem 25rem;
+    }
+    #wrd7{
+        top: 195rem;
+        left: 14rem;
+        width: 30rem;
+        height: 30rem;
+        background-size: 30rem 30rem;
+    }
+
+
+    .m__trr{
+        display: block;
+        position: absolute;
+        scale: 1.5;
+    }
+    .mtr1_1{
+        width:6rem;
+        height:8rem;
+        right: 10rem;
+        top: 10rem;
+        animation: obj1 4s linear infinite;
+    }
+    .mtr1_2{
+        width:6rem;
+        height:4rem;
+        right: 5rem;
+        top: 7rem;
+        animation: obj1 6s linear infinite;
+    }
+    .mtr1_3{
+        width:7rem;
+        height:7rem;
+        right: 2rem;
+        top: 14rem;
+        animation: obj1 8s linear infinite;
+    }
+
+    .mtr2_1{
+        width:6rem;
+        height:6rem;
+        left: 5rem;
+        top: 40rem;
+        animation: obj1 8s linear infinite;
+    }
+    .mtr2_2{
+        width:7rem;
+        height:6rem;
+        left: 9rem;
+        top: 36rem;
+        animation: obj1 4s linear infinite;
+    }
+    .mtr2_3{
+        width:7rem;
+        height:7rem;
+        left: 10rem;
+        top: 40rem;
+        animation: obj1 6s linear infinite;
+    }
+    .mtr3_1{
+        width:11rem;
+        height:10rem;
+        right: 5rem;
+        top: 60rem;
+        animation: obj1 6s linear infinite;
+    }
+    .mtr3_2{
+         width:8rem;
+         height:9rem;
+         right: 0rem;
+         top: 60rem;
+        animation: obj1 8s linear infinite;
+    }
+    .mtr3_3{
+        width:8rem;
+        height:4rem;
+        right: 4rem;
+        top: 73rem;
+        animation: obj1 4s linear infinite;
+    }
+
+    .mtr4_1{
+        width:11rem;
+        height:16rem;
+        left: 1rem;
+        top: 83rem;
+        animation: obj1 4s linear infinite;
+    }
+    .mtr4_2{
+        width:4rem;
+        height:8rem;
+        left: 2rem;
+        top: 78rem;
+        animation: obj1 8s linear infinite;
+    }
+    .mtr4_3{
+        width:7rem;
+        height:11rem;
+        left: 9rem;
+        top: 88rem;
+        animation: obj1 6s linear infinite;
+    }
+
+    .mtr5_1{
+        width:11rem;
+        height:7rem;
+        left: 0rem;
+        top: 128rem;
+        animation: obj1 6s linear infinite;
+    }
+    .mtr5_2{
+        width:8rem;
+        height:7rem;
+        left: 0rem;
+        top: 135rem;
+        animation: obj1 4s linear infinite;
+    }
+    .mtr5_3{
+        width:5rem;
+        height:6rem;
+        left: 10rem;
+        top: 137rem;
+        animation: obj1 8s linear infinite;
+    }
+
+    .mtr6_1{
+        width:7rem;
+        height:9rem;
+        right: 9rem;
+        top: 167rem;
+        animation: obj1 8s linear infinite;
+    }
+    .mtr6_2{
+        width:6rem;
+        height:7rem;
+        right: 2rem;
+        top: 172rem;
+        animation: obj1 8s linear infinite;
+    }
+    .mtr6_3{
+        width:9rem;
+        height:7rem;
+        right: 4rem;
+        top: 177rem;
+        animation: obj1 8s linear infinite;
+    }
+
+    .trngl, .trngl2{
+        display: none;
+    }
+    .wrapper__qst_sub{
+        display: none;
+        flex-direction: column;
+        width: 80vw;
+        background: #AB1B29;
+    }
+    .m__wrapper__qst_sub{
+        width: 80vw;
+        height: 80vh;
+        display: block;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        align-items: center;
+
+        /*background: #AB1B29;*/
+    }
+    .m__wrapper__qst_sub > h1{
+        margin-top: 5rem;
+        max-width: 70vw	;
+        font-family: Montserrat-ExtraBold;
+        font-size: 9vw;
+        color: white;
+        text-align: center;
+        letter-spacing: 0.2em;
+        /*background-color: #1E3743;*/
+    }
+    .offer_btn{
+        margin-top: 5rem;
+        width: 60vw;
+        height: 30vw;
+        font-size: 10rem;
+    }
+    .peng{
+        overflow-x: hidden;
+        width: 15rem;
+        height: 20rem;
+        background-size: 20rem;
+        /*background-color: red;*/
+        bottom: 30rem;
+    }
+
+
+
+
+    .foot, .quotes{
         display: none;
     }
 
