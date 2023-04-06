@@ -5,6 +5,13 @@
 * Browsers: last 4 version
 */
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @media (max-width: 600px) {
     html {
         font-size: calc(100vw / 600 * 10); }
@@ -127,6 +134,9 @@
 
 
     .about-basic-level{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
     }
 
@@ -140,6 +150,9 @@
         margin-top: -10rem;
         width: 50rem;
         height: 50rem;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
         flex-direction: row;
     }
     .wrapper-diogram{
@@ -193,7 +206,12 @@
     .more__btn {
         margin-top: 1rem;
         border-radius: 15rem;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
         transition: 0.5s;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
         user-select: none;
     }
 
@@ -218,6 +236,12 @@
     .about-basic-level__basic-description > h1{
         display: none;
     }
+
+    .staff > h1{
+        max-width: 80vw;
+        font-size: 4rem;
+    }
+
 
     .foot, .qst, .quotes, .companies{
         display: none;
