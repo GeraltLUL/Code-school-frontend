@@ -386,6 +386,15 @@ else{
 // }
 
 
+var btn3 = document.querySelector('.svg__to__top');
+var hiddenElement3 = document.querySelector('.header-preview-wrapper')
+
+btn3.addEventListener('click', handleButtonClick3);
+function handleButtonClick3() {
+    hiddenElement3.scrollIntoView({block: "center", behavior: "smooth"});
+}
+
+
 const hdn = document.querySelector('.about-basic-level');
 
 function activeLeft(){
@@ -436,6 +445,8 @@ function handleButtonClick1() {
     var panel = document.querySelector(".about-basic-level");
     PanelSnapInstance.snapToPanel(panel);
 }
+
+
 
 
 

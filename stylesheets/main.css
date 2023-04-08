@@ -192,7 +192,8 @@ a {
 	width: 100%;
 	height:100vh;
 	background-image: url("images/top-bg.png");
-	background-size: 110%;
+	/*background-size: 110%;*/
+	background-size: auto 100%;
 	background-repeat: no-repeat;
 	color: #FFFFFF;
 }
@@ -1913,22 +1914,22 @@ header{
 
 
 
-.foot{
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	overflow-x: hidden;
-}
+/*.foot{*/
+/*	display: -webkit-box;*/
+/*	display: -ms-flexbox;*/
+/*	display: flex;*/
+/*	-webkit-box-orient: vertical;*/
+/*	-webkit-box-direction: normal;*/
+/*	-ms-flex-direction: column;*/
+/*	flex-direction: column;*/
+/*	-webkit-box-pack: center;*/
+/*	-ms-flex-pack: center;*/
+/*	justify-content: center;*/
+/*	-webkit-box-align: center;*/
+/*	-ms-flex-align: center;*/
+/*	align-items: center;*/
+/*	overflow-x: hidden;*/
+/*}*/
 
 
 
@@ -2028,3 +2029,165 @@ li > *:hover{
 .m__wrapper__qst_sub{
 	display: none;
 }
+
+/*!*ВРЕМЯНКА*!*/
+/*.header-preview-wrapper, .about-us, .prepare-levels, .about-basic-level, .staff, .companies, .quotes, .qst{*/
+/*	display: none;*/
+/*}*/
+
+
+.foot{
+	display: flex;
+	flex-direction: column;
+	max-width: 100vw;
+	max-height: 100vh;
+	justify-content: center;
+	align-items: center;
+}
+
+@keyframes marquee-infinite {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+}
+
+.mrq{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	height: 50%;
+	width: 100vw;
+	background-color: white;
+	overflow: hidden;
+}
+.mrq div{
+	display: flex;
+	/*background-color: #548AFF;*/
+	height: 100%;
+	/*width: 200%;*/
+	animation: marquee-infinite 99s linear infinite;
+}
+.mrq span {
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+.mrq > div > span > img{
+	transition: 0.5s;
+}
+.mrq > div > span > img:hover{
+	transition: 0.5s;
+	scale: 0.8;
+}
+.ft{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	font-family: Montserrat-Regular;
+	color: white;
+	font-size: 3rem;
+	height: 50%;
+	width: 100vw;
+	/*border-top: 0.25rem solid white;*/
+	/*background-color: #548AFF;*/
+}
+
+.ft__block{
+	width: 33%;
+	height: 40rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.ft > div:nth-child(1){
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	/*background-color: #36D7D4;*/
+}
+.ft > div:nth-child(1) > div:nth-child(3) > svg{
+	cursor: url('images/link.cur'), pointer;
+}
+.ft > div:nth-child(1) > div:nth-child(3) > div > a{
+	cursor: url('images/link.cur'), pointer;
+}
+.ft > div:nth-child(2){
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-left: 0.15rem solid white;
+	/*background-color: #2167FF;*/
+}
+.ft > div:nth-child(2) > svg{
+	width:25vw;
+	height:5vw;
+	/*background-color: #A1A1A1;*/
+	cursor: url('images/link.cur'), pointer;
+	transition: 0.5s;
+	fill: white;
+}
+.ft > div:nth-child(2) > svg:hover{
+	transition: 0.5s;
+	scale: 1.1;
+	fill: var(--color-header);
+}
+
+.ft > div:nth-child(3){
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-left: 0.15rem solid white;
+	/*background-color: #A1A1A1;*/
+}
+.ft > div:nth-child(3) > a{
+	height: 10vw;
+	/*background-color: #36D7D4;*/
+	text-align: center;
+}
+
+.num{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	/*background-color: green;*/
+	margin: 0 2rem 2rem 10rem;
+}
+.num > svg{
+	min-width: 8rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.sub__num{
+	display: flex;
+	flex-direction: column;
+	margin-left: 2rem;
+}
+.dot{
+	font-size: 10rem;
+	color: #0050FF;
+}
+.chto{
+	height: 15vw;
+}
+/*.stl{*/
+/*	width: 5vw;*/
+/*	height: 5vw;*/
+/*	background-color: #A1A1A1;*/
+/*}*/
+/*.stl:hover{*/
+/*	width: 5vw;*/
+/*	height: 5vw;*/
+/*	border-radius: 50%;*/
+/*	background-color: white;*/
+/*}*/
