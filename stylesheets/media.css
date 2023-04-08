@@ -489,6 +489,7 @@
         height: 20rem;
         background-size: 20rem;
         /*background-color: red;*/
+        user-select: none;
         bottom: 30rem;
     }
 
