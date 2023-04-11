@@ -862,11 +862,16 @@ a {
 	padding: 1.4vw 0.5vw;
 	margin-top: 3vw;
 	list-style: none;
+	transition: 1s;
 	/*background-color: red;*/
 
 }
-
+/*#edu:hover, #others:hover{*/
+/*	transition: 1s;*/
+/*	border-bottom: 0.15vw solid #bababa;*/
+/*}*/
 #hub{
+	transition: 0.5s;
 	border-bottom: 0.15vw solid white;
 }
 .dropdown_menu li{
@@ -1677,23 +1682,6 @@ header{
 }
 
 
-.quotes{
-	background-color: white;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	font-size: 3vw;
-}
 .qst{
 	position: relative;
 	display: -webkit-box;
@@ -2030,10 +2018,7 @@ li > *:hover{
 	display: none;
 }
 
-/*!*ВРЕМЯНКА*!*/
-/*.header-preview-wrapper, .about-us, .prepare-levels, .about-basic-level, .staff, .companies, .quotes, .qst{*/
-/*	display: none;*/
-/*}*/
+
 
 
 .foot{
@@ -2190,4 +2175,198 @@ li > *:hover{
 /*	height: 5vw;*/
 /*	border-radius: 50%;*/
 /*	background-color: white;*/
+/*}*/
+
+
+
+
+
+
+
+
+.quotes{
+	position: relative;
+	background-color: white;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	font-size: 3vw;
+}
+
+.quotes > h1{
+	color: var(--color-h1);
+	font-size: 5rem;
+}
+
+
+
+.symbol_above{
+	margin-top: 6rem;
+	width: 10vw;
+
+	/*position:absolute;*/
+	/*left: 45vw;*/
+}
+
+.color__blue{
+	color: var(--color-header);
+}
+
+/* Общий видн кнопки */
+.btn{
+	height:55px;
+	width:55px;
+	background-color:#0050FF;
+	border:none;
+	border-radius:50px;
+	cursor:pointer;
+	display:block;
+
+}
+
+/* Расположение для каждой кнопки*/
+#first{
+	/*position:absolute;*/
+	/*top:370px;*/
+	/*left:100px;*/
+	width: 3vw;
+	height: 3vw;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-position: center;
+	/*background-color: #AB1B29;*/
+	background-size: cover;
+	background-image: url("images/Left_arrow.svg");
+	cursor: url('images/link.cur'), pointer;
+	transition: 0.5s;
+}
+#first:hover{
+	transition: 0.5s;
+	background-image: url("images/Left_arrow_reverse.svg");
+}
+
+#second{
+	width: 3vw;
+	height: 3vw;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-position: center;
+	/*background-color: #AB1B29;*/
+	background-image: url("images/Right_arrow.svg");
+	cursor: url('images/link.cur'), pointer;
+	transition: 0.5s;
+	background-size: cover;
+}
+#second:hover{
+	transition: 0.5s;
+	background-image: url("images/Right_arrow_reverse.svg");
+}
+
+
+.quotes__wrapepr{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	width: 90vw;
+	/*height: 20vh;*/
+	max-height: 60vh;
+
+}
+
+
+/*!* Стрелка внутри кнопки *!*/
+/*.arrow_first_part{*/
+/*	border-top: 5px solid #FFFFFF;*/
+/*	border-left: 5px solid #FFFFFF;*/
+/*	height: 13px;*/
+/*	width: 13px;*/
+/*}*/
+
+/*.arrow_second_part{*/
+/*	position:absolute;*/
+/*	border-top:5px solid #FFFFFF;*/
+/*	width:25px;*/
+/*	top:25px;*/
+/*	margin-left:9px;*/
+/*}*/
+
+#first .arrow_first_part{
+	rotate: -40deg;
+	margin-left:9px;
+}
+
+#second .arrow_first_part{
+	margin-left:16px;
+	rotate:130deg;
+}
+
+/* Блок с цитатой */
+.text{
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: var(--color-h1);
+}
+
+/* Текст цитаты */
+.main_text{
+	margin-top: 6rem;
+	width:50vw;
+	/*background-color: #36D7D4;*/
+	font-family: Montserrat-ExtraBold;
+	/*font-weight:800;*/
+	line-height: 1.3;
+	letter-spacing: 0.175em;
+	font-size:4rem;
+	text-align: justify;
+	color: var(--color-text);
+}
+
+/* Автор цитаты */
+.person{
+	margin-top: 4rem;
+	font-family: Montserrat-ExtraBold;
+	font-weight:800;
+	font-size:2rem;
+	text-align:center;
+	width:40vw;
+	color: var(--color-text);
+	/*background-color: green;*/
+}
+
+/* Должность автора */
+.post{
+	/*margin-top: 1rem;*/
+	font-family: Montserrat-ExtraBold;
+	font-weight: 800;
+	font-size:3rem;
+	text-align:center;
+	width:40vw;
+	/*background-color: gold;*/
+}
+
+/* Небольшая анимация при смене цитаты */
+.fade{animation-name: fade;animation-duration: 1.0s;}
+@keyframes fade{from{opacity:0.1;}to{opacity: 1;}}
+
+/* Класс для слайдера. С помощью него скрываем ненужные цитаты */
+.hide{
+	display:none;
+}
+
+/*!*ВРЕМЯНКА*!*/
+/*.header-preview-wrapper, .about-us, .prepare-levels, .about-basic-level, .staff, .companies, .qst, .foot{*/
+/*	display: none;*/
 /*}*/
