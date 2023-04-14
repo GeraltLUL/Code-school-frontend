@@ -47,12 +47,7 @@ function sleep(millis) {
 
 
 
-while (1){
-    timerNext();
-    sleep(2000);
-}
-
-
+//Таймер для автоматичсекой смены цитат
 function timerNext(){
     texts[i].classList.add('hide');
     texts[i].classList.remove('fade');
@@ -63,14 +58,5 @@ function timerNext(){
 }
 
 
+let timerId = setInterval(timerNext, 6000);
 
-/* Кнопка в блоке с заявлением на оценку уровня знаний */
-// const offer_btn = document.querySelector('.offer_btn');
-//
-// offer_btn.addEventListener('mouseenter', () => {
-//     offer_btn.classList.add('offer_btn__active');
-// });
-//
-// offer_btn.addEventListener('mouseout', () => {
-//     offer_btn.classList.remove('offer_btn__active');
-// });
