@@ -356,6 +356,253 @@ if(windowInnerWidth > 600 ){
 
 }
 else{
+
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: false,
+
+        // // If we need pagination
+        // pagination: {
+        //     el: '.swiper-pagination',
+        // },
+        //
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        //
+        // // And if we need scrollbar
+        // scrollbar: {
+        //     el: '.swiper-scrollbar',
+        // },
+    });
+
+
+
+    //Анимация для "О нас"
+    gsap.fromTo(".about-us__title",{opacity:0, y:200}, {
+        scrollTrigger:".about-us__title",
+        opacity:1, y:0,
+        delay:0.25,
+    });
+
+    gsap.fromTo(".about-as__description",{opacity:0, y:200}, {
+        scrollTrigger:".about-as__description",
+        opacity:1, y:0,
+        delay:0.25,
+    });
+
+
+    let itemsL = gsap.utils.toArray('.score__indicator')
+    var x = 0.25;
+    itemsL.forEach(item => {
+        gsap.fromTo(item, { opacity: 0, y: 200 }, {
+            scrollTrigger:".about-as__description",
+            opacity:1, y:0,
+            delay:x,
+        })
+        x += 0.1;
+
+    })
+
+
+
+    //Анимация для "Уровни подготовки"
+    gsap.fromTo(".prepare-levels__title",{opacity:0, y:200}, {
+        scrollTrigger:".prepare-levels__title",
+        opacity:1, y:0,
+        delay:0.25,
+    });
+
+
+
+    let itemsLvl = gsap.utils.toArray('.level')
+    var x1 = 0.25
+    itemsLvl.forEach(item => {
+        gsap.fromTo(item, { opacity: 0, y: 200, scale:1 }, {
+            scrollTrigger:".prepare-levels__levels",
+            opacity:1, y:0, scale:1,
+            delay:x1,
+
+        })
+        x1 += 0.1
+
+        item.addEventListener("mousedown", () => {
+            gsap.fromTo(".about-basic-level__basic-description > *", { opacity: 0, x: 200, scale:1 }, {
+                scrollTrigger:".about-basic-level__basic-description > *",
+                opacity:1, x:0, scale:1,
+                delay:0.25,
+            })
+            gsap.fromTo(".about-basic-level__basic-diogram",{opacity:0, x:-200}, {
+                scrollTrigger:".about-basic-level__basic-diogram",
+                opacity:1, x:0,
+                delay:0.25,
+            });
+        });
+    })
+
+
+    //Анимация для уровней
+    let itemslv = gsap.utils.toArray('.about-basic-level__basic-description > *')
+    itemslv.forEach(item => {
+        gsap.fromTo(item, { opacity: 0, x: 200, scale:1 }, {
+            scrollTrigger:".about-basic-level__basic-description > *",
+            opacity:1, x:0, scale:1,
+            delay:0.1,
+        })
+    })
+
+    gsap.fromTo(".about-basic-level__basic-diogram",{opacity:0, x:-200}, {
+        scrollTrigger:".about-basic-level__basic-diogram",
+        opacity:1, x:0,
+        delay:0.25,
+    });
+
+
+
+
+
+
+
+    //Анимация для "Наши парнеры"
+    gsap.fromTo("#wrd1",{scale:0.0001}, {
+        scrollTrigger:"#wrd1",
+        scale:1,
+        duration: 0.3,
+        delay:0.15,
+    });
+    gsap.fromTo("#wrd2",{scale:0.0001}, {
+        scrollTrigger:"#wrd2",
+        scale:1,
+        duration: 0.3,
+        delay:0.25,
+    });
+    gsap.fromTo("#wrd3",{scale:0.0001}, {
+        scrollTrigger:"#wrd3",
+        scale:1,
+        duration: 0.3,
+        delay:0.35,
+    });
+    gsap.fromTo("#wrd4",{scale:0.0001}, {
+        scrollTrigger:"#wrd4",
+        scale:1,
+        duration: 0.3,
+        delay:0.45,
+    });
+    gsap.fromTo("#wrd5",{scale:0.0001}, {
+        scrollTrigger:"#wrd5",
+        scale:1,
+        duration: 0.3,
+        delay:0.55,
+    });
+    gsap.fromTo("#wrd6",{scale:0.0001}, {
+        scrollTrigger:"#wrd6",
+        scale:1,
+        duration: 0.3,
+        delay:0.65,
+    });
+    gsap.fromTo("#wrd7",{scale:0.0001}, {
+        scrollTrigger:"#wrd7",
+        scale:1,
+        duration: 0.3,
+        delay:0.75,
+    });
+
+    //Анимация для треугольников
+    gsap.fromTo(".tr1 > svg",{scale:0.0001}, {
+        scrollTrigger:".tr1",
+        scale:1,
+        duration: 0.1,
+        delay:0.05,
+    });
+    gsap.fromTo(".tr2 > svg",{scale:0.0001}, {
+        scrollTrigger:".tr2",
+        scale:1,
+        duration: 0.1,
+        delay:0.15,
+    });
+    gsap.fromTo(".tr3 > svg",{scale:0.0001}, {
+        scrollTrigger:".tr3",
+        scale:1,
+        duration: 0.1,
+        delay:0.25,
+    });
+    gsap.fromTo(".tr4 > svg",{scale:0.0001}, {
+        scrollTrigger:".tr4",
+        scale:1,
+        duration: 0.1,
+        delay:0.35,
+    });
+    gsap.fromTo(".tr5 > svg",{scale:0.0001}, {
+        scrollTrigger:".tr5",
+        scale:1,
+        duration: 0.1,
+        delay:0.45,
+    });
+    gsap.fromTo(".tr6 > svg",{scale:0.0001}, {
+        scrollTrigger:".tr6",
+        scale:1,
+        duration: 0.1,
+        delay:0.55,
+    });
+
+
+    //Анимация клика на треугольник
+
+    let triangles = gsap.utils.toArray('.trr > svg')
+
+    triangles.forEach(item => {
+        item.addEventListener("mouseenter", () => {
+            gsap.to(item, {
+                rotation:360,
+                duration:2,
+            });
+        });
+        item.addEventListener("mouseleave", () => {
+            gsap.to(item, {
+                rotation:0,
+                duration:2,
+            });
+        });
+    })
+
+
+
+    // $(function(){
+    //     $("#test1").on('click', function(){
+    //         TweenMax.to('#test', 1, {
+    //             startAt:{
+    //                 rotation:0
+    //             },
+    //             rotation:360
+    //         })
+    //     });
+    // });
+
+
+    //Анимация hover для кружочков IT-компаний
+    let images = gsap.utils.toArray(".wrd");
+
+    images.forEach((image, i) => {
+        image.addEventListener("mouseenter", () => {
+            gsap.to(image, {
+                scale: 1.2,
+                duration: 0.1
+            });
+        });
+        image.addEventListener("mouseleave", () => {
+            gsap.to(image, {
+                scale: 1,
+                duration: 0.1
+            });
+        })
+    });
+
+
+
+
     let peng = gsap.utils.toArray('.peng')
 
     peng.forEach(item => {
