@@ -625,7 +625,8 @@
         font-size: 5rem;
         text-align: center;
         font-family: Montserrat-Regular;
-        overflow-y: visible;
+        /*overflow-x: visible;*/
+        /*overflow-y: visible;*/
     }
 
     .swiper {
@@ -672,8 +673,8 @@
 
     .swiper-button-prev,
     .swiper-button-next{
-        margin-top: 13rem;
-        /*background-color: #AB1B29;*/
+        /*margin-top: 13rem;*/
+        background-color: #AB1B29;
     }
 
 }
