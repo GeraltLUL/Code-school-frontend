@@ -137,17 +137,17 @@
 				<!-- Additional required wrapper -->
 				<div class="swiper-wrapper">
 					<!-- Slides -->
-					<div class="swiper-slide">
+					<div class="swiper-slide" onclick="activeLeft()">
 						<img src="../stylesheets/images/first_slide.svg">
 						<h1>Базовый</h1>
 						<a>основы алгоритмизации и программирования</a>
 					</div>
-					<div class="swiper-slide">
+					<div class="swiper-slide" onclick="activeMiddle()">
 						<img src="../stylesheets/images/second_arrwo.svg">
 						<h1>Средний</h1>
 						<a>программирование на языках высокого уровня</a>
 					</div>
-					<div class="swiper-slide">
+					<div class="swiper-slide" onclick="activeRight()">
 						<img src="../stylesheets/images/third_arrwo.svg">
 						<h1>Продвинутый</h1>
 						<a>специальные разделы программирования</a>
@@ -241,7 +241,9 @@
 		</div>
 	</section>
 	<section class="about-basic-level">
-		<a class="m-level-title">Базовый</a>
+		<a class="m-level-title" id="ez">Базовый</a>
+		<a class="m-level-title" id="mid">Средний</a>
+		<a class="m-level-title" id="hard">Продвинутый</a>
 		<div class="about-basic-level__basic-diogram">
 			<div class="wrapper-diogram">
 				<svg class="left_b" width="8.8rem" height="10rem" viewBox="0 0 88 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -267,23 +269,6 @@
 				</svg>
 				<a>Подробнее</a>
 			</div>
-<!--			<div class="basic-description__title">Базовый</div>-->
-<!--			<div class="basic-description__upper-text">-->
-<!--				<span class="upper-text__blue-text">Что изучается:</span>-->
-<!--				Базовые алгоритмические конструкции,<br>-->
-<!--				понятия типов данных, основы построения и описания<br>-->
-<!--				алгоритмов, решение простейших задач-->
-<!--			</div>-->
-<!--			<div class="basic-description__lower-text">-->
-<!--				<span class="upper-text__blue-text">На кого рассчитано:</span> учащиеся 4-8 классов, практически<br>-->
-<!--				не знакомые с информатикой-->
-<!--			</div>-->
-<!--			<div class="basic-description__lower-part-wrapper">-->
-<!--				<div class="lower-part-wrapper__button">-->
-<!--					<img class="inside-circle" src="../stylesheets/images/about-basic-level-button-triangle.png" alt="">-->
-<!--				</div>-->
-<!--				<div class="lower-part-wrapper__text">Подробнее</div>-->
-<!--			</div>-->
 		</div>
 		<div class="about-basic-level__basic-description medium">
 			<h1>Средний</h1>
@@ -303,7 +288,7 @@
 			</div>
 		</div>
 		<div class="about-basic-level__basic-description hard">
-			<h2 class="small-txt">Продвинутый</h2>
+			<h1 class="small-txt">Продвинутый</h1>
 			<a>
 				<span class="sub-span"> Что изучается: </span> Базовые алгоритмические конструкции, понятия типов данных, основы построения и описания алгоритмов, решение простейших задач
 			</a>
@@ -481,7 +466,7 @@
 			<div class="text">
 				<div class="main_text">
 					<p>
-						Программирование - это возможность создавать мир своей мечты, все, что нужно - это учиться, учитсья и учиться.
+						<span class="m-small">Программирование</span> - это возможность создавать мир своей мечты, все, что нужно - это учиться, учитсья и учиться.
 					</p>
 				</div>
 				<div class="person">
@@ -603,7 +588,7 @@
 					<svg onclick="location.href='https://www.google.com/maps/place/%D0%98%D0%BD%D0%B6%D0%B5%D0%BD%D0%B5%D1%80%D0%BD%D0%BE-%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F+%D0%B0%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D0%B8%D1%8F+%D0%AE%D0%A4%D0%A3/@47.2030794,38.9326556,17z/data=!4m10!1m2!2m1!1z0KDQvtGB0YHQuNGPLCDQotCw0LPQsNC90YDQvtCzLCDRg9C7LiDQrdC90LPQtdC70YzRgdCwLCAxINCY0KLQkCDQrtCk0KMsINC60L7RgNC_0YPRgSAi0JMiLCDQnNCe0J8g0K3QktCc!3m6!1s0x40e3fd233e8f021b:0xfd0e2482e3a62bc4!8m2!3d47.203006!4d38.934882!15sCmnQoNC-0YHRgdC40Y8sINCi0LDQs9Cw0L3RgNC-0LMsINGD0LsuINCt0L3Qs9C10LvRjNGB0LAsIDEg0JjQotCQINCu0KTQoywg0LrQvtGA0L_Rg9GBICLQkyIsINCc0J7QnyDQrdCS0JySAQ9sZWFybmluZ19jZW50ZXLgAQA!16s%2Fg%2F1210xv98';" width="8rem" height="6rem" viewBox="0 0 33 41" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M16.5001 0C7.88595 0 0.903564 6.98339 0.903564 15.5966C0.903564 20.7094 6.39883 30.4162 10.8652 37.4613C13.8567 42.1796 19.1435 42.1796 22.135 37.4613C26.6014 30.4151 32.0967 20.7094 32.0967 15.5966C32.0967 6.98238 25.1143 0 16.5001 0ZM16.5001 22.931C12.2168 22.931 8.74382 19.458 8.74382 15.1747C8.74382 10.8914 12.2168 7.4184 16.5001 7.4184C20.7834 7.4184 24.2564 10.8914 24.2564 15.1747C24.2564 19.458 20.7834 22.931 16.5001 22.931Z" fill="white"/>
 					</svg>
-					<div class="sub__num" onclick="location.href='https://www.google.com/maps/place/%D0%98%D0%BD%D0%B6%D0%B5%D0%BD%D0%B5%D1%80%D0%BD%D0%BE-%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F+%D0%B0%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D0%B8%D1%8F+%D0%AE%D0%A4%D0%A3/@47.2030794,38.9326556,17z/data=!4m10!1m2!2m1!1z0KDQvtGB0YHQuNGPLCDQotCw0LPQsNC90YDQvtCzLCDRg9C7LiDQrdC90LPQtdC70YzRgdCwLCAxINCY0KLQkCDQrtCk0KMsINC60L7RgNC_0YPRgSAi0JMiLCDQnNCe0J8g0K3QktCc!3m6!1s0x40e3fd233e8f021b:0xfd0e2482e3a62bc4!8m2!3d47.203006!4d38.934882!15sCmnQoNC-0YHRgdC40Y8sINCi0LDQs9Cw0L3RgNC-0LMsINGD0LsuINCt0L3Qs9C10LvRjNGB0LAsIDEg0JjQotCQINCu0KTQoywg0LrQvtGA0L_Rg9GBICLQkyIsINCc0J7QnyDQrdCS0JySAQ9sZWFybmluZ19jZW50ZXLgAQA!16s%2Fg%2F1210xv98';"><a>Россия, Таганрог, ул. Энгельса, 1
+					<div class="sub__num" id="location" onclick="location.href='https://www.google.com/maps/place/%D0%98%D0%BD%D0%B6%D0%B5%D0%BD%D0%B5%D1%80%D0%BD%D0%BE-%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F+%D0%B0%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D0%B8%D1%8F+%D0%AE%D0%A4%D0%A3/@47.2030794,38.9326556,17z/data=!4m10!1m2!2m1!1z0KDQvtGB0YHQuNGPLCDQotCw0LPQsNC90YDQvtCzLCDRg9C7LiDQrdC90LPQtdC70YzRgdCwLCAxINCY0KLQkCDQrtCk0KMsINC60L7RgNC_0YPRgSAi0JMiLCDQnNCe0J8g0K3QktCc!3m6!1s0x40e3fd233e8f021b:0xfd0e2482e3a62bc4!8m2!3d47.203006!4d38.934882!15sCmnQoNC-0YHRgdC40Y8sINCi0LDQs9Cw0L3RgNC-0LMsINGD0LsuINCt0L3Qs9C10LvRjNGB0LAsIDEg0JjQotCQINCu0KTQoywg0LrQvtGA0L_Rg9GBICLQkyIsINCc0J7QnyDQrdCS0JySAQ9sZWFybmluZ19jZW50ZXLgAQA!16s%2Fg%2F1210xv98';"><a>Россия, Таганрог, ул. Энгельса, 1
 						ИТА ЮФУ, корпус "Г", МОП ЭВМ (Г-444)</a></div>
 				</div>
 			</div>
