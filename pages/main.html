@@ -29,6 +29,18 @@
 	<script src="https://cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js" defer></script>
 
 
+
+
+
+
+	<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+	/>
+
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+
 	<script src="../js/app.js" defer></script>
 	<script src="../js/slider.js" defer></script>
 	<link rel="stylesheet" href="../stylesheets/media.css">
@@ -44,7 +56,7 @@
 			<div class="navbar">
 				<img src="../stylesheets/images/svgg.svg" alt="" class="mainlogo">
 				<ul class="links">
-					<li id="hub"><a href="hero">Главная</a></li>
+					<li id="hub"><a  href="hero">Главная</a></li>
 					<li id="edu"><a href="hero">Программы обучения</a></li>
 					<li id="others"><a href="hero">Преподаватели</a></li>
 				</ul>
@@ -56,10 +68,11 @@
 
 
 			<div class="dropdown_menu">
-				<li><a href="hero">Главная</a></li>
+				<li><a class="active__page" href="hero">Главная</a></li>
 				<li><a href="hero">Программы обучения</a></li>
 				<li><a href="hero">Преподаватели</a></li>
-				<li><a href="#" class="action_btn">Личный кабинет</a></li>
+				<li><a href="hero">Личный кабинет</a></li>
+				<div class="promo"><a class="hire" onclick="location.href='https://kpyr.github.io/STL/';">Design and Development by STL<span class="dot">.</span></a></div>
 			</div>
 		</header>
 		<section class="preview">
@@ -120,7 +133,39 @@
 		</div>
 
 		<div class="m-prepare-levels">
-			!!SLIDER!!
+			<div class="swiper">
+				<!-- Additional required wrapper -->
+				<div class="swiper-wrapper">
+					<!-- Slides -->
+					<div class="swiper-slide">
+						<img src="../stylesheets/images/first_slide.svg">
+						<h1>Базовый</h1>
+						<a>основы алгоритмизации и программирования</a>
+					</div>
+					<div class="swiper-slide">
+						<img src="../stylesheets/images/second_arrwo.svg">
+						<h1>Средний</h1>
+						<a>программирование на языках высокого уровня</a>
+					</div>
+					<div class="swiper-slide">
+						<img src="../stylesheets/images/third_arrwo.svg">
+						<h1>Продвинутый</h1>
+						<a>специальные разделы программирования</a>
+					</div>
+				</div>
+				<!-- If we need pagination -->
+<!--				<div class="swiper-pagination"></div>-->
+
+				<!-- If we need navigation buttons -->
+
+			</div>
+
+		</div>
+		<div class="swiper-button-prev">
+			<img src="../stylesheets/images/lft.svg">
+		</div>
+		<div class="swiper-button-next">
+			<img src="../stylesheets/images/rght.svg">
 		</div>
 
 		<div class="prepare-levels__levels" >
@@ -568,7 +613,7 @@
 				</svg>
 			</div>
 			<div class="ft__block">
-				<a class="chto">Design and Development by STL<span class="dot">.</span></a>
+				<a class="chto" onclick="location.href='https://kpyr.github.io/STL/';">Design and Development by STL<span class="dot">.</span></a>
 			</div>
 			</div>
 		</div>
