@@ -1247,6 +1247,12 @@ header{
 	display: none;
 	/*background-color: deeppink;*/
 }
+#mid{
+	display: none;
+}
+#hard{
+	display: none;
+}
 
 /*.mid_b{*/
 /*	transition: 2s;*/
@@ -2571,6 +2577,11 @@ li > *:hover{
 /* Класс для слайдера. С помощью него скрываем ненужные цитаты */
 .hide{
 	display:none;
+}
+
+
+.swiper-button-prev, .swiper-button-next{
+	display: none;
 }
 
 /*!*ВРЕМЯНКА*!*/

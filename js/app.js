@@ -29,6 +29,50 @@ if(windowInnerWidth > 600){
 //
 if(windowInnerWidth > 600 ){
 
+
+    function activeLeft(){
+        // document.querySelector("#level__1").classList.toggle("active")
+        document.querySelector("#level__1").classList.add("active");
+        document.querySelector("#level__2").classList.remove("active");
+        document.querySelector("#level__3").classList.remove("active");
+        handleButtonClick1();
+
+        document.querySelector(".easy").style.display = "flex";
+        document.querySelector(".medium").style.display = "none";
+        document.querySelector(".hard").style.display = "none";
+
+        document.querySelector(".mid_b > rect").style.fillOpacity = "0.5";
+        document.querySelector(".right_b > rect").style.fillOpacity = "0.5";
+    }
+    function activeMiddle(){
+        // document.querySelector("#level__1").classList.toggle("active")
+        document.querySelector("#level__2").classList.add("active");
+        document.querySelector("#level__1").classList.remove("active");
+        document.querySelector("#level__3").classList.remove("active");
+        handleButtonClick1();
+
+        document.querySelector(".easy").style.display = "none";
+        document.querySelector(".medium").style.display = "flex";
+        document.querySelector(".hard").style.display = "none";
+
+        document.querySelector(".mid_b > rect").style.fillOpacity = "1";
+        document.querySelector(".right_b > rect").style.fillOpacity = "0.5";
+    }
+    function activeRight(){
+        // document.querySelector("#level__1").classList.toggle("active")
+        document.querySelector("#level__3").classList.add("active");
+        document.querySelector("#level__2").classList.remove("active");
+        document.querySelector("#level__1").classList.remove("active");
+        handleButtonClick1();
+
+        document.querySelector(".easy").style.display = "none";
+        document.querySelector(".medium").style.display = "none";
+        document.querySelector(".hard").style.display = "flex";
+
+        document.querySelector(".mid_b > rect").style.fillOpacity = "1";
+        document.querySelector(".right_b > rect").style.fillOpacity = "1";
+    }
+
     //Анимация для "О нас"
     gsap.fromTo(".about-us__title",{opacity:0, y:200}, {
         scrollTrigger:".about-us__title",
@@ -409,12 +453,94 @@ else{
 
 
 
+    function activeLeft(){
+        // document.querySelector("#level__1").classList.toggle("active")
+        document.querySelector("#level__1").classList.add("active");
+        document.querySelector("#level__2").classList.remove("active");
+        document.querySelector("#level__3").classList.remove("active");
+        scrollToNext();
+
+        document.querySelector(".easy").style.display = "flex";
+        document.querySelector(".medium").style.display = "none";
+        document.querySelector(".hard").style.display = "none";
+
+        document.querySelector("#ez").style.display = "flex";
+        document.querySelector("#mid").style.display = "none";
+        document.querySelector("#hard").style.display = "none";
+        anim();
+
+
+
+        document.querySelector(".mid_b > rect").style.fillOpacity = "0.5";
+        document.querySelector(".right_b > rect").style.fillOpacity = "0.5";
+    }
+    function activeMiddle(){
+        // document.querySelector("#level__1").classList.toggle("active")
+        document.querySelector("#level__2").classList.add("active");
+        document.querySelector("#level__1").classList.remove("active");
+        document.querySelector("#level__3").classList.remove("active");
+        scrollToNext();
+        anim();
+
+        document.querySelector(".easy").style.display = "none";
+        document.querySelector(".medium").style.display = "flex";
+        document.querySelector(".hard").style.display = "none";
+
+        document.querySelector("#ez").style.display = "none";
+        document.querySelector("#mid").style.display = "flex";
+        document.querySelector("#hard").style.display = "none";
+
+        document.querySelector(".mid_b > rect").style.fillOpacity = "1";
+        document.querySelector(".right_b > rect").style.fillOpacity = "0.5";
+    }
+    function activeRight(){
+        // document.querySelector("#level__1").classList.toggle("active")
+        document.querySelector("#level__3").classList.add("active");
+        document.querySelector("#level__2").classList.remove("active");
+        document.querySelector("#level__1").classList.remove("active");
+        scrollToNext();
+        anim();
+
+        document.querySelector(".easy").style.display = "none";
+        document.querySelector(".medium").style.display = "none";
+        document.querySelector(".hard").style.display = "flex";
+
+        document.querySelector("#ez").style.display = "none";
+        document.querySelector("#mid").style.display = "none";
+        document.querySelector("#hard").style.display = "flex";
+
+        document.querySelector(".mid_b > rect").style.fillOpacity = "1";
+        document.querySelector(".right_b > rect").style.fillOpacity = "1";
+    }
+
+
+
+
     //Анимация для "Уровни подготовки"
     gsap.fromTo(".prepare-levels__title",{opacity:0, y:200}, {
         scrollTrigger:".prepare-levels__title",
         opacity:1, y:0,
         delay:0.25,
     });
+
+    gsap.fromTo(".m-prepare-levels",{opacity:0, y:200}, {
+        scrollTrigger:".m-prepare-levels",
+        opacity:1, y:0,
+        delay:0.25,
+    });
+
+    gsap.fromTo(".swiper-button-prev",{opacity:0, y:200}, {
+        scrollTrigger:".swiper-button-prev",
+        opacity:1, y:0,
+        delay:0.25,
+    });
+
+    gsap.fromTo(".swiper-button-next",{opacity:0, y:200}, {
+        scrollTrigger:".swiper-button-next",
+        opacity:1, y:0,
+        delay:0.25,
+    });
+
 
 
 
@@ -445,6 +571,14 @@ else{
 
 
     //Анимация для уровней
+
+
+    gsap.fromTo(".m-level-title",{opacity:0, y:200}, {
+        scrollTrigger:".m-level-title",
+        opacity:1, y:0,
+        delay:0.25,
+    });
+
     let itemslv = gsap.utils.toArray('.about-basic-level__basic-description > *')
     itemslv.forEach(item => {
         gsap.fromTo(item, { opacity: 0, x: 200, scale:1 }, {
@@ -459,6 +593,31 @@ else{
         opacity:1, x:0,
         delay:0.25,
     });
+
+
+    function anim(){
+
+        gsap.fromTo(".m-level-title",{opacity:0, y:200}, {
+            scrollTrigger:".m-level-title",
+            opacity:1, y:0,
+            delay:0.25,
+        });
+
+        let itemslv = gsap.utils.toArray('.about-basic-level__basic-description > *')
+        itemslv.forEach(item => {
+            gsap.fromTo(item, { opacity: 0, x: 200, scale:1 }, {
+                scrollTrigger:".about-basic-level__basic-description > *",
+                opacity:1, x:0, scale:1,
+                delay:0.1,
+            })
+        })
+
+        gsap.fromTo(".about-basic-level__basic-diogram",{opacity:0, x:-200}, {
+            scrollTrigger:".about-basic-level__basic-diogram",
+            opacity:1, x:0,
+            delay:0.25,
+        });
+    }
 
 
 
@@ -644,48 +803,7 @@ function handleButtonClick3() {
 
 const hdn = document.querySelector('.about-basic-level');
 
-function activeLeft(){
-    // document.querySelector("#level__1").classList.toggle("active")
-    document.querySelector("#level__1").classList.add("active");
-    document.querySelector("#level__2").classList.remove("active");
-    document.querySelector("#level__3").classList.remove("active");
-    handleButtonClick1();
 
-    document.querySelector(".easy").style.display = "flex";
-    document.querySelector(".medium").style.display = "none";
-    document.querySelector(".hard").style.display = "none";
-
-    document.querySelector(".mid_b > rect").style.fillOpacity = "0.5";
-    document.querySelector(".right_b > rect").style.fillOpacity = "0.5";
-}
-function activeMiddle(){
-    // document.querySelector("#level__1").classList.toggle("active")
-    document.querySelector("#level__2").classList.add("active");
-    document.querySelector("#level__1").classList.remove("active");
-    document.querySelector("#level__3").classList.remove("active");
-    handleButtonClick1();
-
-    document.querySelector(".easy").style.display = "none";
-    document.querySelector(".medium").style.display = "flex";
-    document.querySelector(".hard").style.display = "none";
-
-    document.querySelector(".mid_b > rect").style.fillOpacity = "1";
-    document.querySelector(".right_b > rect").style.fillOpacity = "0.5";
-}
-function activeRight(){
-    // document.querySelector("#level__1").classList.toggle("active")
-    document.querySelector("#level__3").classList.add("active");
-    document.querySelector("#level__2").classList.remove("active");
-    document.querySelector("#level__1").classList.remove("active");
-    handleButtonClick1();
-
-    document.querySelector(".easy").style.display = "none";
-    document.querySelector(".medium").style.display = "none";
-    document.querySelector(".hard").style.display = "flex";
-
-    document.querySelector(".mid_b > rect").style.fillOpacity = "1";
-    document.querySelector(".right_b > rect").style.fillOpacity = "1";
-}
 
 
 function handleButtonClick1() {
@@ -695,7 +813,11 @@ function handleButtonClick1() {
 
 
 
-
+function scrollToNext(){
+    var hiddenElement3 = document.querySelector('.about-basic-level')
+    // btn2.addEventListener('click', handleButtonClick2);
+    hiddenElement3.scrollIntoView({block: "center", behavior: "smooth"});
+}
 
 
 
