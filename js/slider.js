@@ -37,14 +37,40 @@ second_btn.addEventListener('click', () => {
 });
 
 
+function sleep(millis) {
+    var t = (new Date()).getTime();
+    var i = 0;
+    while (((new Date()).getTime() - t) < millis) {
+        i++;
+    }
+}
+
+
+
+while (1){
+    timerNext();
+    sleep(2000);
+}
+
+
+function timerNext(){
+    texts[i].classList.add('hide');
+    texts[i].classList.remove('fade');
+    i++;
+    i = i % 3;
+    texts[i].classList.remove('hide');
+    texts[i].classList.add('fade');
+}
+
+
 
 /* Кнопка в блоке с заявлением на оценку уровня знаний */
-const offer_btn = document.querySelector('.offer_btn');
-
-offer_btn.addEventListener('mouseenter', () => {
-    offer_btn.classList.add('offer_btn__active');
-});
-
-offer_btn.addEventListener('mouseout', () => {
-    offer_btn.classList.remove('offer_btn__active');
-});
+// const offer_btn = document.querySelector('.offer_btn');
+//
+// offer_btn.addEventListener('mouseenter', () => {
+//     offer_btn.classList.add('offer_btn__active');
+// });
+//
+// offer_btn.addEventListener('mouseout', () => {
+//     offer_btn.classList.remove('offer_btn__active');
+// });
