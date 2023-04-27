@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../static/stylesheets/images/page_logo.svg" type="image/x-icon">
+    <title>Школа::КОДА</title>
+    <script src="https://kit.fontawesome.com/7765d9206b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/stylesheets/profile.css">
+
+    <!--	<script src="../node_modules/panelsnap/lib/panelsnap.umd.js" defer></script>-->
+    <!--	<script src="../node_modules/panelsnap/lib/panelsnap.esm.js" defer></script>-->
+    <!--	<script src="../node_modules/panelsnap/lib/panelsnap.cjs.js" defer></script>-->
+    <script src="../static/libs/panelsnap/lib/panelsnap.umd.js" defer></script>
+    <script src="../static/libs/panelsnap/lib/panelsnap.esm.js" defer></script>
+    <script src="../static/libs/panelsnap/lib/panelsnap.cjs.js" defer></script>
+
+    <script src="../static/libs/gsap/gsap.min.js" defer></script>
+    <script src="../static/libs/gsap/ScrollTrigger.min.js" defer></script>
+    <script src="../static/libs/gsap/ScrollSmoother.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js" defer></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script src="../static/js/app.js" defer></script>
+    <script src="../static/js/slider.js" defer></script>
+    <link rel="stylesheet" href="../static/stylesheets/media.css">
+</head>
+
+
+<body class="bd">
+    <section class="header-preview-wrapper">
+        <header>
+            <div class="navbar">
+                <img src="../static/stylesheets/images/svgg.svg" alt="" class="mainlogo">
+                <ul class="links">
+                    <li id="hub"><a href="hero">Главная</a></li>
+                    <li id="edu"><a href="hero">Программы обучения</a></li>
+                    <li id="others"><a href="hero">Преподаватели</a></li>
+                </ul>
+                <a href="/profile"><img src="../static/stylesheets/images/profile_icon.svg" alt="" class="profile"></a>
+                <div class="toggle_btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+
+
+            <div class="dropdown_menu">
+                <li><a href="hero">Главная</a></li>
+                <li><a href="hero">Программы обучения</a></li>
+                <li><a href="hero">Преподаватели</a></li>
+                <li><a class="active__page" href="hero">Личный кабинет</a></li>
+                <div class="promo"><a class="hire" onclick="location.href='https://kpyr.github.io/STL/';">Design and
+                        Development by STL<span class="dot">.</span></a></div>
+            </div>
+        </header>
+        <section class="preview">
+            <form method="post" action="/logout">
+                <div class="preview-wrapper">
+                    <h2>
+                        <div class="preview-wrapper__school-title">Добро Пожаловать, {{username}}</div>
+                    </h2>
+                    <h3 class="preview-wrapper__h3">Мы рады, что Вы выбрали нас</h3>
+                    <button class="preview-wrapper__button button">Выйти</button>
+                </div>
+            </form>
+        </section>
+    </section>
+
+    <script>
+        const togglebtn = document.querySelector(".toggle_btn")
+        const togglebtnicon = document.querySelector(".toggle_btn i")
+        const toggledropmenu = document.querySelector(".dropdown_menu")
+
+        togglebtn.onclick = function () {
+            toggledropmenu.classList.toggle('open')
+            togglebtnicon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+    </script>
+</body>
+
+</html>
