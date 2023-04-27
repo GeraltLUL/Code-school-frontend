@@ -10,18 +10,14 @@ class User(UserMixin):
     name = ''
     email = ''
     password = ''
-    registerDate = ''
     avatar = ''
-    gameSessions = []
 
-    def __init__(self, id, name, email, password, registerDate, avatar, gameSessions):
+    def __init__(self, id, name, email, password, avatar):
         self.id = id
         self.name = name
         self.email = email
         self.password = password
-        self.registerDate = registerDate
         self.avatar = avatar
-        self.gameSessions = gameSessions
 
     def get_id(self):
         return self.id
@@ -35,25 +31,13 @@ class User(UserMixin):
     def is_anonymous(self):
         return False
 
-def create_record(data):
-    date_now = datetime.now()
-    now_month = date_now.month
-    now_day = date_now.day
-
-    if now_month <= 10:
-        now_month = f"0{now_month}"
-
-    if now_day <= 10:
-        now_day = f"0{now_day}"
-
+def create_record(name, email, password):
     users_col.insert_one({
         'id': str(uuid.uuid4()),
-        'name': data['name'],
-        'email': data['email'],
-        'password': data['password'],
-        'registerDate': f"{now_day}.{now_month}.{date_now.year}",
+        'name': name,
+        'email': email,
+        'password': password,
         'avatar': 'user_tmp_example.png',
-        'gameSessions': []
     })
 
 
@@ -64,9 +48,7 @@ def find_user_by_id(user_id):
                     name=cur_user['name'],
                     email=cur_user['email'],
                     password=cur_user['password'],
-                    registerDate=cur_user['registerDate'],
-                    avatar=cur_user['avatar'],
-                    gameSessions=cur_user['gameSessions'])
+                    avatar=cur_user['avatar'])
     else:
         return None
 
@@ -78,9 +60,7 @@ def find_user_by_email(value):
                     name=cur_user['name'],
                     email=cur_user['email'],
                     password=cur_user['password'],
-                    registerDate=cur_user['registerDate'],
-                    avatar=cur_user['avatar'],
-                    gameSessions=cur_user['gameSessions'])
+                    avatar=cur_user['avatar'])
     else:
         return None
 

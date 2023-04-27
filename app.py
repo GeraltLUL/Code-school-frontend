@@ -11,7 +11,6 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('FLASK_KEY')
 app.config['JSON_AS_ASCII'] = False
 app.config['SECURITY_UNAUTHORIZED_VIEW'] = '/login'
-app.config['UPLOAD_IMAGE_FOLDER'] = './static/assets/img/usersAvatars'
 app.config.from_object(__name__)
 CORS(app)
 
@@ -39,105 +38,91 @@ def apply_caching(response):
 # Main page
 @app.route('/')
 def index():
-    # username = None
-    # if session.get('username'):
-    #     username = session.get('username')
-    #
-    # return render_template('index.html', username=username)
     return render_template('main.html')
+
+@app.route('/auth')
+def auth():
+    if current_user.is_authenticated:
+        return redirect(url_for('profile'))
+
+    return render_template('signin.html')
 
 
 # Profile Page
 @app.route('/profile')
 @login_required
 def profile():
-    username = session.get('username')
-    return render_template('profile.html',
-                           username=username,
-                           registerDate=current_user.registerDate,
-                           avatar=current_user.avatar)
+    if session is None:
+        logout_user()
+        return redirect(url_for('auth'))
+
+    return render_template('profile.html', username=current_user.name)
 
 
 # Login
 @app.route('/login', methods=['POST', 'GET'])
 def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('profile'))
+
     if request.method == 'POST':
         try:
-            data = request.get_json()
-            cur_user = find_user_by_email(str(data['email']))
-            print(data)
+            email = request.form.get('email')
+            password = request.form.get('password')
+            cur_user = find_user_by_email(email)
 
-            if cur_user is not None and cur_user.password == str(data['password']):
+            if cur_user is not None and cur_user.password == password:
                 session['username'] = cur_user.name
                 session['id'] = cur_user.id
                 login_user(cur_user)
-                return {
-                    'msg': f'Добро пожаловать, <strong>{cur_user.name}</strong>!',
-                    'category': 'Success',
-                    'name': cur_user.name
-                }
-            else:
-                return {
-                    'msg': 'Неверный пароль или email!',
-                    'category': 'Error'
-                }
+
+                return redirect(url_for('profile'))
         except Exception as e:
             print(e)
-            return {
-                'msg': e,
-                'category': 'Error'
-            }
+
+    return render_template('signin.html')
+
 
 
 # Register
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('profile'))
+
     if request.method == 'POST':
         try:
-            data = request.get_json()
+            name = request.form.get('name')
+            email = request.form.get('email')
+            password = request.form.get('password')
+            password2 = request.form.get('password2')
+            cur_user = find_user_by_email(email)
 
-            if input_form_correct(data):
-                cur_user = find_user_by_email(str(data['email']))
+            if cur_user is None and password == password2 and len(password) >= 1:
+                create_record(name, email, password)
+                cur_user = find_user_by_email(email)
+                session['username'] = name
+                session['id'] = cur_user.id
+                login_user(cur_user)
 
-                if cur_user is None:
-                    create_record(data)
-                    cur_user = find_user_by_email(str(data['email']))
-                    session['username'] = data['name']
-                    session['id'] = cur_user.id
-                    login_user(cur_user)
-
-                    return {
-                        'msg': f'Привет, <strong>{data["name"]}</strong>, вы успешно зарегестрировались и авторизовались!',
-                        'category': 'Success',
-                        'name': data['name']
-                    }
-                else:
-                    return {
-                        'msg': 'Пользователь с таким email уже существует!',
-                        'category': 'Error'
-                    }
+                return redirect(url_for('profile'))
             else:
-                return {
-                    'msg': 'Поля заполнены некорректно!',
-                    'category': 'Error'
-                }
+                print('Error')
+
         except Exception as e:
             print(e)
-            return {
-                'msg': e,
-                'category': 'Error'
-            }
 
+    return render_template('signin.html')
 
 # Logout
-@app.route('/logout')
+@app.route('/logout', methods=['GET', 'POST'])
 @login_required
 def logout():
-    logout_user()
-    session.pop('username', default=None)
-    session.pop('id', default=None)
+    if current_user.is_authenticated:
+        logout_user()
+        session.pop('username', default=None)
+        session.pop('id', default=None)
     return redirect(url_for('index'))
-
 
 
 if __name__ == '__main__':
