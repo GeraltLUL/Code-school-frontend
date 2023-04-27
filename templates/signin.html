@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.84.0">
+  <title>Авторизация</title>
+
+  <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/"> -->
+
+  <!-- Bootstrap core CSS -->
+  <link href="../static/stylesheets/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="../static/stylesheets/signin.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+
+  <main class="form-signin">
+    <img class="mb-4 " src="../static/stylesheets/images/svgg.svg" width="90%" alt="">
+
+    <div id="login" style="display: block">
+      <form method="post" action="/login">
+        <div class="form-floating mb-2">
+          <input type="email" class="form-control" name="email" id="floatingInputL1" placeholder="name@example.com">
+          <label for="floatingInput">Email</label>
+        </div>
+        <div class="form-floating mb-2">
+          <input type="password" class="form-control" name="password" id="floatingPasswordL1" placeholder="Password">
+          <label for="floatingPassword">Пароль</label>
+        </div>
+
+        <div class="checkbox mb-3">
+          <label style="color: white;">
+            <input type="checkbox" value="remember-me" style="color: white;"> Запомнить меня
+          </label>
+        </div>
+        <button onclick="Timer(1)" class="w-100 btn btn-lg btn-primary" type="submit">Войти</button>
+        <br>
+        <br>
+        <div class="text-center hint">
+          <p style="color: white">Еще нет аккаунта?<a href="javascript:showRegisterForm()"><br>Зарегестрироваться
+              здесь</a></p>
+        </div>
+      </form>
+    </div>
+
+    <div id="register" style="display: none">
+      <form method="post" action="/register">
+
+        <div class="form-floating mb-2">
+          <input type="text" class="form-control" name="name" id="floatingInputR1" placeholder="name@example.com">
+          <label for="floatingInput1">Имя</label>
+        </div>
+        <div class="form-floating mb-2">
+          <input type="email" class="form-control" name="email" id="floatingInputR2" placeholder="name@example.com">
+          <label for="floatingInput2">Email</label>
+        </div>
+        <div class="form-floating mb-2">
+          <input type="password" class="form-control" name="password" id="floatingInputR3" placeholder="Password">
+          <label for="floatingInput3">Пароль</label>
+        </div>
+        <div class="form-floating mb-2">
+          <input type="password" class="form-control" name="password2" id="floatingInputR4" placeholder="Password">
+          <label for="floatingInput4">Повторите пароль</label>
+        </div>
+
+        <button onclick="Timer(2)" class="w-100 btn btn-lg btn-primary" type="submit">Зарегестрироваться</button>
+        <br>
+        <br>
+
+        <div class="text-center hint">
+          <p style="color: white">Уже есть аккаунт?<a href="javascript:showLoginForm()"><br>Войти
+              здесь</a></p>
+        </div>
+      </form>
+    </div>
+    <p class="mt-5 mb-3 text-muted">&copy; Школа::Кода 2015–2023 </p>
+  </main>
+
+  <script>
+    const loginDiv = document.querySelector('#login');
+    const registerDiv = document.querySelector('#register');
+
+    function showRegisterForm() {
+      loginDiv.style.display = "none";
+      registerDiv.style.display = "block";
+    }
+
+    function showLoginForm() {
+      loginDiv.style.display = "block";
+      registerDiv.style.display = "none";
+    }
+
+    function erorrHandlerReg() {
+      document.querySelector('#floatingInputL1').classList.add('errorInput');
+      document.querySelector('#floatingPasswordL1').classList.add('errorInput');
+    }
+    function erorrHandlerLog() {
+      document.querySelector('#floatingInputR1').classList.add('errorInput');
+      document.querySelector('#floatingInputR2').classList.add('errorInput');
+      document.querySelector('#floatingInputR3').classList.add('errorInput');
+      document.querySelector('#floatingInputR4').classList.add('errorInput');
+    }
+
+    function Timer(n) {
+      if (n == 1) {
+        setTimeout(erorrHandlerLog, 2500);
+      }
+      else {
+        setTimeout(erorrHandlerReg, 2500);
+      }
+    }
+  </script>
+
+</body>
+
+</html>

@@ -2,7 +2,6 @@ from flask_login import LoginManager, login_user, login_required, logout_user, c
 from flask import render_template, redirect, url_for, session, Flask, request
 from flask_cors import CORS
 from pymongo import MongoClient
-from validation import input_form_correct
 from mongo import *
 import os
 
