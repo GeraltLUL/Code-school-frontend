@@ -29,6 +29,58 @@ if(windowInnerWidth > 600){
 //
 if(windowInnerWidth > 600 ){
 
+    let nw = 0;
+    let mov = 33.333333;
+
+    const gal__img = document.querySelectorAll('.gal__img');
+
+    let mx = mov * (gal__img.length - 2);
+
+    function nextImg(){
+        // alert(mx)
+        // alert(nw)
+
+        if ((nw - mov) === (mx * -1)) return;
+        nw = nw - mov;
+        document.querySelector(".wrapper__gal").style.transform = `translate(${nw}%, 0%)`;
+    }
+
+    function prevImg(){
+        if (nw == 0) return;
+        nw = nw + mov;
+        document.querySelector(".wrapper__gal").style.transform = `translate(${nw}%, 0%)`;
+    }
+
+
+
+
+
+
+    const swiper2 = new Swiper('.swiper2', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+
+        // // If we need pagination
+        // pagination: {
+        //     el: '.swiper-pagination',
+        // },
+        //
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper2-button-next',
+            prevEl: '.swiper2-button-prev',
+        },
+        //
+        // // And if we need scrollbar
+        // scrollbar: {
+        //     el: '.swiper-scrollbar',
+        // },
+    });
+
+
+
+
 
     function activeLeft(){
         // document.querySelector("#level__1").classList.toggle("active")
@@ -341,6 +393,9 @@ if(windowInnerWidth > 600 ){
             });
         })
     })
+
+    document.querySelector(".swiper-button-next").style.display = "none";
+    document.querySelector(".swiper-button-prev").style.display = "none";
 
     //Анимация при наведении на пингвина
     let peng = gsap.utils.toArray('.peng')
