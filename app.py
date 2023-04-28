@@ -7,13 +7,14 @@ import os
 
 # Flask config
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.getenv('FLASK_KEY')
+# app.config['SECRET_KEY'] = os.getenv('FLASK_KEY')
+app.config['SECRET_KEY'] = "super secret key"
 app.config['JSON_AS_ASCII'] = False
 app.config['SECURITY_UNAUTHORIZED_VIEW'] = '/login'
 app.config.from_object(__name__)
 CORS(app)
 
-client = MongoClient('mongodb://localhost:27019/')
+client = MongoClient('mongodb+srv://Server1:hvdz6OpEEbuUROKF@stl-cluster.ymx42wl.mongodb.net/test')
 db = client['STL']
 users_col = db['users']
 

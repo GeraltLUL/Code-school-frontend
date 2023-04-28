@@ -1,6 +1,7 @@
 import datetime
 import json
-from app import users_col
+#from app import *
+import app
 from flask_login import UserMixin
 import uuid
 
@@ -32,7 +33,7 @@ class User(UserMixin):
         return False
 
 def create_record(name, email, password):
-    users_col.insert_one({
+    app.users_col.insert_one({
         'id': str(uuid.uuid4()),
         'name': name,
         'email': email,
@@ -42,7 +43,7 @@ def create_record(name, email, password):
 
 
 def find_user_by_id(user_id):
-    cur_user = users_col.find_one({'id': user_id})
+    cur_user = app.users_col.find_one({'id': user_id})
     if cur_user is not None:
         return User(id=cur_user['id'],
                     name=cur_user['name'],
@@ -54,7 +55,7 @@ def find_user_by_id(user_id):
 
 
 def find_user_by_email(value):
-    cur_user = users_col.find_one({'email': value})
+    cur_user = app.users_col.find_one({'email': value})
     if cur_user is not None:
         return User(id=cur_user['id'],
                     name=cur_user['name'],
@@ -66,16 +67,16 @@ def find_user_by_email(value):
 
 
 def delete_record_by_id(value):
-    users_col.delete_one({
+    app.users_col.delete_one({
         'id': value
     })
 
 
 def update_record(findKey, findValue, key, value):
-    users_col.find_one_and_update({findKey: findValue},
+    app.users_col.find_one_and_update({findKey: findValue},
                                    {'$set': {key: value}})
 
 
 def update_and_push(findKey, findValue, key, value):
-    users_col.find_one_and_update({findKey: findValue},
+    app.users_col.find_one_and_update({findKey: findValue},
                                    {'$push': {key: value}})
