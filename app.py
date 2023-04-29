@@ -57,7 +57,7 @@ def profile():
         logout_user()
         return redirect(url_for('auth'))
 
-    return render_template('profile.html', username=current_user.name)
+    return render_template('profile.html', username=current_user.name, usersurname=current_user.surname)
 
 
 # Login
@@ -94,13 +94,14 @@ def register():
     if request.method == 'POST':
         try:
             name = request.form.get('name')
+            surname = request.form.get('surname')
             email = request.form.get('email')
             password = request.form.get('password')
             password2 = request.form.get('password2')
             cur_user = find_user_by_email(email)
 
             if cur_user is None and password == password2 and len(password) >= 1:
-                create_record(name, email, password)
+                create_record(name, surname, email, password)
                 cur_user = find_user_by_email(email)
                 session['username'] = name
                 session['id'] = cur_user.id

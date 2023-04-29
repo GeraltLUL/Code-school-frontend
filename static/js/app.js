@@ -3,16 +3,24 @@
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 const windowInnerWidth = document.documentElement.clientWidth
 
+// const sections = document.querySelectorAll('section');
+// for (let id = 0; id < sections.length; id++){
+//     sections[id].style.display = "none";
+// }
+
+
 
 document.body.onload = function (){
     setTimeout(function (){
         var preloader = document.querySelector('.preloader');
         if( !preloader.classList.contains('done')){
             preloader.classList.add('done');
+            // for (let id = 0; id < sections.length; id++){
+            //     sections[id].style.display = "flex";
+            // }
         }
     }, 1000)
 }
-
 
 
 
@@ -212,6 +220,35 @@ if(windowInnerWidth > 600 ){
         delay:0.25,
     });
 
+
+    //Анимация для "Взгляд изнутри"
+    gsap.fromTo(".staff > h1",{x:500}, {
+        scrollTrigger:".staff > h1",
+        x:0,
+        duration: 0.3,
+        delay:0.15,
+    });
+
+    gsap.fromTo(".wrapper__gal",{x:3500}, {
+        scrollTrigger:".wrapper__gal",
+        x:0,
+        duration: 0.4,
+        delay:0.15,
+    });
+
+    gsap.fromTo(".swiper2-button-prev",{x:3500}, {
+        scrollTrigger:"swiper2-button-prev",
+        x:0,
+        duration: 0.4,
+        delay:0.15,
+    });
+
+    gsap.fromTo(".swiper2-button-next",{x:3500}, {
+        scrollTrigger:"swiper2-button-prev",
+        x:0,
+        duration: 0.4,
+        delay:0.15,
+    });
 
 
 

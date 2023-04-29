@@ -2524,6 +2524,7 @@ li>*:hover {
 }
 
 .chto {
+	cursor: url('images/link.cur'), pointer;
 	height: 15vw;
 }
 

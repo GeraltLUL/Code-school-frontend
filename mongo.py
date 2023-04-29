@@ -9,13 +9,15 @@ import uuid
 class User(UserMixin):
     id = ''
     name = ''
+    surname = ''
     email = ''
     password = ''
     avatar = ''
 
-    def __init__(self, id, name, email, password, avatar):
+    def __init__(self, id, name, surname, email, password, avatar):
         self.id = id
         self.name = name
+        self.surname = surname
         self.email = email
         self.password = password
         self.avatar = avatar
@@ -32,10 +34,11 @@ class User(UserMixin):
     def is_anonymous(self):
         return False
 
-def create_record(name, email, password):
+def create_record(name, surname, email, password):
     app.users_col.insert_one({
         'id': str(uuid.uuid4()),
         'name': name,
+        'surname': surname,
         'email': email,
         'password': password,
         'avatar': 'user_tmp_example.png',
@@ -47,6 +50,7 @@ def find_user_by_id(user_id):
     if cur_user is not None:
         return User(id=cur_user['id'],
                     name=cur_user['name'],
+                    surname=cur_user['surname'],
                     email=cur_user['email'],
                     password=cur_user['password'],
                     avatar=cur_user['avatar'])
@@ -59,6 +63,7 @@ def find_user_by_email(value):
     if cur_user is not None:
         return User(id=cur_user['id'],
                     name=cur_user['name'],
+                    surname=cur_user['surname'],
                     email=cur_user['email'],
                     password=cur_user['password'],
                     avatar=cur_user['avatar'])

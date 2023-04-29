@@ -20,6 +20,7 @@ function erorrHandlerLog() {
     document.querySelector('#floatingInputR2').classList.add('errorInput');
     document.querySelector('#floatingInputR3').classList.add('errorInput');
     document.querySelector('#floatingInputR4').classList.add('errorInput');
+    document.querySelector('#floatingInputR5').classList.add('errorInput');
 }
 
 function Timer(n) {
