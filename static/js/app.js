@@ -465,6 +465,31 @@ if(windowInnerWidth > 600 ){
 }
 else{
 
+    let nw = 0;
+    let mov = 100;
+
+    const gal__img = document.querySelectorAll('.gal__img');
+
+    let mx = mov * (gal__img.length);
+
+    function nextImg(){
+        // alert(mx)
+        // alert(nw)
+
+        if ((nw - mov) === (mx * -1)) return;
+        nw = nw - mov;
+        document.querySelector(".wrapper__gal").style.transform = `translate(${nw}%, 0%)`;
+    }
+
+    function prevImg(){
+        if (nw == 0) return;
+        nw = nw + mov;
+        document.querySelector(".wrapper__gal").style.transform = `translate(${nw}%, 0%)`;
+    }
+
+
+
+
     const swiper = new Swiper('.swiper', {
         // Optional parameters
         direction: 'horizontal',
@@ -489,31 +514,31 @@ else{
 
 
 
-    //Анимация для "О нас"
-    gsap.fromTo(".about-us__title",{opacity:0, y:200}, {
-        scrollTrigger:".about-us__title",
-        opacity:1, y:0,
-        delay:0.25,
-    });
-
-    gsap.fromTo(".about-as__description",{opacity:0, y:200}, {
-        scrollTrigger:".about-as__description",
-        opacity:1, y:0,
-        delay:0.25,
-    });
-
-
-    let itemsL = gsap.utils.toArray('.score__indicator')
-    var x = 0.25;
-    itemsL.forEach(item => {
-        gsap.fromTo(item, { opacity: 0, y: 200 }, {
-            scrollTrigger:".about-as__description",
-            opacity:1, y:0,
-            delay:x,
-        })
-        x += 0.1;
-
-    })
+    // //Анимация для "О нас"
+    // gsap.fromTo(".about-us__title",{opacity:0, y:200}, {
+    //     scrollTrigger:".about-us__title",
+    //     opacity:1, y:0,
+    //     delay:0.25,
+    // });
+    //
+    // gsap.fromTo(".about-as__description",{opacity:0, y:200}, {
+    //     scrollTrigger:".about-as__description",
+    //     opacity:1, y:0,
+    //     delay:0.25,
+    // });
+    //
+    //
+    // let itemsL = gsap.utils.toArray('.score__indicator')
+    // var x = 0.25;
+    // itemsL.forEach(item => {
+    //     gsap.fromTo(item, { opacity: 0, y: 200 }, {
+    //         scrollTrigger:".about-as__description",
+    //         opacity:1, y:0,
+    //         delay:x,
+    //     })
+    //     x += 0.1;
+    //
+    // })
 
 
 
@@ -581,82 +606,82 @@ else{
 
 
     //Анимация для "Уровни подготовки"
-    gsap.fromTo(".prepare-levels__title",{opacity:0, y:200}, {
-        scrollTrigger:".prepare-levels__title",
-        opacity:1, y:0,
-        delay:0.25,
-    });
-
-    gsap.fromTo(".m-prepare-levels",{opacity:0, y:200}, {
-        scrollTrigger:".m-prepare-levels",
-        opacity:1, y:0,
-        delay:0.25,
-    });
-
-    gsap.fromTo(".swiper-button-prev",{opacity:0, y:200}, {
-        scrollTrigger:".swiper-button-prev",
-        opacity:1, y:0,
-        delay:0.25,
-    });
-
-    gsap.fromTo(".swiper-button-next",{opacity:0, y:200}, {
-        scrollTrigger:".swiper-button-next",
-        opacity:1, y:0,
-        delay:0.25,
-    });
-
-
-
-
-    let itemsLvl = gsap.utils.toArray('.level')
-    var x1 = 0.25
-    itemsLvl.forEach(item => {
-        gsap.fromTo(item, { opacity: 0, y: 200, scale:1 }, {
-            scrollTrigger:".prepare-levels__levels",
-            opacity:1, y:0, scale:1,
-            delay:x1,
-
-        })
-        x1 += 0.1
-
-        item.addEventListener("mousedown", () => {
-            gsap.fromTo(".about-basic-level__basic-description > *", { opacity: 0, x: 200, scale:1 }, {
-                scrollTrigger:".about-basic-level__basic-description > *",
-                opacity:1, x:0, scale:1,
-                delay:0.25,
-            })
-            gsap.fromTo(".about-basic-level__basic-diogram",{opacity:0, x:-200}, {
-                scrollTrigger:".about-basic-level__basic-diogram",
-                opacity:1, x:0,
-                delay:0.25,
-            });
-        });
-    })
-
-
-    //Анимация для уровней
-
-
-    gsap.fromTo(".m-level-title",{opacity:0, y:200}, {
-        scrollTrigger:".m-level-title",
-        opacity:1, y:0,
-        delay:0.25,
-    });
-
-    let itemslv = gsap.utils.toArray('.about-basic-level__basic-description > *')
-    itemslv.forEach(item => {
-        gsap.fromTo(item, { opacity: 0, x: 200, scale:1 }, {
-            scrollTrigger:".about-basic-level__basic-description > *",
-            opacity:1, x:0, scale:1,
-            delay:0.1,
-        })
-    })
-
-    gsap.fromTo(".about-basic-level__basic-diogram",{opacity:0, x:-200}, {
-        scrollTrigger:".about-basic-level__basic-diogram",
-        opacity:1, x:0,
-        delay:0.25,
-    });
+    // gsap.fromTo(".prepare-levels__title",{opacity:0, y:200}, {
+    //     scrollTrigger:".prepare-levels__title",
+    //     opacity:1, y:0,
+    //     delay:0.25,
+    // });
+    //
+    // gsap.fromTo(".m-prepare-levels",{opacity:0, y:200}, {
+    //     scrollTrigger:".m-prepare-levels",
+    //     opacity:1, y:0,
+    //     delay:0.25,
+    // });
+    //
+    // gsap.fromTo(".swiper-button-prev",{opacity:0, y:200}, {
+    //     scrollTrigger:".swiper-button-prev",
+    //     opacity:1, y:0,
+    //     delay:0.25,
+    // });
+    //
+    // gsap.fromTo(".swiper-button-next",{opacity:0, y:200}, {
+    //     scrollTrigger:".swiper-button-next",
+    //     opacity:1, y:0,
+    //     delay:0.25,
+    // });
+    //
+    //
+    //
+    //
+    // let itemsLvl = gsap.utils.toArray('.level')
+    // var x1 = 0.25
+    // itemsLvl.forEach(item => {
+    //     gsap.fromTo(item, { opacity: 0, y: 200, scale:1 }, {
+    //         scrollTrigger:".prepare-levels__levels",
+    //         opacity:1, y:0, scale:1,
+    //         delay:x1,
+    //
+    //     })
+    //     x1 += 0.1
+    //
+    //     item.addEventListener("mousedown", () => {
+    //         gsap.fromTo(".about-basic-level__basic-description > *", { opacity: 0, x: 200, scale:1 }, {
+    //             scrollTrigger:".about-basic-level__basic-description > *",
+    //             opacity:1, x:0, scale:1,
+    //             delay:0.25,
+    //         })
+    //         gsap.fromTo(".about-basic-level__basic-diogram",{opacity:0, x:-200}, {
+    //             scrollTrigger:".about-basic-level__basic-diogram",
+    //             opacity:1, x:0,
+    //             delay:0.25,
+    //         });
+    //     });
+    // })
+    //
+    //
+    // //Анимация для уровней
+    //
+    //
+    // gsap.fromTo(".m-level-title",{opacity:0, y:200}, {
+    //     scrollTrigger:".m-level-title",
+    //     opacity:1, y:0,
+    //     delay:0.25,
+    // });
+    //
+    // let itemslv = gsap.utils.toArray('.about-basic-level__basic-description > *')
+    // itemslv.forEach(item => {
+    //     gsap.fromTo(item, { opacity: 0, x: 200, scale:1 }, {
+    //         scrollTrigger:".about-basic-level__basic-description > *",
+    //         opacity:1, x:0, scale:1,
+    //         delay:0.1,
+    //     })
+    // })
+    //
+    // gsap.fromTo(".about-basic-level__basic-diogram",{opacity:0, x:-200}, {
+    //     scrollTrigger:".about-basic-level__basic-diogram",
+    //     opacity:1, x:0,
+    //     delay:0.25,
+    // });
 
 
     function anim(){
@@ -669,16 +694,16 @@ else{
 
         let itemslv = gsap.utils.toArray('.about-basic-level__basic-description > *')
         itemslv.forEach(item => {
-            gsap.fromTo(item, { opacity: 0, x: 200, scale:1 }, {
+            gsap.fromTo(item, { opacity: 0, y: 200, scale:1 }, {
                 scrollTrigger:".about-basic-level__basic-description > *",
-                opacity:1, x:0, scale:1,
+                opacity:1, y:0, scale:1,
                 delay:0.1,
             })
         })
 
-        gsap.fromTo(".about-basic-level__basic-diogram",{opacity:0, x:-200}, {
+        gsap.fromTo(".about-basic-level__basic-diogram",{opacity:0, y:200}, {
             scrollTrigger:".about-basic-level__basic-diogram",
-            opacity:1, x:0,
+            opacity:1, y:0,
             delay:0.25,
         });
     }

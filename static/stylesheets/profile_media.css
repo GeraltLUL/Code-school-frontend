@@ -1,0 +1,124 @@
+@media (max-width: 600px) {
+    .header-preview-wrapper{
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
+    body{
+        overflow-x: hidden;
+    }
+
+    #grad2{
+        margin-right:30vw;
+    }
+
+    header{
+        padding-bottom: 4rem;
+    }
+
+    .toggle_btn{
+        margin-right: 5rem;
+        padding-top: 3rem;
+    }
+
+
+    .profile__photo{
+        width: 40vw;
+        height: 40vw;
+        top: -20vw;
+    }
+
+    .preview{
+        margin-top: 12vh;
+    }
+
+    .sub__blocks{
+        flex-direction: column;
+        align-items: flex-start;
+
+        height: 40vw;
+    }
+
+    .profile__inf{
+        margin-left: 0;
+    }
+
+    #right__block{
+        align-items: flex-end;
+        justify-content: right;
+    }
+
+    .profile__buttons{
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .mainlogo{
+        margin-left: 5vw;
+    }
+
+    .sub__buttons{
+        top: 20vw;
+    }
+
+    .FIO{
+        margin-left: 6vw;
+
+        font-size: 3rem;
+
+        margin-top: 10vh;
+        max-width: 50vw;
+        left: 50%;
+    }
+
+
+    .profile__functions{
+        flex-direction: column;
+        gap: 1%;
+    }
+
+    .achievements, .functions{
+        width: 100%;
+    }
+    .achievements{
+        padding: 2rem 2rem 2rem 2rem;
+        gap: 6%;
+    }
+    .ach_sub_items{
+        background-size: cover;
+    }
+
+    .achievements__name > img{
+        width: 13vw;
+    }
+
+    .achievements__items{
+        width: 80%;
+    }
+
+    .some__func > a{
+        font-size: 2rem;
+    }
+
+    .fnc__arrow{
+        display: none;
+    }
+
+    .some__func{
+        gap: 6%;
+    }
+
+    .fnc__img{
+        width: 10vw;
+    }
+
+    .functions__bottom{
+        gap: 6%;
+    }
+    /*.tmp_form{*/
+    /*    display: none;*/
+    /*}*/
+
+
+
+}

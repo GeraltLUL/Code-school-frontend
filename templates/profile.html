@@ -11,8 +11,8 @@
 
 
     <link rel="stylesheet" href="../static/stylesheets/main.css">
-    <link rel="stylesheet" href="../static/stylesheets/media.css">
     <link rel="stylesheet" href="../static/stylesheets/profile.css">
+    <link rel="stylesheet" href="../static/stylesheets/profile_media.css">
 
 
     <script src="https://kit.fontawesome.com/7765d9206b.js" crossorigin="anonymous"></script>
@@ -49,7 +49,7 @@
                 <ul class="links">
                     <li id="hub"><a href="/">Главная</a></li>
                     <li id="edu"><a href="hero">Программы обучения</a></li>
-                    <li id="others"><a href="hero">Преподаватели</a></li>
+<!--                    <li id="others"><a href="hero">Преподаватели</a></li>-->
                 </ul>
                 <a href="/profile"><img src="../static/stylesheets/images/profile_icon.svg" alt="" class="profile"></a>
                 <div class="toggle_btn">
@@ -61,13 +61,13 @@
             <div class="dropdown_menu">
                 <li><a href="/">Главная</a></li>
                 <li><a href="hero">Программы обучения</a></li>
-                <li><a href="hero">Преподаватели</a></li>
+<!--                <li><a href="hero">Преподаватели</a></li>-->
                 <li><a class="active__page" href="hero">Личный кабинет</a></li>
                 <div class="promo"><a class="hire" onclick="location.href='https://kpyr.github.io/STL/';">Design and
                         Development by STL<span class="dot">.</span></a></div>
             </div>
         </header>
-        <form method="post" action="/logout">
+        <form method="post" action="/logout" class="tmp_form">
 
             <section class="preview">
 
@@ -104,18 +104,18 @@
                                 <div class="some__func">
                                     <img class="fnc__img" src="../static/stylesheets/images/profile/select.svg">
                                     <a>Записаться на курс</a>
-                                    <img src="../static/stylesheets/images/profile/arrow.svg">
+                                    <img class="fnc__arrow" src="../static/stylesheets/images/profile/arrow.svg">
                                 </div>
                                 <div class="some__func">
                                     <img class="fnc__img" src="../static/stylesheets/images/profile/test.svg">
                                     <a>Записаться на тест</a>
-                                    <img src="../static/stylesheets/images/profile/arrow.svg">
+                                    <img class="fnc__arrow" src="../static/stylesheets/images/profile/arrow.svg">
                                 </div>
                             </div>
                             <div class="functions__bottom">
                                 <img class="fnc__img" src="../static/stylesheets/images/profile/test.svg">
                                 <a>Записаться на тест</a>
-                                <img src="../static/stylesheets/images/profile/arrow.svg">
+                                <img class="fnc__arrow" src="../static/stylesheets/images/profile/arrow.svg">
                             </div>
                         </div>
                     </div>
