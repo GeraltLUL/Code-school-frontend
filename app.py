@@ -5,6 +5,7 @@ from pymongo import MongoClient
 from mongo import *
 import os
 
+
 # Flask config
 app = Flask(__name__)
 # app.config['SECRET_KEY'] = os.getenv('FLASK_KEY')
