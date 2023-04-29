@@ -4,6 +4,15 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 const windowInnerWidth = document.documentElement.clientWidth
 
 
+document.body.onload = function (){
+    setTimeout(function (){
+        var preloader = document.querySelector('.preloader');
+        if( !preloader.classList.contains('done')){
+            preloader.classList.add('done');
+        }
+    }, 1000)
+}
+
 
 
 
