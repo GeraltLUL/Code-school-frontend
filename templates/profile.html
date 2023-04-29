@@ -8,16 +8,14 @@
 
     <link rel="shortcut icon" href="../static/stylesheets/images/page_logo.svg" type="image/x-icon">
     <title>Школа::КОДА</title>
-    <script src="https://kit.fontawesome.com/7765d9206b.js" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="../static/stylesheets/main.css">
+    <link rel="stylesheet" href="../static/stylesheets/media.css">
     <link rel="stylesheet" href="../static/stylesheets/profile.css">
 
-    <!--	<script src="../node_modules/panelsnap/lib/panelsnap.umd.js" defer></script>-->
-    <!--	<script src="../node_modules/panelsnap/lib/panelsnap.esm.js" defer></script>-->
-    <!--	<script src="../node_modules/panelsnap/lib/panelsnap.cjs.js" defer></script>-->
-    <script src="../static/libs/panelsnap/lib/panelsnap.umd.js" defer></script>
-    <script src="../static/libs/panelsnap/lib/panelsnap.esm.js" defer></script>
-    <script src="../static/libs/panelsnap/lib/panelsnap.cjs.js" defer></script>
 
+    <script src="https://kit.fontawesome.com/7765d9206b.js" crossorigin="anonymous"></script>
     <script src="../static/libs/gsap/gsap.min.js" defer></script>
     <script src="../static/libs/gsap/ScrollTrigger.min.js" defer></script>
     <script src="../static/libs/gsap/ScrollSmoother.min.js" defer></script>
@@ -27,16 +25,17 @@
     <script src="https://cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js" defer></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-    <script src="../static/js/app.js" defer></script>
-    <script src="../static/js/slider.js" defer></script>
-    <link rel="stylesheet" href="../static/stylesheets/media.css">
+    <script src="../static/js/profile.js" defer></script>
+
+
 </head>
 
 
 <body class="bd">
+    <img id="grad1" class="bg-grad" src="../static/stylesheets/images/profile/Grad1.svg">
+    <img id="grad2" class="bg-grad" src="../static/stylesheets/images/profile/Grad2.svg">
     <section class="header-preview-wrapper">
         <header>
             <div class="navbar">
@@ -62,17 +61,77 @@
                         Development by STL<span class="dot">.</span></a></div>
             </div>
         </header>
-        <section class="preview">
-            <form method="post" action="/logout">
-                <div class="preview-wrapper">
-                    <h2>
-                        <div class="preview-wrapper__school-title">Добро Пожаловать, {{username}}</div>
-                    </h2>
-                    <h3 class="preview-wrapper__h3">Мы рады, что Вы выбрали нас</h3>
-                    <button class="preview-wrapper__button button">Выйти</button>
+        <form method="post" action="/logout">
+
+            <section class="preview">
+
+                <img src="../static/stylesheets/images/profile/tmpprofile2.jpg" class="profile__photo">
+                <div class="sub__buttons">
+                    <div class="sub__blocks" id="left__block">
+                        <div onclick="activateHome()" class="profile__buttons profile__home active_btn"><img src="../static/stylesheets/images/profile/home.svg"></div>
+                        <div onclick="activateInf()" class="profile__buttons profile__inf"><img src="../static/stylesheets/images/profile/inf.svg"></div>
+                    </div>
+                    <div class="sub__blocks" id="mid__block"></div>
+                    <div class="sub__blocks" id="right__block">
+                        <div onclick="activateSettings()" class="profile__buttons profile__settings"><img src="../static/stylesheets/images/profile/settings.svg"></div>
+                        <button class="profile__buttons profile__logout"><img src="../static/stylesheets/images/profile/logout.svg"></button>
+                    </div>
                 </div>
-            </form>
-        </section>
+                <div class="home__wrapper">
+                    <h1 class="FIO">{{username}}</h1>
+                    <div class="profile__functions">
+                        <div class="achievements">
+                            <div class="achievements__name"><img src="../static/stylesheets/images/profile/achievements.svg"><a>Достижения</a></div>
+                            <div class="achievements__items">
+                                <div class="ach__items">
+                                    <div class="ach_sub_items" id="item__1"></div>
+                                    <div class="ach_sub_items" id="item__2"></div>
+                                </div>
+                                <div class="ach__items">
+                                    <div class="ach_sub_items" id="item__3"></div>
+                                    <div class="ach_sub_items" id="item__4"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="functions">
+                            <div class="functions__top">
+                                <div class="some__func">
+                                    <img class="fnc__img" src="../static/stylesheets/images/profile/select.svg">
+                                    <a>Записаться на курс</a>
+                                    <img src="../static/stylesheets/images/profile/arrow.svg">
+                                </div>
+                                <div class="some__func">
+                                    <img class="fnc__img" src="../static/stylesheets/images/profile/test.svg">
+                                    <a>Записаться на тест</a>
+                                    <img src="../static/stylesheets/images/profile/arrow.svg">
+                                </div>
+                            </div>
+                            <div class="functions__bottom">
+                                <img class="fnc__img" src="../static/stylesheets/images/profile/test.svg">
+                                <a>Записаться на тест</a>
+                                <img src="../static/stylesheets/images/profile/arrow.svg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="inf__wrapper"></div>
+                <div class="settings__wrapper"></div>
+            </section>
+        </form>
+
+
+
+
+<!--            <form method="post" action="/logout">-->
+<!--                <div class="preview-wrapper">-->
+<!--                    <h2>-->
+<!--                        <div class="preview-wrapper__school-title">Добро Пожаловать, {{username}}</div>-->
+<!--                    </h2>-->
+<!--                    <h3 class="preview-wrapper__h3">Мы рады, что Вы выбрали нас</h3>-->
+<!--                    <button class="preview-wrapper__button button">Выйти</button>-->
+<!--                </div>-->
+<!--            </form>-->
+
     </section>
 
     <script>
