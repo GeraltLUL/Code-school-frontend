@@ -27,3 +27,13 @@ function activateSettings(){
     document.querySelector(".profile__inf").classList.remove("active_btn");
     document.querySelector(".profile__settings").classList.add("active_btn");
 }
+
+
+document.body.onload = function (){
+    setTimeout(function (){
+        var preloader = document.querySelector('.preloader');
+        if( !preloader.classList.contains('done')){
+            preloader.classList.add('done');
+        }
+    }, 1000)
+}

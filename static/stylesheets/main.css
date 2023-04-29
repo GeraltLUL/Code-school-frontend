@@ -2792,3 +2792,48 @@ li>*:hover {
 
 
 
+.preloader{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+
+	background-image: url("images/bg.jpg");
+
+	transition: 1s all;
+	opacity: 1;
+	visibility: visible;
+
+	z-index: 999;
+}
+.loader{
+	transition: 1s all;
+	opacity: 1;
+	width: 10vw;
+	height: 10vw;
+	border: 10px solid white;
+	border-radius: 50%;
+	border-top-color: #0050FF;
+
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+
+	animation: 2s spin infinite linear;
+}
+
+.done{
+	opacity: 0;
+	visibility: hidden;
+}
+
+@keyframes spin {
+	from{
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+	to{
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
