@@ -1,3 +1,7 @@
+html{
+	cursor: url('images/pointer.cur'), default;
+}
+
 #hub{
 	border-bottom: none;
 }

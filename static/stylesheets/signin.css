@@ -1,5 +1,21 @@
+@font-face {
+  font-family: Montserrat-Regular;
+  src: url(fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url(fonts/Montserrat-Bold.ttf);
+}
+
+@font-face {
+  font-family: Montserrat-ExtraBold;
+  src: url(fonts/Montserrat-ExtraBold.ttf);
+}
+
 html,
 body {
+  cursor: url('images/pointer.cur'), default;
   height: 100%;
 }
 
@@ -40,4 +56,62 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.cstm{
+  font-size: 1.8rem;
+  font-family: Montserrat-Regular;
+  color: white;
+
+  background-color: #0050FF;
+  border-color: #0050FF;
+  transition: 0.4s;
+}
+.cstm:hover{
+
+  color: #0050FF;
+
+  background-color: white;
+  border-color: white;
+  transition: 0.4s;
+}
+
+.cstm2{
+  font-size: 1.4rem;
+  font-family: Montserrat-Regular;
+  color: white;
+
+  background-color: #0050FF;
+  border-color: #0050FF;
+  transition: 0.4s;
+}
+.cstm2:hover{
+
+  color: #0050FF;
+
+  background-color: white;
+  border-color: white;
+  transition: 0.4s;
+}
+
+.back__to__main{
+  cursor: url('images/link.cur'), pointer;
+}
+
+.bbt{
+  font-family: Montserrat-Regular;
+  font-size: 1.2rem;
+  transition: 0.4s;
+
+  color: white;
+  padding: 0.6rem;
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: #0050FF;
+}
+.bbt:hover{
+  background-color: white;
+
+  color: #0050FF;
+  transition: 0.4s;
 }
