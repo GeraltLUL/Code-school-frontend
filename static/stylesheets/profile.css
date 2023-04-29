@@ -137,7 +137,7 @@
 .FIO{
 	text-align: center;
 
-	max-width: 60vw;
+	max-width: 100%;
 	margin-top: 25vh;
 	/*background-color: #AB1B29;*/
 	letter-spacing: 0.02em;
@@ -347,9 +347,15 @@
 
 
 .home__wrapper{
+	/*display: flex;*/
+	/*justify-content: center;*/
 	transition: 1s;
 }
 .inf__wrapper, .settings__wrapper{
 	display: none;
 }
 
+.bd{
+	width: 100vw;
+	overflow-x: hidden;
+}

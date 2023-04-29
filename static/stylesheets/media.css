@@ -697,4 +697,48 @@
     .m-small{
         font-size: 2rem;
     }
+
+
+    .wrapper__gal > img{
+        /*height: 100%;*/
+        width: 100vw;
+        object-fit: cover;
+        object-position: center;
+
+    }
+
+    .staff > h1{
+        font-size: 9rem;
+    }
+
+
+    .swiper2-button-prev{
+        top: 63vh;
+
+    }
+    .swiper2-button-next{
+        top: 63vh;
+
+    }
+
+
+
+    /*!*ВРЕМЯНКА*!*/
+    /*.header-preview-wrapper, .about-us, .prepare-levels, .about-basic-level, .companies, .qst, .foot, .quotes{*/
+    /*	display: none;*/
+    /*}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
