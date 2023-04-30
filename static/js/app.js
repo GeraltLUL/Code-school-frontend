@@ -229,21 +229,21 @@ if(windowInnerWidth > 600 ){
         delay:0.15,
     });
 
-    gsap.fromTo(".wrapper__gal",{x:3500}, {
+    gsap.fromTo(".wrapper__gal",{x:1500}, {
         scrollTrigger:".wrapper__gal",
         x:0,
         duration: 0.4,
         delay:0.15,
     });
 
-    gsap.fromTo(".swiper2-button-prev",{x:3500}, {
+    gsap.fromTo(".swiper2-button-prev",{x:1500}, {
         scrollTrigger:"swiper2-button-prev",
         x:0,
         duration: 0.4,
         delay:0.15,
     });
 
-    gsap.fromTo(".swiper2-button-next",{x:3500}, {
+    gsap.fromTo(".swiper2-button-next",{x:1500}, {
         scrollTrigger:"swiper2-button-prev",
         x:0,
         duration: 0.4,
