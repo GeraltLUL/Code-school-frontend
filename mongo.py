@@ -13,13 +13,21 @@ class User(UserMixin):
     email = ''
     password = ''
     avatar = ''
+    patronymic = ''
+    DD = ''
+    MM = ''
+    YYYY = ''
 
-    def __init__(self, id, name, surname, email, password, avatar):
+    def __init__(self, id, name, surname, patronymic, email, password, DD, MM, YYYY, avatar):
         self.id = id
         self.name = name
         self.surname = surname
+        self.patronymic = patronymic
         self.email = email
         self.password = password
+        self.DD = DD
+        self.MM = MM
+        self.YYYY = YYYY
         self.avatar = avatar
 
     def get_id(self):
@@ -34,13 +42,18 @@ class User(UserMixin):
     def is_anonymous(self):
         return False
 
-def create_record(name, surname, email, password):
+
+def create_record(name, surname, patronymic, email, password, DD, MM, YYYY):
     app.users_col.insert_one({
         'id': str(uuid.uuid4()),
         'name': name,
         'surname': surname,
+        'patronymic': patronymic,
         'email': email,
         'password': password,
+        'DD': DD,
+        'MM': MM,
+        'YYYY': YYYY,
         'avatar': 'user_tmp_example.png',
     })
 
@@ -51,8 +64,12 @@ def find_user_by_id(user_id):
         return User(id=cur_user['id'],
                     name=cur_user['name'],
                     surname=cur_user['surname'],
+                    patronymic=cur_user['patronymic'],
                     email=cur_user['email'],
                     password=cur_user['password'],
+                    DD=cur_user['DD'],
+                    MM=cur_user['MM'],
+                    YYYY=cur_user['YYYY'],
                     avatar=cur_user['avatar'])
     else:
         return None
@@ -64,8 +81,12 @@ def find_user_by_email(value):
         return User(id=cur_user['id'],
                     name=cur_user['name'],
                     surname=cur_user['surname'],
+                    patronymic=cur_user['patronymic'],
                     email=cur_user['email'],
                     password=cur_user['password'],
+                    DD=cur_user['DD'],
+                    MM=cur_user['MM'],
+                    YYYY=cur_user['YYYY'],
                     avatar=cur_user['avatar'])
     else:
         return None

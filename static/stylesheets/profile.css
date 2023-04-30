@@ -1,5 +1,18 @@
 html{
 	cursor: url('images/pointer.cur'), default;
+	/*max-width: 100vw;*/
+	/*min-height: 100vh;*/
+	/*overflow-x: hidden;*/
+}
+
+:active, :hover, :focus {
+	outline: 0;
+	outline-offset: 0;
+}
+
+body{
+	max-width: 100vw;
+	overflow-x: hidden;
 }
 
 #hub{
@@ -47,7 +60,7 @@ html{
 
 	width: 75vw;
 	padding-bottom: 10rem;
-	min-height: 80vh;
+	/*min-height: 90vh;*/
 	/*height: 80vh;*/
 	background: radial-gradient(90.16% 143.01% at 15.32% 21.04%, rgba(105, 59, 147, 0.2) 0%, rgba(110, 191, 244, 0.0447917) 77.08%, rgba(70, 144, 213, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
 	background-blend-mode: overlay, normal;
@@ -236,6 +249,7 @@ html{
 	width: 48%;
 	height: 100%;
 
+	background-size: cover;
 	object-fit: cover;
 	object-position: center;
 	background-position: 0rem -1vh;
@@ -351,6 +365,7 @@ html{
 
 
 .home__wrapper{
+	/*margin-top: 25vh;*/
 	/*display: flex;*/
 	/*justify-content: center;*/
 	transition: 1s;
@@ -362,4 +377,193 @@ html{
 .bd{
 	width: 100vw;
 	overflow-x: hidden;
+}
+
+
+
+/*!*ВРЕМЯНКА*!*/
+/*.home__wrapper{*/
+/*	display: none;*/
+/*}*/
+
+.inf__wrapper{
+	width: 62vw;
+	/*height: 80vh;*/
+	margin-top: 15vh;
+	/*background-color: #36D7D4;*/
+	flex-direction: column;
+}
+
+.inf__form{
+	display: flex;
+	flex-direction: row;
+
+	gap: 6%;
+	min-height:65vh ;
+
+	/*width: 62vw;*/
+
+	/*background-color: #36D7D4;*/
+
+	justify-content: space-between;
+	align-items: center;
+}
+
+.inf__form_left, .inf__form_right{
+	display: flex;
+	flex-direction: column;
+	gap: 10rem;
+	/*width: 30vw;*/
+	/*height: 100%;*/
+
+	/*background-color: #AB1B29;*/
+}
+
+.inf__form_right{
+	/*margin-top: -40vh;*/
+	/*width: 30vw;*/
+	gap: 10rem;
+		/*background-color: #AB1B29;*/
+	justify-content: left;
+}
+
+.input__div{
+	display: flex;
+	flex-direction: column;
+
+	width: auto;
+	height: 5vh;
+}
+
+.tt{
+	align-items: flex-start;
+}
+
+.cstmm{
+	background: rgba(0, 0, 0, 0);
+	border: none;
+
+	width: 25vw;
+	height: 5vh;
+
+	padding-bottom: 5rem;
+	border-radius: 0;
+
+	border-bottom:0.2rem solid white;
+}
+
+.form-floating>.form-control {
+	border: none;
+	padding: 3rem 0.75rem;
+
+	border-radius: 0;
+}
+
+.form-floating > .form-control, .form-floating > .form-select {
+	background: rgba(0, 0, 0, 0);
+	border: none;
+	border-bottom:0.2rem solid white;
+	padding: 3rem 0.75rem;
+
+	font-size: 3rem;
+
+	color: white;
+
+	border-radius: 0;
+	height: 7vh;
+	line-height: 1.25;
+}
+
+.form-select{
+	opacity: 0;
+}
+
+.cll{
+	padding-left: 0.6rem;
+	color: rgba(255, 255, 255, 0.55);
+	font-family: Montserrat-Bold;
+	font-size: 2rem;
+}
+
+.cll2{
+
+	padding-left: 0.6rem;
+	color: white;
+	font-family: Montserrat-Bold;
+	font-size: 4.5rem;
+}
+
+input{
+	font-family: Montserrat-Bold;
+}
+
+
+input::placeholder{
+	font-family: Montserrat-Bold;
+	color: white;
+}
+
+.invis{
+	display: none;
+}
+
+.date{
+	font-size: 2vw;
+
+	text-decoration: none;
+	text-align: center;
+
+	width: 12.5vw;
+	background-color: white;
+	color: #0050FF;
+	padding: 1rem 1rem;
+
+	border: none;
+}
+.date1{
+	font-size: 2vw;
+	text-decoration: none;
+	text-align: center;
+
+	background-color: white;
+	color: #0050FF;
+	padding: 1rem 1rem;
+	width: 25.6vw;
+
+	border: none;
+}
+
+.inf__buttons{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 5vw;
+
+	width: 65vw;
+	/*height: 10vh;*/
+
+	/*background-color: #AB1B29;*/
+}
+
+.inf__btn{
+	text-align: center;
+	width: 20vw;
+	border: none;
+	border-radius: 14px;
+	font-size: 2vw;
+	font-family: Montserrat-Bold;
+	background-color: white;
+	color: #0050FF;
+	padding: 2rem 1rem;
+	transition: 0.3s;
+
+	cursor: url('images/link.cur'), pointer;
+}
+.inf__btn:hover{
+	scale: 1.03;
+
+	transition: 0.3s;
+	color: white;
+	background-color: #0050FF;
 }

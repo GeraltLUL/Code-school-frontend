@@ -115,3 +115,23 @@ body {
   color: #0050FF;
   transition: 0.4s;
 }
+
+.bbt2{
+  font-family: Montserrat-Regular;
+  font-size: 1rem;
+  transition: 0.4s;
+
+  color: white;
+  padding: 0.4rem;
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: #0050FF;
+  border-color: #0050FF;
+}
+.bbt2:hover{
+  background-color: white;
+
+  color: #0050FF;
+  transition: 0.4s;
+  border-color: white;
+}
