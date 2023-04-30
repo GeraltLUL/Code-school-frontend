@@ -24,6 +24,7 @@
     <title>Школа::КОДА</title>
 
 
+<!--    <link href="../static/stylesheets/bootstrap.min.css" rel="stylesheet">-->
     <link rel="stylesheet" href="../static/stylesheets/main.css">
     <link rel="stylesheet" href="../static/stylesheets/profile.css">
     <link rel="stylesheet" href="../static/stylesheets/profile_media.css">
@@ -81,7 +82,7 @@
                         Development by STL<span class="dot">.</span></a></div>
             </div>
         </header>
-        <form method="post" action="/logout" class="tmp_form">
+        <form method="post" action="/logout" class="tmp_form" id="logout"></form>
 
             <section class="preview">
 
@@ -89,12 +90,12 @@
                 <div class="sub__buttons">
                     <div class="sub__blocks" id="left__block">
                         <div onclick="activateHome()" class="profile__buttons profile__home active_btn"><img src="../static/stylesheets/images/profile/home.svg"></div>
-                        <div onclick="activateInf()" class="profile__buttons profile__inf"><img src="../static/stylesheets/images/profile/inf.svg"></div>
+                        <div onclick="activateInf()" class="profile__buttons profile__inf "><img src="../static/stylesheets/images/profile/inf.svg"></div>
                     </div>
                     <div class="sub__blocks" id="mid__block"></div>
                     <div class="sub__blocks" id="right__block">
                         <div onclick="activateSettings()" class="profile__buttons profile__settings"><img src="../static/stylesheets/images/profile/settings.svg"></div>
-                        <button class="profile__buttons profile__logout"><img src="../static/stylesheets/images/profile/logout.svg"></button>
+                        <button form="logout" class="profile__buttons profile__logout"><img src="../static/stylesheets/images/profile/logout.svg"></button>
                     </div>
                 </div>
                 <div class="home__wrapper">
@@ -134,10 +135,55 @@
                         </div>
                     </div>
                 </div>
-                <div class="inf__wrapper"></div>
+                <div class="inf__wrapper">
+                    <form method="post" action="/changing" id="change__inf">
+                        <div class="inf__form">
+                            <div class="inf__form_left">
+                                <div class="form-floating mb-2 input__div">
+                                    <a class="name invis">{{username}}</a>
+                                    <label class="cll" for="floatingInput1">Ваше имя</label>
+                                    <input type="text" class="form-control cstmm" name="name" id="name" placeholder="">
+                                </div>
+                                <div class="form-floating mb-2 input__div">
+                                    <a class="surname invis">{{usersurname}}</a>
+                                    <label class="cll" for="floatingInput1">Ваша фамилия</label>
+                                    <input type="text" class="form-control cstmm" name="surname" id="surname" placeholder="">
+                                </div>
+                                <div class="form-floating mb-2 input__div">
+                                    <a class="patronymic invis">{{patronymic}}</a>
+                                    <label class="cll" for="floatingInput1">Ваша отчество</label>
+                                    <input type="text" class="form-control cstmm" name="patronymic" id="patronymic" placeholder="">
+                                </div>
+
+                            </div>
+                            <div class="inf__form_right">
+                                <div class="form-floating mb-2 input__div tt">
+                                    <a class="DD invis">{{DD}}</a>
+                                    <a class="MM invis">{{MM}}</a>
+                                    <a class="YYYY invis">{{YYYY}}</a>
+                                    <label style="margin-bottom: 2rem" class="cll2" for="floatingInput1">Дата рождения</label>
+                                    <div>
+                                        <input maxlength="2" type="text" class="date" name="DD" id="DD" placeholder="">
+                                        <input maxlength="2" style="margin-left: 1rem" type="text" class="date" name="MM" id="MM" placeholder="">
+                                    </div>
+                                    <input style="margin-top: 1rem" maxlength="4" type="text" class="date1" name="YYYY" id="YYYY" placeholder="">
+                                </div>
+                                <div class="form-floating mb-2 input__div" style="margin-top: 15vh">
+                                    <a class="email invis">{{email}}</a>
+                                    <label class="cll" for="floatingInput1">Ваш email</label>
+                                    <input type="text" class="form-control cstmm" name="email" id="email" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inf__buttons">
+                            <button class="inf__btn" type="submit" form="change__inf">Подтвердить</button>
+                            <div class="inf__btn" id="resetbutton" onclick="clearAll()">Отмена</div>
+                        </div>
+                    </form>
+                </div>
                 <div class="settings__wrapper"></div>
             </section>
-        </form>
+
 
 
 
