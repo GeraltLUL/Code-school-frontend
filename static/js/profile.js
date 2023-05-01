@@ -85,3 +85,13 @@ document.querySelector("#MM").value = MM;
 
 let YYYY = document.querySelector(".YYYY").textContent;
 document.querySelector("#YYYY").value = YYYY;
+
+
+//
+// function validateForm() {
+//     var x = document.forms["changing_inf"]["fname"].value;
+//     if (x == "") {
+//         alert("Необходимо ввести имя");
+//         return false;
+//     }
+// }

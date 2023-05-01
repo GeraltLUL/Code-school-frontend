@@ -35,6 +35,12 @@ def apply_caching(response):
     return response
 
 
+# Programs
+@app.route('/programs')
+def programs():
+    return render_template('StudyPrograms.html')
+
+
 # Main page
 @app.route('/')
 def index():
