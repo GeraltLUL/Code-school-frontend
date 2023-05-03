@@ -41,6 +41,7 @@
     <script src="../static/js/app.js" defer></script>
 
     <script src="../static/js/study.js" defer></script>
+    <script src="../static/js/navbar.js" defer></script>
 
 </head>
 
@@ -65,7 +66,7 @@
             </ul>
             <a href="/profile"><img src="../static/stylesheets/images/profile_icon.svg" alt="" class="profile"></a>
             <div class="toggle_btn">
-                <i class="fa-solid fa-bars"></i>
+                <i id="brs" class="fa-solid fa-bars"></i>
             </div>
         </div>
 
@@ -134,43 +135,60 @@
             </div>
         </div>
     </section>
-
-    <div class="">
-
-    </div>
-
-
 </section>
 
+<div class="easy__lvl">
+    <div class="line">
+        <div><a>1</a></div>
+    </div>
+    <div class="data">
+        <h1 class="main__h1">Базовый</h1>
+        <a class="sub__h1">уровень</a>
+
+        <div class="some__info">
+            <div class="some__info__line">
+                <img src="../static/stylesheets/images/study/triple-arrows.svg">
+                <a><span class="colored__text"> Направление:</span> Основы алгоритмизации и программирования</a>
+            </div>
+            <div class="some__info__line">
+                <img src="../static/stylesheets/images/study/education.svg">
+                <a><span class="colored__text"> Что изучается:</span> Базовые алгоритмические конструкции, понятия типов данных, основы построения и описания алгоритмов, решение простейших задач</a>
+            </div>
+            <div class="some__info__line">
+                <img src="../static/stylesheets/images/study/target.svg">
+                <a><span class="colored__text"> На кого рассчитано:</span> Учащиеся 4-8 классов, практически не знакомые с информатикой</a>
+            </div>
+
+        </div>
+
+        <h1 class="main__h1__medium">Образовательный трек</h1>
+        <div class="some__info__horizontal">
+            <div class="inf">
+                <div>
+                    <a>Визуальное программирование для начинающих (Scratch)</a>
+                    <img id="img1" src="../static/stylesheets/images/study/line.svg">
+                </div>
+                <div>
+                    <a>Введение в программирование для начинающих</a>
+                    <a>Разработка игровых и анимационных приложений</a>
+                </div>
+            </div>
+            <img src="../static/stylesheets/images/study/scratch.svg">
+        </div>
+
+
+        <div class="ending">
+            <h1 class="main__h1__medium" style="color: #162831">По окончанию обучения</h1>
+        </div>
+
+
+    </div>
+</div>
 
 
 
 
 
-<script>
-
-
-
-
-
-
-    const togglebtn = document.querySelector(".toggle_btn")
-    const togglebtnicon = document.querySelector(".toggle_btn i")
-    const toggledropmenu = document.querySelector(".dropdown_menu")
-
-    togglebtn.onclick = function () {
-        toggledropmenu.classList.toggle('open')
-        togglebtnicon.classList = isOpen
-            ? 'fa-solid fa-xmark'
-            : 'fa-solid fa-bars'
-
-    }
-
-
-
-
-
-</script>
 </body>
 
 </html>
