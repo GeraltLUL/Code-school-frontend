@@ -3,10 +3,20 @@
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 const windowInnerWidth = document.documentElement.clientWidth
 
-// const sections = document.querySelectorAll('section');
-// for (let id = 0; id < sections.length; id++){
-//     sections[id].style.display = "none";
-// }
+const sections = document.querySelectorAll('section');
+for (let id = 0; id < sections.length; id++){
+    sections[id].style.visibility = "hidden"
+}
+
+let chek = 0;
+
+
+
+window.addEventListener('scroll', e => {
+    if (chek === 0){
+        window.scrollTo({top: 0})
+    }
+})
 
 
 
@@ -15,12 +25,18 @@ document.body.onload = function (){
         var preloader = document.querySelector('.preloader');
         if( !preloader.classList.contains('done')){
             preloader.classList.add('done');
-            // for (let id = 0; id < sections.length; id++){
-            //     sections[id].style.display = "flex";
-            // }
+            for (let id = 0; id < sections.length; id++){
+                sections[id].style.visibility = "visible"
+            }
+            chek = 1;
         }
     }, 1000)
 }
+
+
+
+
+
 
 
 
@@ -531,6 +547,7 @@ else{
         // Optional parameters
         direction: 'horizontal',
         loop: false,
+        spaceBetween: 100,
 
         // // If we need pagination
         // pagination: {

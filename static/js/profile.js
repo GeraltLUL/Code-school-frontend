@@ -29,12 +29,21 @@ function activateSettings(){
     document.querySelector(".profile__settings").classList.add("active_btn");
 }
 
+let chek1 = 0;
+window.addEventListener('scroll', e => {
+    if (chek1 === 0){
+        window.scrollTo({top: 0})
+    }
+})
+
+
 
 document.body.onload = function (){
     setTimeout(function (){
         var preloader = document.querySelector('.preloader');
         if( !preloader.classList.contains('done')){
             preloader.classList.add('done');
+            chek1 = 1;
         }
     }, 1000)
 }

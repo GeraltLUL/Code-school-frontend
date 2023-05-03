@@ -67,6 +67,8 @@ html {
 }
 
 
+
+
 /* Убираем внутренние отступы */
 ul[class],
 ol[class] {
@@ -1953,7 +1955,7 @@ header {
 }
 
 .offer_btn {
-	margin-top: 5vw;
+	/*margin-top: 5vw;*/
 	height: 7vw;
 	width: 30vw;
 	border-radius: 7rem;
