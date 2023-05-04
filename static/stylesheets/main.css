@@ -103,6 +103,7 @@ body {
 	text-rendering: optimizeSpeed;
 	line-height: 1.5;
 	font-family: Montserrat-Regular;
+	background-color: #162831;
 	background-image: url("images/bg.jpg");
 	overflow-x: hidden;
 	cursor: url('images/pointer.cur'), default;
@@ -311,6 +312,9 @@ a {
 	line-height: 6.4rem;
 	text-align: center;
 }
+
+
+
 
 .preview-wrapper__button {
 	list-style: none;
@@ -2839,4 +2843,9 @@ li>*:hover {
 	to{
 		transform: translate(-50%, -50%) rotate(360deg);
 	}
+}
+
+
+#prod__h1{
+	font-size: 10rem;
 }
