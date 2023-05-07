@@ -24,6 +24,7 @@
     <title>Школа::КОДА</title>
     <script src="https://kit.fontawesome.com/7765d9206b.js" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="../static/stylesheets/fonts.css">
     <link rel="stylesheet" href="../static/stylesheets/main.css">
     <link rel="stylesheet" href="../static/stylesheets/study.css">
 
@@ -82,7 +83,7 @@
     <section class="preview">
         <h1>Подстроимся под любой уровень знаний!</h1>
         <div class="cards__wrapper">
-            <div class="cards">
+            <div class="cards" onclick="toEasy()">
                 <div id="left">
                     <svg id="left-svg" viewBox="0 0 85 74" xmlns="http://www.w3.org/2000/svg">
                         <path d="M45.9682 65.7091C45.2062 66.0566 44.3451 66.1102 43.547 65.8597L16.0775 54.1553C12.0134 52.8798 13.0239 48.6387 17.2265 49.3086L46.9408 51.0339C47.7662 51.1655 48.5159 51.5981 49.049 52.2503L52.703 57.362C53.2652 59.5789 53.0251 60.6284 51.4692 62.7516L45.9682 65.7091Z" />
@@ -99,7 +100,7 @@
                 <h1>Базовый</h1>
                 <a>основы алгоритмизации и программирования</a>
             </div>
-            <div class="cards">
+            <div class="cards" onclick="toMedium()">
                 <div id="midd">
                     <svg id="midd-svg" viewBox="0 0 85 74" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M42.5 4.18346C21.3739 4.18346 4.25 21.0315 4.25 41.812C4.25 52.1377 8.4748 61.4885 15.3219 68.2898L12.3031 71.2345C4.69967 63.6819 0 53.285 0 41.812C0 18.7189 19.0289 0 42.5 0C65.9711 0 85 18.7189 85 41.812C85 53.5977 80.0409 64.2471 72.0698 71.8449L69.1133 68.8395C76.2922 61.9968 80.75 52.4184 80.75 41.812C80.75 21.0315 63.6261 4.18346 42.5 4.18346Z" />
@@ -116,7 +117,7 @@
                 <h1>Средний</h1>
                 <a>программирование на языках высокого уровня</a>
             </div>
-            <div class="cards">
+            <div class="cards" onclick="toHard()">
                 <div id="right">
                     <svg id="right-svg" viewBox="0 0 85 74" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M35.1619 52.7998C35.673 52.1297 36.4078 51.6717 37.2285 51.512L66.8992 48.7368C71.0772 47.9235 72.1537 52.1478 68.1343 53.5616L41.1136 66.2133C40.3244 66.4908 39.4621 66.4669 38.689 66.1454L33.0926 63.378C31.5675 61.69 31.2925 60.6494 31.6801 58.0336L35.1619 52.7998Z" />
@@ -138,8 +139,8 @@
 </section>
 
 <div class="easy__lvl">
-    <div class="line">
-        <div><a>1</a></div>
+    <div class="line1">
+        <div><a>0</a></div>
     </div>
     <div class="data">
         <h1 class="main__h1">Базовый</h1>
@@ -176,10 +177,215 @@
             <img src="../static/stylesheets/images/study/scratch.svg">
         </div>
 
-
-        <div class="ending">
-            <h1 class="main__h1__medium" style="color: #162831">По окончанию обучения</h1>
+        <div class="ending__wrapper">
+            <div class="ending">
+                <h1 class="main__h1__medium" style="color: #162831">По окончанию обучения</h1>
+                <div class="ending__block rt__blck" id="end_1"><a>Владение системой <br>программирования Scratch</a><img src="../static/stylesheets/images/study/skills.svg"></div>
+                <div class="ending__block lft__blck" id="end_2"><img src="../static/stylesheets/images/study/gear.svg"><a>Знание принципов реализации базовых <br> алгоритмических конструкций и типов данных <br> средствами языка Scratch</a></div>
+                <div class="ending__block rt__blck" id="end_3"><a>Умение создавать анимационные и <br> игровые приложения в среде <br> Scratch</a><img src="../static/stylesheets/images/study/application.svg"></div>
+                <div class="ending__block lft__blck" id="end_4"><img src="../static/stylesheets/images/study/debug.svg"><a>Навыки разработки и отладки программ в <br> среде Scratch</a></div>
+                <img src="../static/stylesheets/images/study/Arrow%202.svg" id="arrow1">
+                <img src="../static/stylesheets/images/study/Arrow%203.svg" id="arrow2">
+                <img src="../static/stylesheets/images/study/Arrow%204.svg" id="arrow3">
+            </div>
         </div>
+
+
+
+    </div>
+</div>
+<div class="horizontal__line"></div>
+<div class="medium__lvl">
+    <div class="data" style="align-items: flex-start;">
+        <h1 class="main__h1">Средний</h1>
+        <a class="sub__h1">уровень</a>
+
+        <div class="some__info">
+            <div class="some__info__line">
+                <img src="../static/stylesheets/images/study/triple-arrows.svg">
+                <a><span class="colored__text"> Направление:</span> Программирование на языках высокого уровня</a>
+            </div>
+            <div class="some__info__line">
+                <img src="../static/stylesheets/images/study/education.svg">
+                <a><span class="colored__text"> Что изучается:</span> Реализация алгоритмических конструкций на языке высокого уровня. Решение типовых задач по программированию (уровня ОГЭ/ЕГЭ)</a>
+            </div>
+            <div class="some__info__line">
+                <img src="../static/stylesheets/images/study/target.svg">
+                <a><span class="colored__text"> На кого рассчитано:</span> Учащиеся 7-11 классов, знакомые с основными понятиями информатики, имеющие представление об алгоритмах, но не имеющие опыта программирования</a>
+            </div>
+        </div>
+        <h1 class="main__h1__medium" style="width: 90%">Образовательные треки</h1>
+        <div class="new__block">
+            <div class="number">01</div>
+            <div class="close__block"></div>
+
+            <h1 class="small__h1__block">Язык программирования</h1>
+            <h1 class="python">PYTHON</h1>
+
+            <div class="diagram">
+                <div>
+                    <div>Основы <br> программирования <br> на языке Python <div class="rnd"><img class="rnd__inside" src="../static/stylesheets/images/study/Ellipse.svg"><img class="inside__line" src="../static/stylesheets/images/study/Line3.svg"></div></div>
+                </div>
+                <div><img src="../static/stylesheets/images/study/Line_2.svg"></div>
+                <div>
+                    <div>Решение прикладных <br> задач и разработка <br> приложений на <br> языке Python <div class="rnd2"><img class="rnd__inside2" src="../static/stylesheets/images/study/Ellipse.svg"><img class="inside__line2" src="../static/stylesheets/images/study/Line4.svg"></div></div>
+                </div>
+            </div>
+
+            <h1 class="small__h1__block" style="padding-left: 2.4vw">Итоги</h1>
+            <h1 class="python">ОБУЧЕНИЯ</h1>
+
+            <div class="bottom__block">
+                <div>
+                    <a class="bottom__h1">Блок-схемы и <br> псевдокод</a>
+                    <a class="bottom__a">Умение строить алгоритмы с описанием в виде блок-схем и псевдокода</a>
+                </div>
+                <img src="../static/stylesheets/images/study/Line5.svg">
+                <div>
+                    <a class="bottom__h1">Базовые конструкции и <br> типы данных</a>
+                    <a class="bottom__a">Знание принципов реализации базовых алгоритмических конструкций и типов данных средствами языка Python</a>
+                </div>
+            </div>
+            <div class="bottom__block">
+                <div>
+                    <a class="bottom__h1">Синтаксис языка и <br> простые программы</a>
+                    <a class="bottom__a">Умение разрабатывать и отлаживать простые программы, знание синтаксиса языка программирования Python</a>
+                </div>
+                <img src="../static/stylesheets/images/study/Line5.svg">
+                <div>
+                    <a class="bottom__h1">Применение Python для <br> решения задач ОГЭ и ЕГЭ</a>
+                    <a class="bottom__a">Умение разрабатывать и отлаживать полноценные программы на языке Python, решать практические задачи из ОГЭ и ЕГЭ по информатике</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="new__block">
+            <div class="number">02</div>
+            <div class="close__block"></div>
+
+            <h1 class="small__h1__block">Язык программирования</h1>
+            <h1 class="python" style="letter-spacing: 0.34em;">C/C++</h1>
+
+            <div class="diagram">
+                <div>
+                    <div>Основы <br> программирования <br> на языке С/С++<div class="rnd"><img class="rnd__inside" src="../static/stylesheets/images/study/Ellipse.svg"><img class="inside__line" src="../static/stylesheets/images/study/Line3.svg"></div></div>
+                </div>
+                <div><img src="../static/stylesheets/images/study/Line_2.svg"></div>
+                <div>
+                    <div>Решение прикладных <br> задач на языке <br> программирования <br> С/С++<div class="rnd2"><img class="rnd__inside2" src="../static/stylesheets/images/study/Ellipse.svg"><img class="inside__line2" src="../static/stylesheets/images/study/Line4.svg"></div></div>
+                </div>
+            </div>
+
+            <h1 class="small__h1__block" style="padding-left: 2.4vw">Итоги</h1>
+            <h1 class="python">ОБУЧЕНИЯ</h1>
+
+            <div class="bottom__block">
+                <div>
+                    <a class="bottom__h1">Разработка и отладка  <br> простых программ</a>
+                    <a class="bottom__a">Умение разрабатывать и отлаживать простейшие программы на языке С/С++ в среде Microsoft Visual Studio</a>
+                </div>
+                <img src="../static/stylesheets/images/study/Line5.svg">
+                <div>
+                    <a class="bottom__h1">Базовые конструкции и <br> типы данных</a>
+                    <a class="bottom__a">Знание принципов реализации базовых алгоритмических конструкций и типов данных средствами языка С/С++</a>
+                </div>
+            </div>
+            <div class="bottom__block">
+                <div>
+                    <a class="bottom__h1">Синтаксис языка</a>
+                    <a class="bottom__a">Знание синтаксиса языка программирования С/С++</a>
+                </div>
+                <img src="../static/stylesheets/images/study/Line5.svg">
+                <div>
+                    <a class="bottom__h1">Приближение института</a>
+                    <a class="bottom__a">Умение разрабатывать и тестировать программы, соответствующие по сложности заданиям, выполняемым студентами ИКТИБ при изучении дисциплины "Основы алгоритмизации и программирования"</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="new__block">
+            <div class="number">03</div>
+            <div class="close__block"></div>
+
+            <h1 class="small__h1__block">Язык программирования</h1>
+            <h1 class="python" style="letter-spacing: 0.54em;">Java</h1>
+
+            <div class="diagram">
+                <div>
+                    <div>Основы <br> программирования <br> на языке Java<div class="rnd"><img class="rnd__inside" src="../static/stylesheets/images/study/Ellipse.svg"><img class="inside__line" src="../static/stylesheets/images/study/Line3.svg"></div></div>
+                </div>
+                <div><img src="../static/stylesheets/images/study/Line_2.svg"></div>
+                <div>
+                    <div>Решение <br> прикладных задач и <br> основы разработки <br> мобильных приложений <br> на языке Java<div class="rnd2"><img class="rnd__inside2" src="../static/stylesheets/images/study/Ellipse.svg"><img class="inside__line2" src="../static/stylesheets/images/study/Line4.svg"></div></div>
+                </div>
+            </div>
+
+            <h1 class="small__h1__block" style="padding-left: 2.4vw">Итоги</h1>
+            <h1 class="python">ОБУЧЕНИЯ</h1>
+
+            <div class="bottom__block">
+                <div>
+                    <a class="bottom__h1">Разработка и отладка  <br> простых программ</a>
+                    <a class="bottom__a">Умение разрабатывать и отлаживать простейшие программы</a>
+                </div>
+                <img src="../static/stylesheets/images/study/Line5.svg">
+                <div>
+                    <a class="bottom__h1">Базовые конструкции и <br> типы данных</a>
+                    <a class="bottom__a">Знание принципов реализации базовых алгоритмических конструкций и типов данных средствами языка Java</a>
+                </div>
+            </div>
+            <div class="bottom__block">
+                <div>
+                    <a class="bottom__h1">Синтаксис языка</a>
+                    <a class="bottom__a">Знание объектно-ориентированного подхода в программировании</a>
+                </div>
+                <img src="../static/stylesheets/images/study/Line5.svg">
+                <div>
+                    <a class="bottom__h1">Приближение института</a>
+                    <a class="bottom__a">Умение решать практические задачи из ЕГЭ по информатике, разрабатывать приложения для мобильных устройств</a>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <div class="line2"><div><a>1</a></div></div>
+</div>
+<div class="horizontal__line_back"></div>
+<div class="hard__lvl">
+    <div class="line1">
+        <div><a>2</a></div>
+    </div>
+    <div class="data">
+        <h1 class="main__h1">Продвинутый</h1>
+        <a class="sub__h1">уровень</a>
+
+        <div class="some__info">
+            <div class="some__info__line">
+                <img src="../static/stylesheets/images/study/triple-arrows.svg">
+                <a><span class="colored__text"> Направление:</span> Cпециальные разделы программирования</a>
+            </div>
+            <div class="some__info__line">
+                <img src="../static/stylesheets/images/study/education.svg">
+                <a><span class="colored__text"> Что изучается:</span> Алгоритмы, используемые для решения задач по программированию повышенной сложности (олимпиадные), основы объектно-ориентированного программирования, разработка программного обеспечения для решения задач в области компьютерной графики, баз данных, робототехнических устройств.
+                </a>
+            </div>
+            <div class="some__info__line">
+                <img src="../static/stylesheets/images/study/target.svg">
+                <a><span class="colored__text"> На кого рассчитано:</span> Учащиеся 7-11 классов, знакомые с основными понятиями информатики, имеющие представление об алгоритмах, но не имеющие опыта программирования</a>
+            </div>
+
+        </div>
+            <div class="ending2">
+                <div>
+                    <h1>Python для анализа данных и машинного обучения</h1>
+                    <a>Курс предназначен для тех, кто хочет освоить технологии машинного обучения.
+                        От слушателей требуется знание основ языка Python. Курс рекомендован слушателям, освоившим ранее курс “Программирование на языке Python”, однако приветсвуем и тех, кто просто знает или освоил Python в любом другом месте.</a>
+                </div>
+                <div><img src="../static/stylesheets/images/study/python.svg"></div>
+            </div>
+
 
 
     </div>
