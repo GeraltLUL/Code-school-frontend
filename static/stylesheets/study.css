@@ -837,6 +837,9 @@ body{
     align-items: center;
     padding-left: 5vw;
 
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+
     margin-top: 7vh;
 
     margin-left: 59%;
@@ -879,4 +882,59 @@ body{
 }
 .ending2 > div:nth-child(2) > img{
     width: 20vw;
+}
+
+.some__skills{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 5%;
+
+    padding-top: 5vw;
+    padding-left: 5vw;
+    padding-bottom: 5vw;
+
+    width: 100%;
+}
+.some__skills{
+    color: white;
+    font-size: 1vw;
+    font-family: Montserrat-Regular;
+}
+.some__skills > div{
+    width: 66vw;
+    margin-top: 5vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 5%;
+}
+.card{
+    min-width: 15vw;
+    /*height: 30vw;*/
+
+    min-height: 45vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    /*gap: 1vw;*/
+
+    /*background-color: #AB1B29;*/
+}
+.card > h1{
+    margin-top: 2vw;
+    min-height: 5vw;
+    font-size: 1.2vw;
+}
+.card > a{
+    font-family: Montserrat-Regular;
+    letter-spacing: 0.02em;
 }

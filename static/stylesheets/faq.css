@@ -1,0 +1,258 @@
+.header-preview-wrapper{
+    height: 100%;
+    background-image: none;
+}
+#hub{
+    border: none;
+}
+#others{
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    border-bottom: 0.15vw solid white;
+}
+
+.header-preview-wrapper > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 60vh;
+
+    font-size: 7vw;
+}
+
+.fq{
+    padding-top: 5vw;
+
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 4%;
+
+}
+.fq > h1{
+    font-family: Montserrat-ExtraBold;
+    font-size: 4vw;
+    color: white;
+}
+
+
+.accordion-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 500ms;
+}
+
+.accordion-content[aria-hidden="false"] {
+    grid-template-rows: 1fr;
+}
+
+.accordion-content > div {
+    overflow: hidden;
+}
+
+
+.wrapper {
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+
+    width: min(65ch, 100% - 4rem);
+    margin-inline: auto;
+
+    /*background-color: #AB1B29;*/
+
+    font-size: 1.5vw;
+}
+
+.accordion {
+    /*background: #121212;*/
+    color: white;
+    padding: 1rem;
+}
+
+.accordion-panel {
+    padding: 1rem;
+    border: 1.5px solid;
+
+    cursor: url('images/link.cur'), pointer;
+}
+
+.accordion h2 {
+    position: relative;
+}
+
+.accordion-trigger {
+    background: transparent;
+    border: 0;
+    font: inherit;
+    color: inherit;
+
+
+}
+
+/*.accordion-trigger::before,*/
+.accordion-trigger::after {
+    margin-top: 1vw;
+    position: absolute;
+    right: 1em;
+    content: "+";
+    display: block;
+    width: 1vw;
+    height: 1vw;
+    /*background: currentcolor;*/
+    transition: transform 500ms;
+}
+
+.accordion-trigger::after {
+    rotate: 90deg;
+    translate: 0 -1.5em;
+}
+
+.accordion-trigger[aria-expanded="true"]::before,
+.accordion-trigger[aria-expanded="true"]::after {
+    transform: rotate(45deg) translate(1vw, -2vw);
+}
+
+.accordion-panel > h2{
+    color: white;
+
+    text-align: left;
+    font-family: Montserrat-Bold;
+}
+
+.accordion-content > div > p{
+    max-width: 90%;
+    font-family: Montserrat-Regular;
+}
+
+.ttt{
+    font-family: Montserrat-ExtraBold;
+    font-size: 4vw;
+    color: #162831;
+    margin-top: 5vw;
+
+    margin-bottom: 5vw;
+}
+
+
+#email__us{
+    padding: 5vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5%;
+
+    width: 100vw;
+    background-color: white;
+}
+
+.inf__form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1vw;
+
+    width: 70%;
+}
+
+.line__form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 80%;
+    gap: 5%;
+
+    /*height: 5vw;*/
+    /*background-color: #AB1B29;*/
+}
+.line__form > label{
+    width: 50vw;
+    text-align: left;
+
+    font-family: Montserrat-Bold;
+    color: #162831;
+    font-size: 3vw;
+}
+.line__form > input{
+    font-family: Montserrat-Regular;
+    font-size: 2vw;
+    width: 60vw;
+
+    border: none;
+    border-bottom: 0.15vw solid #162831;
+}
+
+#message{
+    margin-top: 2vw;
+    flex-direction: column;
+}
+#message > label{
+    text-align: center;
+}
+#message > textarea{
+    font-family: Montserrat-Regular;
+    font-size: 2vw;
+    width: 60vw;
+
+    resize:none;
+
+
+
+    border: none;
+    border-bottom: 0.15vw solid #162831;
+}
+
+.input__area:hover{
+    cursor: text;
+}
+.input__area{
+    margin-top: 2vw;
+
+    font-family: Montserrat-Regular;
+    font-size: 2vw;
+    width: 50vw;
+
+    resize:none;
+
+
+
+    border: none;
+    border-bottom: 0.15vw solid #162831;
+}
+
+.inf__buttons{
+    margin-top: 5vw;
+}
+
+.inf__btn:hover{
+    cursor: url('images/link.cur'), pointer;
+    scale: 1.1;
+    transition: 500ms all;
+}
+.inf__btn{
+    width: 30vw;
+    font-family: Montserrat-Bold;
+    font-size: 2vw;
+    color: white;
+
+    padding: 1vw;
+
+    background-color: #0050FF;
+    border: none;
+    border-radius: 0.5vw;
+
+    transition: 500ms all;
+}
