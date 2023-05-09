@@ -35,6 +35,12 @@ def apply_caching(response):
     return response
 
 
+# FAQ
+@app.route('/FAQ')
+def faq():
+    return render_template('faq.html')
+
+
 # Programs
 @app.route('/programs')
 def programs():
@@ -53,6 +59,18 @@ def auth():
         return redirect(url_for('profile'))
 
     return render_template('signin.html')
+
+
+# Update inf
+@app.route('/sendmessage', methods=['POST', 'GET'])
+def sendmail():
+    if request.method == 'POST':
+        try:
+            pass
+
+        except Exception as e:
+            print(e)
+    return render_template('faq.html')
 
 
 # Profile Page
@@ -95,7 +113,7 @@ def updateInf():
             email = request.form.get('email')
 
             if 0 < int(MM) <= 12:
-                if int(MM)%2 == 0:
+                if int(MM) % 2 == 0:
                     if int(MM) == 2:
                         if 0 < int(DD) <= 29:
                             pass
@@ -121,8 +139,6 @@ def updateInf():
 
         except Exception as e:
             print(e)
-
-
 
 
 # Login
