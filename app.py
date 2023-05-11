@@ -5,7 +5,8 @@ from email.mime.application import MIMEApplication
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime
 import requests
-from flask_login import LoginManager, login_user, login_required, logout_user, current_user
+import flask_login
+#from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from flask import render_template, redirect, url_for, session, Flask, request
 from flask_cors import CORS
 from pymongo import MongoClient
@@ -31,7 +32,7 @@ users_col = db['users']
 orders_col = db['orders']
 checks_col = db['checks']
 
-login_manager = LoginManager(app)
+login_manager = flask_login.LoginManager(app)
 login_manager.login_view = 'login'
 login_manager.login_message = 'Please log in to access the site'
 login_manager.login_message_category = 'success'
@@ -68,7 +69,7 @@ def index():
 
 @app.route('/auth')
 def auth():
-    if current_user.is_authenticated:
+    if flask_login.current_user.is_authenticated:
         return redirect(url_for('profile'))
 
     return render_template('signin.html')
@@ -105,15 +106,15 @@ def sendmail():
 
 # Profile Page
 @app.route('/profile')
-@login_required
+@flask_login.login_required
 def profile():
     if session is None:
-        logout_user()
+        flask_login.logout_user()
         return redirect(url_for('auth'))
 
-    DD = current_user.DD
-    MM = current_user.MM
-    YYYY = current_user.YYYY
+    DD = flask_login.current_user.DD
+    MM = flask_login.current_user.MM
+    YYYY = flask_login.current_user.YYYY
 
     if DD == '':
         DD = 'ДД'
@@ -122,8 +123,8 @@ def profile():
     if YYYY == '':
         YYYY = 'YYYY'
 
-    return render_template('profile.html', username=current_user.name, usersurname=current_user.surname,
-                           patronymic=current_user.patronymic, email=current_user.email, DD=DD,
+    return render_template('profile.html', username=flask_login.current_user.name, usersurname=flask_login.current_user.surname,
+                           patronymic=flask_login.current_user.patronymic, email=flask_login.current_user.email, DD=DD,
                            MM=MM, YYYY=YYYY)
 
 
@@ -131,7 +132,7 @@ def profile():
 # enroll
 @app.route('/order', methods=['POST', 'GET'])
 def order():
-    if request.method == 'POST' and current_user.is_authenticated:
+    if request.method == 'POST' and flask_login.current_user.is_authenticated:
         current_datetime = datetime.datetime.now()
 
         day = str(current_datetime.day)
@@ -157,10 +158,10 @@ def order():
             server.login('codeschool48@gmail.com', 'fyuznnkwfsblxgur')
 
             subject = f'Новая запись'
-            text = f'Пользователь {current_user.surname} {current_user.name} ' \
-                   f'{current_user.patronymic} отправил новый запрос на запись.\n' \
+            text = f'Пользователь {flask_login.current_user.surname} {flask_login.current_user.name} ' \
+                   f'{flask_login.current_user.patronymic} отправил новый запрос на запись.\n' \
                    f'Программа: {program}\n' \
-                   f'email:{current_user.email} \n' \
+                   f'email:{flask_login.current_user.email} \n' \
                    f'Дата записи: {day}.{month}.{year}\n' \
                    f'Время записи: {hour}:{minutes}'
 
@@ -171,10 +172,10 @@ def order():
             server.sendmail('codeschool48@gmail.com', 'codeschool48@gmail.com', mime.as_string())
             server.quit()
 
-            create_order(current_user.surname,
-                         current_user.name,
-                         current_user.patronymic,
-                         current_user.email,
+            create_order(flask_login.current_user.surname,
+                         flask_login.current_user.name,
+                         flask_login.current_user.patronymic,
+                         flask_login.current_user.email,
                          hour,
                          minutes,
                          year,
@@ -184,10 +185,10 @@ def order():
                          'Success')
         except Exception as e:
             print(e)
-            create_order(current_user.surname,
-                         current_user.name,
-                         current_user.patronymic,
-                         current_user.email,
+            create_order(flask_login.current_user.surname,
+                         flask_login.current_user.name,
+                         flask_login.current_user.patronymic,
+                         flask_login.current_user.email,
                          hour,
                          minutes,
                          year,
@@ -200,7 +201,7 @@ def order():
 
 # Uploading pdf in storage
 @app.route('/uploadcheck', methods=['GET', 'POST'])
-@login_required
+@flask_login.login_required
 def upload_file():
     if request.method == 'POST':
         try:
@@ -225,16 +226,16 @@ def upload_file():
             if len(minutes) == 1:
                 minutes = '0' + minutes
 
-            if current_user.is_authenticated:
+            if flask_login.current_user.is_authenticated:
                 server = smtp.SMTP('smtp.gmail.com', 587)
                 server.starttls()
                 #server.login(os.getenv('email_login'), os.getenv('email_password'))
                 server.login('codeschool48@gmail.com', 'fyuznnkwfsblxgur')
 
                 subject = f'Чек об оплате обучения'
-                text = f'Пользователь {current_user.surname} {current_user.name} ' \
-                       f'{current_user.patronymic} отправил новый чек об оплате обучения.\n' \
-                       f'email:{current_user.email} \n' \
+                text = f'Пользователь {flask_login.current_user.surname} {flask_login.current_user.name} ' \
+                       f'{flask_login.current_user.patronymic} отправил новый чек об оплате обучения.\n' \
+                       f'email:{flask_login.current_user.email} \n' \
                        f'Дата отправки: {day}.{month}.{year}\n' \
                        f'Время отправки: {hour}:{minutes}'
 
@@ -250,10 +251,10 @@ def upload_file():
                 server.sendmail('codeschool48@gmail.com', 'codeschool48@gmail.com', mime.as_string())
                 server.quit()
 
-                create_check(current_user.surname,
-                             current_user.name,
-                             current_user.patronymic,
-                             current_user.email,
+                create_check(flask_login.current_user.surname,
+                             flask_login.current_user.name,
+                             flask_login.current_user.patronymic,
+                             flask_login.current_user.email,
                              hour,
                              minutes,
                              year,
@@ -273,7 +274,7 @@ def upload_file():
 # Update inf
 @app.route('/changing', methods=['POST', 'GET'])
 def updateInf():
-    if request.method == 'POST' and current_user.is_authenticated:
+    if request.method == 'POST' and flask_login.current_user.is_authenticated:
         try:
             name = request.form.get('name')
             surname = request.form.get('surname')
@@ -318,7 +319,7 @@ def updateInf():
 # Login
 @app.route('/login', methods=['POST', 'GET'])
 def login():
-    if current_user.is_authenticated:
+    if flask_login.current_user.is_authenticated:
         return redirect(url_for('profile'))
 
     if request.method == 'POST':
@@ -330,7 +331,7 @@ def login():
             if cur_user is not None and cur_user.password == password:
                 session['username'] = cur_user.name
                 session['id'] = cur_user.id
-                login_user(cur_user)
+                flask_login.login_user(cur_user)
 
                 return redirect(url_for('profile'))
         except Exception as e:
@@ -342,7 +343,7 @@ def login():
 # Register
 @app.route('/register', methods=['GET', 'POST'])
 def register():
-    if current_user.is_authenticated:
+    if flask_login.current_user.is_authenticated:
         return redirect(url_for('profile'))
 
     if request.method == 'POST':
@@ -364,7 +365,7 @@ def register():
                 cur_user = find_user_by_email(email)
                 session['username'] = name
                 session['id'] = cur_user.id
-                login_user(cur_user)
+                flask_login.login_user(cur_user)
 
                 return redirect(url_for('profile'))
             else:
@@ -378,10 +379,10 @@ def register():
 
 # Logout
 @app.route('/logout', methods=['GET', 'POST'])
-@login_required
+@flask_login.login_required
 def logout():
-    if current_user.is_authenticated:
-        logout_user()
+    if flask_login.current_user.is_authenticated:
+        flask_login.logout_user()
         session.pop('username', default=None)
         session.pop('id', default=None)
     return redirect(url_for('index'))
