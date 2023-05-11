@@ -85,15 +85,16 @@ def sendmail():
 
             server = smtp.SMTP('smtp.gmail.com', 587)
             server.starttls()
-            server.login(os.getenv('email_login'), os.getenv('email_password'))
-
+            #server.login(os.getenv('email_login'), os.getenv('email_password'))
+            server.login('codeschool48@gmail.com', 'fyuznnkwfsblxgur')
             subject = f'Вопрос от {name} ({email})'
             text = msg
 
             mime = MIMEText(text, 'plain', 'utf-8')
             mime['Subject'] = Header(subject, 'utf-8')
 
-            server.sendmail(os.getenv('email_login'), 'codeschool48@gmail.com', mime.as_string())
+            #server.sendmail(os.getenv('email_login'), 'codeschool48@gmail.com', mime.as_string())
+            server.sendmail('codeschool48@gmail.com', 'codeschool48@gmail.com', mime.as_string())
             server.quit()
 
 
@@ -152,7 +153,8 @@ def order():
         try:
             server = smtp.SMTP('smtp.gmail.com', 587)
             server.starttls()
-            server.login(os.getenv('email_login'), os.getenv('email_password'))
+            #server.login(os.getenv('email_login'), os.getenv('email_password'))
+            server.login('codeschool48@gmail.com', 'fyuznnkwfsblxgur')
 
             subject = f'Новая запись'
             text = f'Пользователь {current_user.surname} {current_user.name} ' \
@@ -165,7 +167,8 @@ def order():
             mime = MIMEText(text, 'plain', 'utf-8')
             mime['Subject'] = Header(subject, 'utf-8')
 
-            server.sendmail(os.getenv('email_login'), 'codeschool48@gmail.com', mime.as_string())
+            #server.sendmail(os.getenv('email_login'), 'codeschool48@gmail.com', mime.as_string())
+            server.sendmail('codeschool48@gmail.com', 'codeschool48@gmail.com', mime.as_string())
             server.quit()
 
             create_order(current_user.surname,
@@ -225,7 +228,8 @@ def upload_file():
             if current_user.is_authenticated:
                 server = smtp.SMTP('smtp.gmail.com', 587)
                 server.starttls()
-                server.login(os.getenv('email_login'), os.getenv('email_password'))
+                #server.login(os.getenv('email_login'), os.getenv('email_password'))
+                server.login('codeschool48@gmail.com', 'fyuznnkwfsblxgur')
 
                 subject = f'Чек об оплате обучения'
                 text = f'Пользователь {current_user.surname} {current_user.name} ' \
@@ -242,7 +246,8 @@ def upload_file():
                 attachment.add_header('Content-Disposition', 'attachment', filename=file.filename)
                 mime.attach(attachment)
 
-                server.sendmail(os.getenv('email_login'), 'codeschool48@gmail.com', mime.as_string())
+                #server.sendmail(os.getenv('email_login'), 'codeschool48@gmail.com', mime.as_string())
+                server.sendmail('codeschool48@gmail.com', 'codeschool48@gmail.com', mime.as_string())
                 server.quit()
 
                 create_check(current_user.surname,

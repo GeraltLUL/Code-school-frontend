@@ -24,7 +24,7 @@
     <title>Школа::КОДА</title>
 
 
-<!--    <link href="../static/stylesheets/bootstrap.min.css" rel="stylesheet">-->
+    <!--    <link href="../static/stylesheets/bootstrap.min.css" rel="stylesheet">-->
     <link rel="stylesheet" href="../static/stylesheets/fonts.css">
     <link rel="stylesheet" href="../static/stylesheets/main.css">
     <link rel="stylesheet" href="../static/stylesheets/profile.css">
@@ -88,153 +88,167 @@
 
         <section class="preview">
 
-                <img src="../static/stylesheets/images/profile/tmpprofile2.jpg" class="profile__photo">
-                <div class="sub__buttons">
-                    <div class="sub__blocks" id="left__block">
-                        <div onclick="activateHome()" class="profile__buttons profile__home active_btn"><img src="../static/stylesheets/images/profile/home.svg"></div>
-                        <div onclick="activateInf()" class="profile__buttons profile__inf "><img src="../static/stylesheets/images/profile/inf.svg"></div>
-                    </div>
-                    <div class="sub__blocks" id="mid__block"></div>
-                    <div class="sub__blocks" id="right__block">
-                        <div onclick="activateSettings()" class="profile__buttons profile__settings"><img src="../static/stylesheets/images/profile/settings.svg"></div>
-                        <button form="logout" class="profile__buttons profile__logout"><img src="../static/stylesheets/images/profile/logout.svg"></button>
-                    </div>
+            <img src="../static/stylesheets/images/profile/tmpprofile2.jpg" class="profile__photo">
+            <div class="sub__buttons">
+                <div class="sub__blocks" id="left__block">
+                    <div onclick="activateHome()" class="profile__buttons profile__home active_btn"><img
+                            src="../static/stylesheets/images/profile/home.svg"></div>
+                    <div onclick="activateInf()" class="profile__buttons profile__inf "><img
+                            src="../static/stylesheets/images/profile/inf.svg"></div>
                 </div>
-                <div class="home__wrapper">
-                    <h1 class="FIO">{{username}} {{usersurname}}</h1>
-                    <form method="post" action="/order" class="order__form" id="order">
-                        <div class="order__close" onclick="closeOrder()"><a>CLOSE!!</a></div>
-                        <div class="order__wrapper">
-                            <div class="order__block">
-                                <div class="order__top__block">
-                                    <a class="order__a">Базовый</a>
-                                    <h1 class="order__h1">Scratch</h1>
-                                </div>
-                                <div class="order__mid__block">
-                                    <svg class="order__round" width="23" height="23" viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="11.5" cy="11.5" r="11.5" />
-                                    </svg>
-                                    <a>Учащиеся 4-8 классов, практически не знакомые с информатикой</a>
-                                </div>
-                                <button form="order" class="order_btn">ХОЧУ!</button>
+                <div class="sub__blocks" id="mid__block"></div>
+                <div class="sub__blocks" id="right__block">
+                    <div onclick="activateSettings()" class="profile__buttons profile__settings"><img
+                            src="../static/stylesheets/images/profile/settings.svg"></div>
+                    <button form="logout" class="profile__buttons profile__logout"><img
+                            src="../static/stylesheets/images/profile/logout.svg"></button>
+                </div>
+            </div>
+            <div class="home__wrapper">
+                <h1 class="FIO">{{username}} {{usersurname}}</h1>
+                <form method="post" action="/order" class="order__form" id="order">
+                    <div class="order__close" onclick="closeOrder()"><a>CLOSE!!</a></div>
+                    <div class="order__wrapper">
+                        <div class="order__block">
+                            <div class="order__top__block">
+                                <a class="order__a">Базовый</a>
+                                <h1 class="order__h1">Scratch</h1>
                             </div>
-                            <div class="order__block">
-                                <div class="order__top__block">
-                                    <a class="order__a">Средний</a>
-                                    <h1 class="order__h1">Python</h1>
-                                </div>
-                                <div class="order__mid__block">
-                                    <svg class="order__round" width="23" height="23" viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="11.5" cy="11.5" r="11.5" />
-                                    </svg>
-                                    <a>Учащиеся 7-11 классов, знакомые с основными понятиями информатики</a>
-                                </div>
-                                <button form="order" class="order_btn">ХОЧУ!</button>
+                            <div class="order__mid__block">
+                                <svg class="order__round" width="23" height="23" viewBox="0 0 23 23"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="11.5" cy="11.5" r="11.5" />
+                                </svg>
+                                <a>Учащиеся 4-8 классов, практически не знакомые с информатикой</a>
                             </div>
-                            <div class="order__block">
-                                <div class="order__top__block">
-                                    <a class="order__a">Средний</a>
-                                    <h1 class="order__h1">C++</h1>
-                                </div>
-                                <div class="order__mid__block">
-                                    <svg class="order__round" width="23" height="23" viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="11.5" cy="11.5" r="11.5" />
-                                    </svg>
-                                    <a>Учащиеся 7-11 классов, знакомые с основными понятиями информатики</a>
-                                </div>
-                                <button form="order" class="order_btn">ХОЧУ!</button>
-                            </div>
-                            <div class="order__block">
-                                <div class="order__top__block">
-                                    <a class="order__a">Средний</a>
-                                    <h1 class="order__h1">Java</h1>
-                                </div>
-                                <div class="order__mid__block">
-                                    <svg class="order__round" width="23" height="23" viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="11.5" cy="11.5" r="11.5" />
-                                    </svg>
-                                    <a>Учащиеся 7-11 классов, знакомые с основными понятиями информатики</a>
-                                </div>
-                                <button form="order" class="order_btn">ХОЧУ!</button>
-                            </div>
-                            <div class="order__block">
-                                <div class="order__top__block">
-                                    <a class="order__a">Продвинутый</a>
-                                    <h1 class="order__h1">Python</h1>
-                                </div>
-                                <div class="order__mid__block">
-                                    <svg class="order__round" width="23" height="23" viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="11.5" cy="11.5" r="11.5" />
-                                    </svg>
-                                    <a>Учащиеся 7-11 классов, знакомые с основными понятиями информатики</a>
-                                </div>
-                                <button form="order" class="order_btn">ХОЧУ!</button>
-                            </div>
+                            <button form="order" value="Базовый Scratch" name="program" class="order_btn">ХОЧУ!</button>
                         </div>
+                        <div class="order__block">
+                            <div class="order__top__block">
+                                <a class="order__a">Средний</a>
+                                <h1 class="order__h1">Python</h1>
+                            </div>
+                            <div class="order__mid__block">
+                                <svg class="order__round" width="23" height="23" viewBox="0 0 23 23"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="11.5" cy="11.5" r="11.5" />
+                                </svg>
+                                <a>Учащиеся 7-11 классов, знакомые с основными понятиями информатики</a>
+                            </div>
+                            <button form="order" value="Средний Python" name="program" class="order_btn">ХОЧУ!</button>
+                        </div>
+                        <div class="order__block">
+                            <div class="order__top__block">
+                                <a class="order__a">Средний</a>
+                                <h1 class="order__h1">C++</h1>
+                            </div>
+                            <div class="order__mid__block">
+                                <svg class="order__round" width="23" height="23" viewBox="0 0 23 23"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="11.5" cy="11.5" r="11.5" />
+                                </svg>
+                                <a>Учащиеся 7-11 классов, знакомые с основными понятиями информатики</a>
+                            </div>
+                            <button form="order" value="Средний С++" name="program" class="order_btn">ХОЧУ!</button>
+                        </div>
+                        <div class="order__block">
+                            <div class="order__top__block">
+                                <a class="order__a">Средний</a>
+                                <h1 class="order__h1">Java</h1>
+                            </div>
+                            <div class="order__mid__block">
+                                <svg class="order__round" width="23" height="23" viewBox="0 0 23 23"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="11.5" cy="11.5" r="11.5" />
+                                </svg>
+                                <a>Учащиеся 7-11 классов, знакомые с основными понятиями информатики</a>
+                            </div>
+                            <button form="order" value="Средний Java" name="program" class="order_btn">ХОЧУ!</button>
+                        </div>
+                        <div class="order__block">
+                            <div class="order__top__block">
+                                <a class="order__a">Продвинутый</a>
+                                <h1 class="order__h1">Python</h1>
+                            </div>
+                            <div class="order__mid__block">
+                                <svg class="order__round" width="23" height="23" viewBox="0 0 23 23"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="11.5" cy="11.5" r="11.5" />
+                                </svg>
+                                <a>Учащиеся 7-11 классов, знакомые с основными понятиями информатики</a>
+                            </div>
+                            <button form="order" value="Продвинутый Python" name="program"
+                                class="order_btn">ХОЧУ!</button>
+                        </div>
+                    </div>
 
 
-                    </form>
-                    <form method="post" action="/addfile" class="addfile__form" id="addfile">
-                        <div class="addfile__close" onclick="closeAddfile()"><a>CLOSE!!</a></div>
-                        <p>
-                            <input type="file" name="f">
-                            <input type="submit" value="Отправить" form="addfile">
-                        </p>
-                    </form>
-                    <div class="profile__functions">
-                        <div class="achievements">
-                            <div class="achievements__name"><img src="../static/stylesheets/images/profile/achievements.svg"><a>Достижения</a></div>
-                            <div class="achievements__items">
-                                <div class="ach__items">
-                                    <div class="ach_sub_items" id="item__1"></div>
-                                    <div class="ach_sub_items" id="item__2"></div>
-                                </div>
-                                <div class="ach__items">
-                                    <div class="ach_sub_items" id="item__3"></div>
-                                    <div class="ach_sub_items" id="item__4"></div>
-                                </div>
+                </form>
+                <form method="post" action="/uploadcheck" class="addfile__form" id="addfile"
+                    enctype="multipart/form-data">
+                    <div class="addfile__close" onclick="closeAddfile()"><a>CLOSE!!</a></div>
+                    <p>
+                        <input type="file" name="check" accept=".pdf">
+                        <input type="submit" value="Отправить" form="addfile">
+                    </p>
+                </form>
+                <div class="profile__functions">
+                    <div class="achievements">
+                        <div class="achievements__name"><img
+                                src="../static/stylesheets/images/profile/achievements.svg"><a>Достижения</a></div>
+                        <div class="achievements__items">
+                            <div class="ach__items">
+                                <div class="ach_sub_items" id="item__1"></div>
+                                <div class="ach_sub_items" id="item__2"></div>
+                            </div>
+                            <div class="ach__items">
+                                <div class="ach_sub_items" id="item__3"></div>
+                                <div class="ach_sub_items" id="item__4"></div>
                             </div>
                         </div>
-                        <div class="functions">
-                            <div class="functions__top">
-                                <div class="some__func" onclick="openAddfile()">
-                                    <img class="fnc__img" src="../static/stylesheets/images/profile/chek.svg">
-                                    <a>Прикрепить чек</a>
-                                    <img class="fnc__arrow" src="../static/stylesheets/images/profile/arrow.svg">
-                                </div>
-                                <div class="some__func" onclick="location.href='/FAQ'" >
-                                    <img class="fnc__img" src="../static/stylesheets/images/profile/test.svg">
-                                    <a>Задать <br> вопрос</a>
-                                    <img class="fnc__arrow" src="../static/stylesheets/images/profile/arrow.svg">
-                                </div>
+                    </div>
+                    <div class="functions">
+                        <div class="functions__top">
+                            <div class="some__func" onclick="openAddfile()">
+                                <img class="fnc__img" src="../static/stylesheets/images/profile/chek.svg">
+                                <a>Прикрепить чек</a>
+                                <img class="fnc__arrow" src="../static/stylesheets/images/profile/arrow.svg">
                             </div>
-                            <div class="functions__bottom" onclick="openOrder()">
-                                <img class="fnc__img" src="../static/stylesheets/images/profile/select.svg">
-                                <a>Записаться на курс</a>
+                            <div class="some__func" onclick="location.href='/FAQ'">
+                                <img class="fnc__img" src="../static/stylesheets/images/profile/test.svg">
+                                <a>Задать <br> вопрос</a>
                                 <img class="fnc__arrow" src="../static/stylesheets/images/profile/arrow.svg">
                             </div>
                         </div>
+                        <div class="functions__bottom" onclick="openOrder()">
+                            <img class="fnc__img" src="../static/stylesheets/images/profile/select.svg">
+                            <a>Записаться на курс</a>
+                            <img class="fnc__arrow" src="../static/stylesheets/images/profile/arrow.svg">
+                        </div>
                     </div>
                 </div>
-                <div class="inf__wrapper">
-                    <form method="post" action="/changing" id="change__inf">
-                        <div class="inf__form">
-                            <div class="inf__form_left">
-                                <div class="form-floating mb-2 input__div">
-                                    <a class="name invis">{{username}}</a>
-                                    <label class="cll" for="floatingInput1">Ваше имя</label>
-                                    <input type="text" class="form-control cstmm" name="name" id="name" placeholder="">
-                                </div>
-                                <div class="form-floating mb-2 input__div">
-                                    <a class="surname invis">{{usersurname}}</a>
-                                    <label class="cll" for="floatingInput1">Ваша фамилия</label>
-                                    <input type="text" class="form-control cstmm" name="surname" id="surname" placeholder="">
-                                </div>
-                                <div class="form-floating mb-2 input__div">
-                                    <a class="patronymic invis">{{patronymic}}</a>
-                                    <label class="cll" for="floatingInput1">Ваша отчество</label>
-                                    <input type="text" class="form-control cstmm" name="patronymic" id="patronymic" placeholder="">
-                                </div>
+            </div>
+            <div class="inf__wrapper">
+                <form method="post" action="/changing" id="change__inf">
+                    <div class="inf__form">
+                        <div class="inf__form_left">
+                            <div class="form-floating mb-2 input__div">
+                                <a class="name invis">{{username}}</a>
+                                <label class="cll" for="floatingInput1">Ваше имя</label>
+                                <input type="text" class="form-control cstmm" name="name" id="name" placeholder="">
+                            </div>
+                            <div class="form-floating mb-2 input__div">
+                                <a class="surname invis">{{usersurname}}</a>
+                                <label class="cll" for="floatingInput1">Ваша фамилия</label>
+                                <input type="text" class="form-control cstmm" name="surname" id="surname"
+                                    placeholder="">
+                            </div>
+                            <div class="form-floating mb-2 input__div">
+                                <a class="patronymic invis">{{patronymic}}</a>
+                                <label class="cll" for="floatingInput1">Ваша отчество</label>
+                                <input type="text" class="form-control cstmm" name="patronymic" id="patronymic"
+                                    placeholder="">
+                            </div>
 
                         </div>
                         <div class="inf__form_right">
