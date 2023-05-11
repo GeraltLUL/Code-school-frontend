@@ -9,22 +9,22 @@
 
     <meta property="vk:image" content="../static/stylesheets/images/prew.jpg" />
 
-    <meta property="og:url" content="www.school-code.ru"/>
-	<meta property="og:image" content="../static/stylesheets/images/prew.jpg"/>
-	<meta property="og:image:width" content="1074"/>
-	<meta property="og:image:height" content="480"/>
+    <meta property="og:url" content="www.school-code.ru" />
+    <meta property="og:image" content="../static/stylesheets/images/prew.jpg" />
+    <meta property="og:image:width" content="1074" />
+    <meta property="og:image:height" content="480" />
 
 
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="Школа::КОДА">
-	<meta name="twitter:description" content="Образовательный проект при ЮФУ">
-	<meta name="twitter:image" content="../static/stylesheets/images/prew.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Школа::КОДА">
+    <meta name="twitter:description" content="Образовательный проект при ЮФУ">
+    <meta name="twitter:image" content="../static/stylesheets/images/prew.jpg">
 
     <link rel="shortcut icon" href="../static/stylesheets/images/page_logo.svg" type="image/x-icon">
     <title>Школа::КОДА</title>
 
 
-<!--    <link href="../static/stylesheets/bootstrap.min.css" rel="stylesheet">-->
+    <!--    <link href="../static/stylesheets/bootstrap.min.css" rel="stylesheet">-->
     <link rel="stylesheet" href="../static/stylesheets/main.css">
     <link rel="stylesheet" href="../static/stylesheets/profile.css">
     <link rel="stylesheet" href="../static/stylesheets/profile_media.css">
@@ -85,151 +85,169 @@
         </header>
         <form method="post" action="/logout" class="tmp_form" id="logout"></form>
 
-            <section class="preview">
+        <section class="preview">
 
-                <img src="../static/stylesheets/images/profile/tmpprofile2.jpg" class="profile__photo">
-                <div class="sub__buttons">
-                    <div class="sub__blocks" id="left__block">
-                        <div onclick="activateHome()" class="profile__buttons profile__home active_btn"><img src="../static/stylesheets/images/profile/home.svg"></div>
-                        <div onclick="activateInf()" class="profile__buttons profile__inf "><img src="../static/stylesheets/images/profile/inf.svg"></div>
-                    </div>
-                    <div class="sub__blocks" id="mid__block"></div>
-                    <div class="sub__blocks" id="right__block">
-                        <div onclick="activateSettings()" class="profile__buttons profile__settings"><img src="../static/stylesheets/images/profile/settings.svg"></div>
-                        <button form="logout" class="profile__buttons profile__logout"><img src="../static/stylesheets/images/profile/logout.svg"></button>
-                    </div>
+            <img src="../static/stylesheets/images/profile/tmpprofile2.jpg" class="profile__photo">
+            <div class="sub__buttons">
+                <div class="sub__blocks" id="left__block">
+                    <div onclick="activateHome()" class="profile__buttons profile__home active_btn"><img
+                            src="../static/stylesheets/images/profile/home.svg"></div>
+                    <div onclick="activateInf()" class="profile__buttons profile__inf "><img
+                            src="../static/stylesheets/images/profile/inf.svg"></div>
                 </div>
-                <div class="home__wrapper">
-                    <h1 class="FIO">{{username}} {{usersurname}}</h1>
-                    <form method="post" action="/order" class="order__form" id="order">
-                        <div class="order__close" onclick="closeOrder()"><a>CLOSE!!</a></div>
-                        <div class="order__wrapper">
-                            <div>
-                                <img src="../static/stylesheets/images/profile/Python.svg">
-                                <h1 class="order__h1">Python 1</h1>
-                                <button form="order" class="order_btn">ХОЧУ!</button>
-                            </div>
-                            <div>
-                                <img src="../static/stylesheets/images/profile/Python.svg">
-                                <h1 class="order__h1">Python 2</h1>
-                                <button form="order" class="order_btn">ХОЧУ!</button>
-                            </div>
-                            <div>
-                                <img src="../static/stylesheets/images/profile/Python.svg">
-                                <h1 class="order__h1">Python 3</h1>
-                                <button form="order" class="order_btn">ХОЧУ!</button>
-                            </div>
-                            <div>
-                                <img src="../static/stylesheets/images/profile/Python.svg">
-                                <h1 class="order__h1">Python 4</h1>
-                                <button form="order" class="order_btn">ХОЧУ!</button>
-                            </div>
-                            <div>
-                                <img src="../static/stylesheets/images/profile/Python.svg">
-                                <h1 class="order__h1">Python 5</h1>
-                                <button form="order" class="order_btn">ХОЧУ!</button>
-                            </div>
+                <div class="sub__blocks" id="mid__block"></div>
+                <div class="sub__blocks" id="right__block">
+                    <div onclick="activateSettings()" class="profile__buttons profile__settings"><img
+                            src="../static/stylesheets/images/profile/settings.svg"></div>
+                    <button form="logout" class="profile__buttons profile__logout"><img
+                            src="../static/stylesheets/images/profile/logout.svg"></button>
+                </div>
+            </div>
+            <div class="home__wrapper">
+                <h1 class="FIO">{{username}} {{usersurname}}</h1>
+                <form method="post" action="/order" class="order__form" id="order">
+                    <div class="order__close" onclick="closeOrder()"><a>CLOSE!!</a></div>
+                    <div class="order__wrapper">
+                        <div>
+                            <img src="../static/stylesheets/images/profile/Python.svg">
+                            <h1 class="order__h1">Python</h1>
+                            <button form="order" class="order_btn">ХОЧУ!</button>
                         </div>
+                        <div>
+                            <img src="../static/stylesheets/images/profile/scratch_lock.svg">
+                            <h1 class="order__h1">Scratch</h1>
+                            <button form="order" class="order_btn">ХОЧУ!</button>
+                        </div>
+                        <div>
+                            <img src="../static/stylesheets/images/profile/C++_lock.svg">
+                            <h1 class="order__h1">C++</h1>
+                            <button form="order" class="order_btn">ХОЧУ!</button>
+                        </div>
+                        <div>
+                            <img src="../static/stylesheets/images/profile/Python.svg">
+                            <h1 class="order__h1">Python</h1>
+                            <button form="order" class="order_btn">ХОЧУ!</button>
+                        </div>
+                        <div>
+                            <img src="../static/stylesheets/images/profile/scratch_lock.svg">
+                            <h1 class="order__h1">Scratch</h1>
+                            <button form="order" class="order_btn">ХОЧУ!</button>
+                        </div>
+                        <div>
+                            <img src="../static/stylesheets/images/profile/C++_lock.svg">
+                            <h1 class="order__h1">C++</h1>
+                            <button form="order" class="order_btn">ХОЧУ!</button>
+                        </div>
+                    </div>
 
 
-                    </form>
-                    <div class="profile__functions">
-                        <div class="achievements">
-                            <div class="achievements__name"><img src="../static/stylesheets/images/profile/achievements.svg"><a>Достижения</a></div>
-                            <div class="achievements__items">
-                                <div class="ach__items">
-                                    <div class="ach_sub_items" id="item__1"></div>
-                                    <div class="ach_sub_items" id="item__2"></div>
-                                </div>
-                                <div class="ach__items">
-                                    <div class="ach_sub_items" id="item__3"></div>
-                                    <div class="ach_sub_items" id="item__4"></div>
-                                </div>
+                </form>
+                <div class="profile__functions">
+                    <div class="achievements">
+                        <div class="achievements__name"><img
+                                src="../static/stylesheets/images/profile/achievements.svg"><a>Достижения</a></div>
+                        <div class="achievements__items">
+                            <div class="ach__items">
+                                <div class="ach_sub_items" id="item__1"></div>
+                                <div class="ach_sub_items" id="item__2"></div>
+                            </div>
+                            <div class="ach__items">
+                                <div class="ach_sub_items" id="item__3"></div>
+                                <div class="ach_sub_items" id="item__4"></div>
                             </div>
                         </div>
-                        <div class="functions">
-                            <div class="functions__top">
-                                <div class="some__func">
-                                    <img class="fnc__img" src="../static/stylesheets/images/profile/chek.svg">
-                                    <a>Прикрепить чек</a>
-                                    <img class="fnc__arrow" src="../static/stylesheets/images/profile/arrow.svg">
-                                </div>
-                                <div class="some__func">
-                                    <img class="fnc__img" src="../static/stylesheets/images/profile/test.svg">
-                                    <a>Задать <br> вопрос</a>
-                                    <img class="fnc__arrow" src="../static/stylesheets/images/profile/arrow.svg">
-                                </div>
+                    </div>
+                    <div class="functions">
+                        <div class="functions__top">
+                            <div class="some__func">
+                                <img class="fnc__img" src="../static/stylesheets/images/profile/chek.svg">
+                                <a>Прикрепить чек</a>
+                                <img class="fnc__arrow" src="../static/stylesheets/images/profile/arrow.svg">
                             </div>
-                            <div class="functions__bottom" onclick="openOrder()">
-                                <img class="fnc__img" src="../static/stylesheets/images/profile/select.svg">
-                                <a>Записаться на курс</a>
+                            <div class="some__func">
+                                <img class="fnc__img" src="../static/stylesheets/images/profile/test.svg">
+                                <a>Задать <br> вопрос</a>
                                 <img class="fnc__arrow" src="../static/stylesheets/images/profile/arrow.svg">
                             </div>
                         </div>
+                        <div class="functions__bottom" onclick="openOrder()">
+                            <img class="fnc__img" src="../static/stylesheets/images/profile/select.svg">
+                            <a>Записаться на курс</a>
+                            <img class="fnc__arrow" src="../static/stylesheets/images/profile/arrow.svg">
+                        </div>
                     </div>
                 </div>
-                <div class="inf__wrapper">
-                    <form method="post" action="/changing" id="change__inf">
-                        <div class="inf__form">
-                            <div class="inf__form_left">
-                                <div class="form-floating mb-2 input__div">
-                                    <a class="name invis">{{username}}</a>
-                                    <label class="cll" for="floatingInput1">Ваше имя</label>
-                                    <input type="text" class="form-control cstmm" name="name" id="name" placeholder="">
-                                </div>
-                                <div class="form-floating mb-2 input__div">
-                                    <a class="surname invis">{{usersurname}}</a>
-                                    <label class="cll" for="floatingInput1">Ваша фамилия</label>
-                                    <input type="text" class="form-control cstmm" name="surname" id="surname" placeholder="">
-                                </div>
-                                <div class="form-floating mb-2 input__div">
-                                    <a class="patronymic invis">{{patronymic}}</a>
-                                    <label class="cll" for="floatingInput1">Ваша отчество</label>
-                                    <input type="text" class="form-control cstmm" name="patronymic" id="patronymic" placeholder="">
-                                </div>
-
+            </div>
+            <div class="inf__wrapper">
+                <form method="post" action="/changing" id="change__inf">
+                    <div class="inf__form">
+                        <div class="inf__form_left">
+                            <div class="form-floating mb-2 input__div">
+                                <a class="name invis">{{username}}</a>
+                                <label class="cll" for="floatingInput1">Ваше имя</label>
+                                <input type="text" class="form-control cstmm" name="name" id="name" placeholder="">
                             </div>
-                            <div class="inf__form_right">
-                                <div class="form-floating mb-2 input__div tt">
-                                    <a class="DD invis">{{DD}}</a>
-                                    <a class="MM invis">{{MM}}</a>
-                                    <a class="YYYY invis">{{YYYY}}</a>
-                                    <label style="margin-bottom: 2rem" class="cll2" for="floatingInput1">Дата рождения</label>
-                                    <div>
-                                        <input maxlength="2" type="text" class="date" name="DD" id="DD" placeholder="" onKeyPress ="if ((event.keyCode < 48) || (event.keyCode > 57)) event.returnValue = false;">
-                                        <input maxlength="2" style="margin-left: 1rem" type="text" class="date" name="MM" id="MM" placeholder="" onKeyPress ="if ((event.keyCode < 48) || (event.keyCode > 57)) event.returnValue = false;">
-                                    </div>
-                                    <input style="margin-top: 1rem" maxlength="4" type="text" class="date1" name="YYYY" id="YYYY" placeholder="" onKeyPress ="if ((event.keyCode < 48) || (event.keyCode > 57)) event.returnValue = false;">
+                            <div class="form-floating mb-2 input__div">
+                                <a class="surname invis">{{usersurname}}</a>
+                                <label class="cll" for="floatingInput1">Ваша фамилия</label>
+                                <input type="text" class="form-control cstmm" name="surname" id="surname"
+                                    placeholder="">
+                            </div>
+                            <div class="form-floating mb-2 input__div">
+                                <a class="patronymic invis">{{patronymic}}</a>
+                                <label class="cll" for="floatingInput1">Ваша отчество</label>
+                                <input type="text" class="form-control cstmm" name="patronymic" id="patronymic"
+                                    placeholder="">
+                            </div>
+
+                        </div>
+                        <div class="inf__form_right">
+                            <div class="form-floating mb-2 input__div tt">
+                                <a class="DD invis">{{DD}}</a>
+                                <a class="MM invis">{{MM}}</a>
+                                <a class="YYYY invis">{{YYYY}}</a>
+                                <label style="margin-bottom: 2rem" class="cll2" for="floatingInput1">Дата
+                                    рождения</label>
+                                <div>
+                                    <input maxlength="2" type="text" class="date" name="DD" id="DD" placeholder=""
+                                        onKeyPress="if ((event.keyCode < 48) || (event.keyCode > 57)) event.returnValue = false;">
+                                    <input maxlength="2" style="margin-left: 1rem" type="text" class="date" name="MM"
+                                        id="MM" placeholder=""
+                                        onKeyPress="if ((event.keyCode < 48) || (event.keyCode > 57)) event.returnValue = false;">
                                 </div>
-                                <div class="form-floating mb-2 input__div" style="margin-top: 15vh">
-                                    <a class="email invis">{{email}}</a>
-                                    <label class="cll" for="floatingInput1">Ваш email</label>
-                                    <input type="text" class="form-control cstmm" name="email" id="email" placeholder="">
-                                </div>
+                                <input style="margin-top: 1rem" maxlength="4" type="text" class="date1" name="YYYY"
+                                    id="YYYY" placeholder=""
+                                    onKeyPress="if ((event.keyCode < 48) || (event.keyCode > 57)) event.returnValue = false;">
+                            </div>
+                            <div class="form-floating mb-2 input__div" style="margin-top: 15vh">
+                                <a class="email invis">{{email}}</a>
+                                <label class="cll" for="floatingInput1">Ваш email</label>
+                                <input type="text" class="form-control cstmm" name="email" id="email" placeholder="">
                             </div>
                         </div>
-                        <div class="inf__buttons">
-                            <button class="inf__btn" type="submit" form="change__inf">Подтвердить</button>
-                            <div class="inf__btn" id="resetbutton" onclick="clearAll()">Отмена</div>
-                        </div>
-                    </form>
-                </div>
-                <div class="settings__wrapper"></div>
-            </section>
+                    </div>
+                    <div class="inf__buttons">
+                        <button class="inf__btn" type="submit" form="change__inf">Подтвердить</button>
+                        <div class="inf__btn" id="resetbutton" onclick="clearAll()">Отмена</div>
+                    </div>
+                </form>
+            </div>
+            <div class="settings__wrapper"></div>
+        </section>
 
 
 
 
 
-<!--            <form method="post" action="/logout">-->
-<!--                <div class="preview-wrapper">-->
-<!--                    <h2>-->
-<!--                        <div class="preview-wrapper__school-title">Добро Пожаловать, {{username}}</div>-->
-<!--                    </h2>-->
-<!--                    <h3 class="preview-wrapper__h3">Мы рады, что Вы выбрали нас</h3>-->
-<!--                    <button class="preview-wrapper__button button">Выйти</button>-->
-<!--                </div>-->
-<!--            </form>-->
+        <!--            <form method="post" action="/logout">-->
+        <!--                <div class="preview-wrapper">-->
+        <!--                    <h2>-->
+        <!--                        <div class="preview-wrapper__school-title">Добро Пожаловать, {{username}}</div>-->
+        <!--                    </h2>-->
+        <!--                    <h3 class="preview-wrapper__h3">Мы рады, что Вы выбрали нас</h3>-->
+        <!--                    <button class="preview-wrapper__button button">Выйти</button>-->
+        <!--                </div>-->
+        <!--            </form>-->
 
     </section>
 

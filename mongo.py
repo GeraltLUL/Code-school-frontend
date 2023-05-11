@@ -7,18 +7,9 @@ import uuid
 
 
 class User(UserMixin):
-    id = ''
-    name = ''
-    surname = ''
-    email = ''
-    password = ''
-    avatar = ''
-    patronymic = ''
-    DD = ''
-    MM = ''
-    YYYY = ''
+    id = name = surname = email = password = avatar = patronymic = DD = MM = YYYY = ''
 
-    def __init__(self, id, name, surname, patronymic, email, password, DD, MM, YYYY, avatar):
+    def __init__(self, id, name, surname, patronymic, email, password, DD, MM, YYYY, avatar, awards):
         self.id = id
         self.name = name
         self.surname = surname
@@ -29,6 +20,7 @@ class User(UserMixin):
         self.MM = MM
         self.YYYY = YYYY
         self.avatar = avatar
+        self.awards = awards
 
     def get_id(self):
         return self.id
@@ -43,7 +35,7 @@ class User(UserMixin):
         return False
 
 
-def create_record(name, surname, patronymic, email, password, DD, MM, YYYY):
+def create_record(name, surname, patronymic, email, password, DD, MM, YYYY, awards):
     app.users_col.insert_one({
         'id': str(uuid.uuid4()),
         'name': name,
@@ -54,6 +46,7 @@ def create_record(name, surname, patronymic, email, password, DD, MM, YYYY):
         'DD': DD,
         'MM': MM,
         'YYYY': YYYY,
+        'awards': awards,
         'avatar': 'user_tmp_example.png',
     })
 
@@ -70,7 +63,8 @@ def find_user_by_id(user_id):
                     DD=cur_user['DD'],
                     MM=cur_user['MM'],
                     YYYY=cur_user['YYYY'],
-                    avatar=cur_user['avatar'])
+                    avatar=cur_user['avatar'],
+                    awards=cur_user['awards'])
     else:
         return None
 
@@ -87,7 +81,8 @@ def find_user_by_email(value):
                     DD=cur_user['DD'],
                     MM=cur_user['MM'],
                     YYYY=cur_user['YYYY'],
-                    avatar=cur_user['avatar'])
+                    avatar=cur_user['avatar'],
+                    awards=cur_user['awards'])
     else:
         return None
 

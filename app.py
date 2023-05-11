@@ -1,3 +1,8 @@
+import smtplib as smtp
+from email.mime.text import MIMEText
+from email.header import Header
+
+import requests
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from flask import render_template, redirect, url_for, session, Flask, request
 from flask_cors import CORS
@@ -7,6 +12,7 @@ import os
 
 # Flask config
 app = Flask(__name__)
+
 # app.config['SECRET_KEY'] = os.getenv('FLASK_KEY')
 app.config['SECRET_KEY'] = "super secret key"
 app.config['JSON_AS_ASCII'] = False
@@ -66,7 +72,24 @@ def auth():
 def sendmail():
     if request.method == 'POST':
         try:
-            pass
+            name = request.form.get('name')
+            email = request.form.get('email')
+            msg = request.form.get('message')
+            login = 'codeschool48@gmail.com'
+            password = 'fyuznnkwfsblxgur'
+
+            server = smtp.SMTP('smtp.gmail.com', 587)
+            server.starttls()
+            server.login(login, password)
+
+            subject = f'Вопрос от {name} ({email})'
+            text = msg
+
+            mime = MIMEText(text, 'plain', 'utf-8')
+            mime['Subject'] = Header(subject, 'utf-8')
+
+            server.sendmail(login, 'codeschool48@gmail.com', mime.as_string())
+
 
         except Exception as e:
             print(e)
@@ -85,12 +108,6 @@ def profile():
     MM = current_user.MM
     YYYY = current_user.YYYY
 
-    if DD == '':
-        DD = "ДД"
-    if MM == '':
-        MM = "ММ"
-    if YYYY == '':
-        YYYY = "ГГГГ"
     return render_template('profile.html', username=current_user.name, usersurname=current_user.surname,
                            patronymic=current_user.patronymic, email=current_user.email, DD=DD,
                            MM=MM, YYYY=YYYY)
@@ -112,33 +129,15 @@ def updateInf():
             YYYY = request.form.get('YYYY')
             email = request.form.get('email')
 
-            if 0 < int(MM) <= 12:
-                if int(MM) % 2 == 0:
-                    if int(MM) == 2:
-                        if 0 < int(DD) <= 29:
-                            pass
-                        else:
-                            return redirect(url_for('profile'))
-                    else:
-                        if 0 < int(DD) <= 30:
-                            pass
-                        else:
-                            return redirect(url_for('profile'))
-                else:
-                    if 0 < int(DD) <= 31:
-                        pass
-                    else:
-                        return redirect(url_for('profile'))
-            else:
+            if (int(MM) > 12 or int(MM) < 0) or (int(DD) < 0 or int(DD) > 31) or (int(YYYY) > 2023 or int(YYYY) < 2000):
                 return redirect(url_for('profile'))
 
-            return redirect(url_for('profile'))
-
             # ???????????? КАК ЭТОЙ ХУЙНЕЙ ПОЛЬЗОВАТЬСЯ?!?!
-            # update_record()
+            # update_record('ss', 'sss')+
 
         except Exception as e:
             print(e)
+    return redirect(url_for('profile'))
 
 
 # Login
@@ -183,9 +182,10 @@ def register():
             DD = ''
             MM = ''
             YYYY = ''
+            awards = ['scratch', 'cpp']
 
             if cur_user is None and password == password2 and len(password) >= 1:
-                create_record(name, surname, patronymic, email, password, DD, MM, YYYY)
+                create_record(name, surname, patronymic, email, password, DD, MM, YYYY, awards)
                 cur_user = find_user_by_email(email)
                 session['username'] = name
                 session['id'] = cur_user.id
