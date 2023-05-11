@@ -44,6 +44,13 @@ function openOrder(){
 }
 
 
+function closeAddfile(){
+    document.querySelector('.addfile__form').style.display = "none";
+}
+function openAddfile(){
+    document.querySelector('.addfile__form').style.display = "flex";
+}
+
 
 document.body.onload = function (){
     setTimeout(function (){
