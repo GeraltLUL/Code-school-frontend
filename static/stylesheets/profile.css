@@ -136,6 +136,8 @@ body{
 
 	cursor: url('images/link.cur'), pointer;
 	transition: 0.2s;
+
+	z-index: 9999;
 }
 .profile__buttons > img{
 	width: 4vw;
