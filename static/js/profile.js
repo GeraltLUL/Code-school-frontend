@@ -36,6 +36,13 @@ window.addEventListener('scroll', e => {
     }
 })
 
+function closeOrder(){
+    document.querySelector('.order__form').style.display = "none";
+}
+function openOrder(){
+    document.querySelector('.order__form').style.display = "block";
+}
+
 
 
 document.body.onload = function (){

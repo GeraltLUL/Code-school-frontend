@@ -101,6 +101,38 @@
                 </div>
                 <div class="home__wrapper">
                     <h1 class="FIO">{{username}} {{usersurname}}</h1>
+                    <form method="post" action="/order" class="order__form" id="order">
+                        <div class="order__close" onclick="closeOrder()"><a>CLOSE!!</a></div>
+                        <div class="order__wrapper">
+                            <div>
+                                <img src="../static/stylesheets/images/profile/Python.svg">
+                                <h1 class="order__h1">Python 1</h1>
+                                <button form="order" class="order_btn">ХОЧУ!</button>
+                            </div>
+                            <div>
+                                <img src="../static/stylesheets/images/profile/Python.svg">
+                                <h1 class="order__h1">Python 2</h1>
+                                <button form="order" class="order_btn">ХОЧУ!</button>
+                            </div>
+                            <div>
+                                <img src="../static/stylesheets/images/profile/Python.svg">
+                                <h1 class="order__h1">Python 3</h1>
+                                <button form="order" class="order_btn">ХОЧУ!</button>
+                            </div>
+                            <div>
+                                <img src="../static/stylesheets/images/profile/Python.svg">
+                                <h1 class="order__h1">Python 4</h1>
+                                <button form="order" class="order_btn">ХОЧУ!</button>
+                            </div>
+                            <div>
+                                <img src="../static/stylesheets/images/profile/Python.svg">
+                                <h1 class="order__h1">Python 5</h1>
+                                <button form="order" class="order_btn">ХОЧУ!</button>
+                            </div>
+                        </div>
+
+
+                    </form>
                     <div class="profile__functions">
                         <div class="achievements">
                             <div class="achievements__name"><img src="../static/stylesheets/images/profile/achievements.svg"><a>Достижения</a></div>
@@ -118,19 +150,19 @@
                         <div class="functions">
                             <div class="functions__top">
                                 <div class="some__func">
-                                    <img class="fnc__img" src="../static/stylesheets/images/profile/select.svg">
-                                    <a>Записаться на курс</a>
+                                    <img class="fnc__img" src="../static/stylesheets/images/profile/chek.svg">
+                                    <a>Прикрепить чек</a>
                                     <img class="fnc__arrow" src="../static/stylesheets/images/profile/arrow.svg">
                                 </div>
                                 <div class="some__func">
                                     <img class="fnc__img" src="../static/stylesheets/images/profile/test.svg">
-                                    <a>Записаться на тест</a>
+                                    <a>Задать <br> вопрос</a>
                                     <img class="fnc__arrow" src="../static/stylesheets/images/profile/arrow.svg">
                                 </div>
                             </div>
-                            <div class="functions__bottom">
-                                <img class="fnc__img" src="../static/stylesheets/images/profile/test.svg">
-                                <a>Записаться на тест</a>
+                            <div class="functions__bottom" onclick="openOrder()">
+                                <img class="fnc__img" src="../static/stylesheets/images/profile/select.svg">
+                                <a>Записаться на курс</a>
                                 <img class="fnc__arrow" src="../static/stylesheets/images/profile/arrow.svg">
                             </div>
                         </div>
