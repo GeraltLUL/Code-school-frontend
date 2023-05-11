@@ -111,98 +111,102 @@
                         <div>
                             <img src="../static/stylesheets/images/profile/Python.svg">
                             <h1 class="order__h1">Python</h1>
-                            <button form="order" class="order_btn">ХОЧУ!</button>
-                        </div>
-                        <div>
-                            <img src="../static/stylesheets/images/profile/scratch_lock.svg">
-                            <h1 class="order__h1">Scratch</h1>
-                            <button form="order" class="order_btn">ХОЧУ!</button>
-                        </div>
-                        <div>
-                            <img src="../static/stylesheets/images/profile/C++_lock.svg">
-                            <h1 class="order__h1">C++</h1>
-                            <button form="order" class="order_btn">ХОЧУ!</button>
+                            <button form="order" value="Python" name="program" class="order_btn">ХОЧУ!</button>
                         </div>
                         <div>
                             <img src="../static/stylesheets/images/profile/Python.svg">
-                            <h1 class="order__h1">Python</h1>
-                            <button form="order" class="order_btn">ХОЧУ!</button>
-                        </div>
-                        <div>
-                            <img src="../static/stylesheets/images/profile/scratch_lock.svg">
                             <h1 class="order__h1">Scratch</h1>
-                            <button form="order" class="order_btn">ХОЧУ!</button>
+                            <button form="order" value="Scratch" name="program" class="order_btn">ХОЧУ!</button>
                         </div>
                         <div>
-                            <img src="../static/stylesheets/images/profile/C++_lock.svg">
+                            <img src="../static/stylesheets/images/profile/Python.svg">
                             <h1 class="order__h1">C++</h1>
-                            <button form="order" class="order_btn">ХОЧУ!</button>
+                            <button form="order" value="C++" name="program" class="order_btn">ХОЧУ!</button>
+                        </div>
+                        <div>
+                            <img src="../static/stylesheets/images/profile/Python.svg">
+                            <h1 class="order__h1">Java</h1>
+                            <button form="order" value="Java" name="program" class="order_btn">ХОЧУ!</button>
+                        </div>
+                        <div>
+                            <img src="../static/stylesheets/images/profile/Python.svg">
+                            <h1 class="order__h1">Data science</h1>
+                            <button form="order" value="Data science" name="program" class="order_btn">ХОЧУ!</button>
+                        </div>
+                        <div>
+                            <img src="../static/stylesheets/images/profile/Python.svg">
+                            <h1 class="order__h1">Java</h1>
+                            <button form="order" value="Java" name="program" class="order_btn">ХОЧУ!</button>
                         </div>
                     </div>
 
 
-                    </form>
-                    <form method="post" action="/addfile" class="addfile__form" id="addfile">
-                        <div class="addfile__close" onclick="closeAddfile()"><a>CLOSE!!</a></div>
-                        <p>
-                            <input type="file" name="f">
-                            <input type="submit" value="Отправить" form="addfile">
-                        </p>
-                    </form>
-                    <div class="profile__functions">
-                        <div class="achievements">
-                            <div class="achievements__name"><img src="../static/stylesheets/images/profile/achievements.svg"><a>Достижения</a></div>
-                            <div class="achievements__items">
-                                <div class="ach__items">
-                                    <div class="ach_sub_items" id="item__1"></div>
-                                    <div class="ach_sub_items" id="item__2"></div>
-                                </div>
-                                <div class="ach__items">
-                                    <div class="ach_sub_items" id="item__3"></div>
-                                    <div class="ach_sub_items" id="item__4"></div>
-                                </div>
+                </form>
+                <form method="post" action="/uploadcheck" class="addfile__form" id="addfile"
+                    enctype="multipart/form-data">
+                    <div class="addfile__close" onclick="closeAddfile()"><a>CLOSE!!</a></div>
+                    <p>
+                        <input type="file" name="check" accept=".pdf">
+                        <input type="submit" value="Отправить" form="addfile">
+                    </p>
+                </form>
+                <div class="profile__functions">
+                    <div class="achievements">
+                        <div class="achievements__name"><img
+                                src="../static/stylesheets/images/profile/achievements.svg"><a>Достижения</a></div>
+                        <div class="achievements__items">
+                            <div class="ach__items">
+                                <div class="ach_sub_items" id="item__1"></div>
+                                <div class="ach_sub_items" id="item__2"></div>
+                            </div>
+                            <div class="ach__items">
+                                <div class="ach_sub_items" id="item__3"></div>
+                                <div class="ach_sub_items" id="item__4"></div>
                             </div>
                         </div>
-                        <div class="functions">
-                            <div class="functions__top">
-                                <div class="some__func" onclick="openAddfile()">
-                                    <img class="fnc__img" src="../static/stylesheets/images/profile/chek.svg">
-                                    <a>Прикрепить чек</a>
-                                    <img class="fnc__arrow" src="../static/stylesheets/images/profile/arrow.svg">
-                                </div>
-                                <div class="some__func">
-                                    <img class="fnc__img" src="../static/stylesheets/images/profile/test.svg">
-                                    <a>Задать <br> вопрос</a>
-                                    <img class="fnc__arrow" src="../static/stylesheets/images/profile/arrow.svg">
-                                </div>
+                    </div>
+                    <div class="functions">
+                        <div class="functions__top">
+                            <div class="some__func" onclick="openAddfile()">
+                                <img class="fnc__img" src="../static/stylesheets/images/profile/chek.svg">
+                                <a>Прикрепить чек</a>
+                                <img class="fnc__arrow" src="../static/stylesheets/images/profile/arrow.svg">
                             </div>
-                            <div class="functions__bottom" onclick="openOrder()">
-                                <img class="fnc__img" src="../static/stylesheets/images/profile/select.svg">
-                                <a>Записаться на курс</a>
+                            <div class="some__func" onclick="location.href='/FAQ'">
+                                <img class="fnc__img" src="../static/stylesheets/images/profile/test.svg">
+                                <a>Задать <br> вопрос</a>
                                 <img class="fnc__arrow" src="../static/stylesheets/images/profile/arrow.svg">
                             </div>
                         </div>
+                        <div class="functions__bottom" onclick="openOrder()">
+                            <img class="fnc__img" src="../static/stylesheets/images/profile/select.svg">
+                            <a>Записаться на курс</a>
+                            <img class="fnc__arrow" src="../static/stylesheets/images/profile/arrow.svg">
+                        </div>
                     </div>
                 </div>
-                <div class="inf__wrapper">
-                    <form method="post" action="/changing" id="change__inf">
-                        <div class="inf__form">
-                            <div class="inf__form_left">
-                                <div class="form-floating mb-2 input__div">
-                                    <a class="name invis">{{username}}</a>
-                                    <label class="cll" for="floatingInput1">Ваше имя</label>
-                                    <input type="text" class="form-control cstmm" name="name" id="name" placeholder="">
-                                </div>
-                                <div class="form-floating mb-2 input__div">
-                                    <a class="surname invis">{{usersurname}}</a>
-                                    <label class="cll" for="floatingInput1">Ваша фамилия</label>
-                                    <input type="text" class="form-control cstmm" name="surname" id="surname" placeholder="">
-                                </div>
-                                <div class="form-floating mb-2 input__div">
-                                    <a class="patronymic invis">{{patronymic}}</a>
-                                    <label class="cll" for="floatingInput1">Ваша отчество</label>
-                                    <input type="text" class="form-control cstmm" name="patronymic" id="patronymic" placeholder="">
-                                </div>
+            </div>
+            <div class="inf__wrapper">
+                <form method="post" action="/changing" id="change__inf">
+                    <div class="inf__form">
+                        <div class="inf__form_left">
+                            <div class="form-floating mb-2 input__div">
+                                <a class="surname invis">{{usersurname}}</a>
+                                <label class="cll" for="floatingInput1">Ваша фамилия</label>
+                                <input type="text" class="form-control cstmm" name="surname" id="surname"
+                                    placeholder="">
+                            </div>
+                            <div class="form-floating mb-2 input__div">
+                                <a class="name invis">{{username}}</a>
+                                <label class="cll" for="floatingInput1">Ваше имя</label>
+                                <input type="text" class="form-control cstmm" name="name" id="name" placeholder="">
+                            </div>
+                            <div class="form-floating mb-2 input__div">
+                                <a class="patronymic invis">{{patronymic}}</a>
+                                <label class="cll" for="floatingInput1">Ваша отчество</label>
+                                <input type="text" class="form-control cstmm" name="patronymic" id="patronymic"
+                                    placeholder="">
+                            </div>
 
                         </div>
                         <div class="inf__form_right">
@@ -226,7 +230,8 @@
                             <div class="form-floating mb-2 input__div" style="margin-top: 15vh">
                                 <a class="email invis">{{email}}</a>
                                 <label class="cll" for="floatingInput1">Ваш email</label>
-                                <input type="text" class="form-control cstmm" name="email" id="email" placeholder="">
+                                <input readonly type="text" class="form-control cstmm" name="email" id="email"
+                                    placeholder="">
                             </div>
                         </div>
                     </div>

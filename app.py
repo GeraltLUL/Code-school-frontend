@@ -1,12 +1,16 @@
 import smtplib as smtp
 from email.mime.text import MIMEText
 from email.header import Header
-
+from email.mime.application import MIMEApplication
+from email.mime.multipart import MIMEMultipart
+from datetime import datetime
 import requests
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from flask import render_template, redirect, url_for, session, Flask, request
 from flask_cors import CORS
 from pymongo import MongoClient
+from werkzeug.utils import secure_filename
+
 from mongo import *
 import os
 
@@ -15,6 +19,7 @@ app = Flask(__name__)
 
 # app.config['SECRET_KEY'] = os.getenv('FLASK_KEY')
 app.config['SECRET_KEY'] = "super secret key"
+app.config['UPLOAD_FOLDER'] = './static/data/checks/'
 app.config['JSON_AS_ASCII'] = False
 app.config['SECURITY_UNAUTHORIZED_VIEW'] = '/login'
 app.config.from_object(__name__)
@@ -23,6 +28,8 @@ CORS(app)
 client = MongoClient('mongodb+srv://Server1:hvdz6OpEEbuUROKF@stl-cluster.ymx42wl.mongodb.net/test')
 db = client['STL']
 users_col = db['users']
+orders_col = db['orders']
+checks_col = db['checks']
 
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
@@ -75,12 +82,10 @@ def sendmail():
             name = request.form.get('name')
             email = request.form.get('email')
             msg = request.form.get('message')
-            login = 'codeschool48@gmail.com'
-            password = 'fyuznnkwfsblxgur'
 
             server = smtp.SMTP('smtp.gmail.com', 587)
             server.starttls()
-            server.login(login, password)
+            server.login(os.getenv('email_login'), os.getenv('email_password'))
 
             subject = f'Вопрос от {name} ({email})'
             text = msg
@@ -88,7 +93,8 @@ def sendmail():
             mime = MIMEText(text, 'plain', 'utf-8')
             mime['Subject'] = Header(subject, 'utf-8')
 
-            server.sendmail(login, 'codeschool48@gmail.com', mime.as_string())
+            server.sendmail(os.getenv('email_login'), 'codeschool48@gmail.com', mime.as_string())
+            server.quit()
 
 
         except Exception as e:
@@ -108,18 +114,161 @@ def profile():
     MM = current_user.MM
     YYYY = current_user.YYYY
 
+    if DD == '':
+        DD = 'ДД'
+    if MM == '':
+        MM = 'ММ'
+    if YYYY == '':
+        YYYY = 'YYYY'
+
     return render_template('profile.html', username=current_user.name, usersurname=current_user.surname,
                            patronymic=current_user.patronymic, email=current_user.email, DD=DD,
                            MM=MM, YYYY=YYYY)
 
 
+
+# enroll
+@app.route('/order', methods=['POST', 'GET'])
+def order():
+    if request.method == 'POST' and current_user.is_authenticated:
+        current_datetime = datetime.datetime.now()
+
+        day = str(current_datetime.day)
+        month = str(current_datetime.month)
+        hour = str(current_datetime.hour)
+        minutes = str(current_datetime.minute)
+        year = str(current_datetime.year)
+        program = request.form.get('program')
+
+        if len(day) == 1:
+            day = '0' + day
+        if len(month) == 1:
+            month = '0' + month
+        if len(hour) == 1:
+            hour = '0' + hour
+        if len(minutes) == 1:
+            minutes = '0' + minutes
+
+        try:
+            server = smtp.SMTP('smtp.gmail.com', 587)
+            server.starttls()
+            server.login(os.getenv('email_login'), os.getenv('email_password'))
+
+            subject = f'Новая запись'
+            text = f'Пользователь {current_user.surname} {current_user.name} ' \
+                   f'{current_user.patronymic} отправил новый запрос на запись.\n' \
+                   f'Программа: {program}\n' \
+                   f'email:{current_user.email} \n' \
+                   f'Дата записи: {day}.{month}.{year}\n' \
+                   f'Время записи: {hour}:{minutes}'
+
+            mime = MIMEText(text, 'plain', 'utf-8')
+            mime['Subject'] = Header(subject, 'utf-8')
+
+            server.sendmail(os.getenv('email_login'), 'codeschool48@gmail.com', mime.as_string())
+            server.quit()
+
+            create_order(current_user.surname,
+                         current_user.name,
+                         current_user.patronymic,
+                         current_user.email,
+                         hour,
+                         minutes,
+                         year,
+                         month,
+                         day,
+                         program,
+                         'Success')
+        except Exception as e:
+            print(e)
+            create_order(current_user.surname,
+                         current_user.name,
+                         current_user.patronymic,
+                         current_user.email,
+                         hour,
+                         minutes,
+                         year,
+                         month,
+                         day,
+                         program,
+                         'Error')
+    return redirect(url_for('profile'))
+
+
+# Uploading pdf in storage
+@app.route('/uploadcheck', methods=['GET', 'POST'])
+@login_required
+def upload_file():
+    if request.method == 'POST':
+        try:
+            file = request.files['check']
+            file_name = secure_filename(file.filename)
+
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], file_name))
+            current_datetime = datetime.datetime.now()
+
+            day = str(current_datetime.day)
+            month = str(current_datetime.month)
+            hour = str(current_datetime.hour)
+            minutes = str(current_datetime.minute)
+            year = str(current_datetime.year)
+
+            if len(day) == 1:
+                day = '0' + day
+            if len(month) == 1:
+                month = '0' + month
+            if len(hour) == 1:
+                hour = '0' + hour
+            if len(minutes) == 1:
+                minutes = '0' + minutes
+
+            if current_user.is_authenticated:
+                server = smtp.SMTP('smtp.gmail.com', 587)
+                server.starttls()
+                server.login(os.getenv('email_login'), os.getenv('email_password'))
+
+                subject = f'Чек об оплате обучения'
+                text = f'Пользователь {current_user.surname} {current_user.name} ' \
+                       f'{current_user.patronymic} отправил новый чек об оплате обучения.\n' \
+                       f'email:{current_user.email} \n' \
+                       f'Дата отправки: {day}.{month}.{year}\n' \
+                       f'Время отправки: {hour}:{minutes}'
+
+                mime = MIMEMultipart()
+                mime['Subject'] = Header(subject, 'utf-8')
+                mime.attach(MIMEText(text, 'plain', 'utf-8'))
+
+                attachment = MIMEApplication(file.read(), _subtype='pdf')
+                attachment.add_header('Content-Disposition', 'attachment', filename=file.filename)
+                mime.attach(attachment)
+
+                server.sendmail(os.getenv('email_login'), 'codeschool48@gmail.com', mime.as_string())
+                server.quit()
+
+                create_check(current_user.surname,
+                             current_user.name,
+                             current_user.patronymic,
+                             current_user.email,
+                             hour,
+                             minutes,
+                             year,
+                             month,
+                             day,
+                             file_name,
+                             'Success')
+        except Exception as e:
+
+            print(e)
+
+    return redirect(url_for('profile'))
+
+
+
+
 # Update inf
 @app.route('/changing', methods=['POST', 'GET'])
 def updateInf():
-    if current_user.is_authenticated:
-        return redirect(url_for('profile'))
-
-    if request.method == 'POST':
+    if request.method == 'POST' and current_user.is_authenticated:
         try:
             name = request.form.get('name')
             surname = request.form.get('surname')
@@ -129,11 +278,32 @@ def updateInf():
             YYYY = request.form.get('YYYY')
             email = request.form.get('email')
 
+            d = DD
+            m = MM
+            y = YYYY
+
+            if not YYYY.isnumeric():
+                YYYY = 2020
+            if not DD.isnumeric():
+                DD = 1
+            if not MM.isnumeric():
+                MM = 1
+
             if (int(MM) > 12 or int(MM) < 0) or (int(DD) < 0 or int(DD) > 31) or (int(YYYY) > 2023 or int(YYYY) < 2000):
                 return redirect(url_for('profile'))
 
-            # ???????????? КАК ЭТОЙ ХУЙНЕЙ ПОЛЬЗОВАТЬСЯ?!?!
-            # update_record('ss', 'sss')+
+            if len(m) == 1:
+                m = '0' + m
+
+            if len(d) == 1:
+                d = '0' + d
+
+            update_record('email', email, 'DD', d)
+            update_record('email', email, 'MM', m)
+            update_record('email', email, 'YYYY', y)
+            update_record('email', email, 'name', name)
+            update_record('email', email, 'surname', surname)
+            update_record('email', email, 'patronymic', patronymic)
 
         except Exception as e:
             print(e)
@@ -185,7 +355,7 @@ def register():
             awards = ['scratch', 'cpp']
 
             if cur_user is None and password == password2 and len(password) >= 1:
-                create_record(name, surname, patronymic, email, password, DD, MM, YYYY, awards)
+                create_user(name, surname, patronymic, email, password, DD, MM, YYYY, awards)
                 cur_user = find_user_by_email(email)
                 session['username'] = name
                 session['id'] = cur_user.id

@@ -35,7 +35,7 @@ class User(UserMixin):
         return False
 
 
-def create_record(name, surname, patronymic, email, password, DD, MM, YYYY, awards):
+def create_user(name, surname, patronymic, email, password, DD, MM, YYYY, awards):
     app.users_col.insert_one({
         'id': str(uuid.uuid4()),
         'name': name,
@@ -48,6 +48,38 @@ def create_record(name, surname, patronymic, email, password, DD, MM, YYYY, awar
         'YYYY': YYYY,
         'awards': awards,
         'avatar': 'user_tmp_example.png',
+    })
+
+def create_order(surname, name, patronymic, email, hours, minutes, year, month, day, program, status):
+    app.orders_col.insert_one({
+        'id': str(uuid.uuid4()),
+        'name': name,
+        'surname': surname,
+        'patronymic': patronymic,
+        'email': email,
+        'hours': hours,
+        'minutes': minutes,
+        'year': year,
+        'month': month,
+        'day': day,
+        'program': program,
+        'status': status
+    })
+
+def create_check(surname, name, patronymic, email, hours, minutes, year, month, day, filename, status):
+    app.checks_col.insert_one({
+        'id': str(uuid.uuid4()),
+        'name': name,
+        'surname': surname,
+        'patronymic': patronymic,
+        'email': email,
+        'hours': hours,
+        'minutes': minutes,
+        'year': year,
+        'month': month,
+        'day': day,
+        'filename': filename,
+        'status': status
     })
 
 
