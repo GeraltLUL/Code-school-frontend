@@ -577,8 +577,8 @@ input::placeholder{
 	left: 0;
 	top: 17vw;
 
-	/*display: none;*/
-	display: block;
+	display: none;
+	/*display: block;*/
 
 	width: 100%;
 	/*height: 100vh;*/
