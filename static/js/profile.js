@@ -1,5 +1,5 @@
 function activateHome(){
-    document.querySelector('.home__wrapper').style.display = "block";
+    document.querySelector('.home__wrapper').style.display = "flex";
     document.querySelector('.inf__wrapper').style.display = "none";
     document.querySelector('.settings__wrapper').style.display = "none";
 
@@ -22,7 +22,7 @@ function activateInf(){
 function activateSettings(){
     document.querySelector('.home__wrapper').style.display = "none";
     document.querySelector('.inf__wrapper').style.display = "none";
-    document.querySelector('.settings__wrapper').style.display = "block";
+    document.querySelector('.settings__wrapper').style.display = "flex";
 
     document.querySelector(".profile__home").classList.remove("active_btn");
     document.querySelector(".profile__inf").classList.remove("active_btn");
@@ -37,10 +37,15 @@ window.addEventListener('scroll', e => {
 })
 
 function closeOrder(){
+
     document.querySelector('.order__form').style.display = "none";
+    document.querySelector('.preview').style.paddingBottom = "10rem";
 }
 function openOrder(){
     document.querySelector('.order__form').style.display = "block";
+
+    document.querySelector('.preview').style.paddingBottom = "80rem";
+
 }
 
 

@@ -105,9 +105,9 @@
                 </div>
             </div>
             <div class="home__wrapper">
-                <h1 class="FIO">{{username}} {{usersurname}}</h1>
+                <h1 class="FIO">{{username}} <br> {{usersurname}}</h1>
                 <form method="post" action="/order" class="order__form" id="order">
-                    <div class="order__close" onclick="closeOrder()"><a>CLOSE!!</a></div>
+                    <div class="order__close" onclick="closeOrder()"><a>X</a></div>
                     <div class="order__wrapper">
                         <div class="order__block">
                             <div class="order__top__block">
@@ -186,7 +186,7 @@
                 </form>
                 <form method="post" action="/uploadcheck" class="addfile__form" id="addfile"
                     enctype="multipart/form-data">
-                    <div class="addfile__close" onclick="closeAddfile()"><a>CLOSE!!</a></div>
+                    <div class="addfile__close" onclick="closeAddfile()"><a>X</a></div>
                     <p>
                         <input type="file" name="check" accept=".pdf">
                         <input type="submit" value="Отправить" form="addfile">
@@ -269,7 +269,7 @@
                                     id="YYYY" placeholder=""
                                     onKeyPress="if ((event.keyCode < 48) || (event.keyCode > 57)) event.returnValue = false;">
                             </div>
-                            <div class="form-floating mb-2 input__div" style="margin-top: 15vh">
+                            <div class="form-floating mb-2 input__div mobile pc">
                                 <a class="email invis">{{email}}</a>
                                 <label class="cll" for="floatingInput1">Ваш email</label>
                                 <input readonly type="text" class="form-control cstmm" name="email" id="email"
@@ -283,7 +283,9 @@
                     </div>
                 </form>
             </div>
-            <div class="settings__wrapper"></div>
+            <div class="settings__wrapper">
+                <h1>Больше полезных функций в будущем!</h1>
+            </div>
         </section>
 
 

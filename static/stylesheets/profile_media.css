@@ -1,12 +1,18 @@
 @media (max-width: 600px) {
     .header-preview-wrapper{
         width: 100vw;
+        min-height: 200vh;
         overflow-x: hidden;
     }
+
+
 
     body{
         overflow-x: hidden;
     }
+
+
+
 
     #grad2{
         margin-right:30vw;
@@ -29,7 +35,10 @@
     }
 
     .preview{
+        width: 90vw;
         margin-top: 12vh;
+
+        padding-bottom: 20vh;
     }
 
     .sub__blocks{
@@ -48,9 +57,25 @@
         justify-content: right;
     }
 
+    .home__wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+            /*background-color: red;*/
+        width: 80vw;
+    }
+
     .profile__buttons{
-        width: 10vw;
-        height: 10vw;
+        width: 15vw;
+        height: 15vw;
+        /*margin-top: 1vh;*/
+    }
+
+    .profile__buttons > img{
+        width: 8vw;
+        height: 8vw;
     }
 
     .mainlogo{
@@ -58,15 +83,22 @@
     }
 
     .sub__buttons{
+        width: 80vw;
         top: 20vw;
     }
 
+
+    .settings__wrapper > h1{
+        font-size: 5vw;
+        margin-top: 25vh;
+    }
+
     .FIO{
-        margin-left: 6vw;
+        /*margin-left: 15vw;*/
 
-        font-size: 3rem;
+        font-size: 2.8rem;
 
-        margin-top: 10vh;
+        margin-top: 13vh;
         max-width: 50vw;
         left: 50%;
     }
@@ -83,9 +115,12 @@
     .achievements{
         padding: 2rem 2rem 2rem 2rem;
         gap: 6%;
+        padding-bottom: 5rem;
     }
     .ach_sub_items{
+        height: 12vh;
         background-size: cover;
+        background-position: -3px;
     }
 
     .achievements__name > img{
@@ -93,11 +128,13 @@
     }
 
     .achievements__items{
+        gap: 2vh;
         width: 80%;
     }
 
     .some__func > a{
-        font-size: 2rem;
+        margin-top: 1vh;
+        font-size: 2.7rem;
     }
 
     .fnc__arrow{
@@ -120,5 +157,70 @@
     /*}*/
 
 
+
+
+    .addfile__form{
+        top: 20vh;
+        width: 80vw;
+    }
+
+
+    .addfile__close{
+        width: 10vw;
+        height: 10vw;
+
+        font-size: 5vw;
+
+        top: 4vw;
+        right: 4vw;
+    }
+
+    .inf__form{
+        flex-direction: column;
+        margin-top: 10vh;
+    }
+
+    .inf__form_left, .inf__form_right{
+        width: 70vw;
+    }
+
+    .inf__form_right{
+        margin-top: 10vh;
+    }
+
+    .cstmm{
+        width: 70vw;
+    }
+
+
+    .date{
+        width: 33vw;
+        font-size: 5vw;
+    }
+    .date1{
+        width: 68vw;
+        font-size: 5vw;
+    }
+
+    .mobile{
+        margin-top: 10vh;
+    }
+    .inf__buttons{
+        margin-top: 10vh;
+    }
+    .inf__btn{
+        width: 36vw;
+        font-size: 3.7vw;
+    }
+
+    .profile__functions{
+        width: 75vw;
+        margin-bottom: 5vh;
+    }
+
+    .functions > div > div{
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+    }
 
 }
