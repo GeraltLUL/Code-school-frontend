@@ -746,6 +746,11 @@ a {
 	user-select: none;
 }
 
+.more__btn:hover .more{
+	color: var(--color-header);
+	transition: 0.5s;
+}
+
 .more__btn:hover {
 	border-radius: 15rem;
 	background-color: white;
@@ -2860,4 +2865,8 @@ li>*:hover {
 
 #prod__h1{
 	font-size: 10rem;
+}
+
+.more{
+	color: white;
 }
