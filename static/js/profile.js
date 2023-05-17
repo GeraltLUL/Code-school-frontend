@@ -42,12 +42,22 @@ function closeOrder(){
 
     document.querySelector('.order__form').style.display = "none";
     document.querySelector('.preview').style.paddingBottom = "10rem";
+
+    if (windowInnerWidth < 600){
+        document.querySelector(".header-preview-wrapper").style.height = "100vh"
+    }
+    else{
+        document.querySelector(".header-preview-wrapper").style.height = "160vh"
+    }
+
+
 }
 function openOrder(){
     document.querySelector('.order__form').style.display = "block";
-
     document.querySelector('.preview').style.paddingBottom = "80rem";
 
+
+    document.querySelector(".header-preview-wrapper").style.height = "220vh"
 }
 
 

@@ -818,6 +818,41 @@ body{
 
     background-color: #2D6FFF;
 }
+.line3{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+
+    width: 15%;
+    height: 240vh;
+
+    z-index: 2;
+
+    background-color: #2D6FFF;
+}
+.line3 > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 20vh;
+    background-color: #0050FF;
+}
+
+
+.line3 > div > a{
+    font-family: Montserrat-ExtraBold;
+    font-size: 5vw;
+
+    color: white;
+    user-select: none;
+
+    -webkit-user-drag: none;
+
+    text-align: center;
+}
 
 .hard__lvl{
     display: flex;
@@ -826,7 +861,7 @@ body{
     align-items: start;
 
     width: 74vw;
-    height: 207vh;
+    height: 240vh;
 }
 
 .ending2{
@@ -937,4 +972,9 @@ body{
 .card > a{
     font-family: Montserrat-Regular;
     letter-spacing: 0.02em;
+}
+
+
+.ft2{
+    margin-top: 20vh;
 }

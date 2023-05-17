@@ -1,7 +1,7 @@
 @media (max-width: 600px) {
     .header-preview-wrapper{
         width: 100vw;
-        min-height: 119vh;
+        height: 120vh;
         overflow-x: hidden;
     }
 
@@ -38,7 +38,7 @@
         width: 90vw;
         margin-top: 12vh;
 
-        padding-bottom: 20vh;
+        padding-bottom: 5vh;
     }
 
     .sub__blocks{
