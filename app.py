@@ -196,7 +196,7 @@ def order():
                          day,
                          program,
                          'Error')
-    return redirect(url_for('profile'))
+    return render_template('letter.html')
 
 
 # Uploading pdf in storage

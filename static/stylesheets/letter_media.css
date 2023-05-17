@@ -1,0 +1,50 @@
+@media (max-width: 600px) {
+
+    .header-preview-wrapper{
+        min-height: 120vh;
+    }
+
+    .prev{
+        width: 90vw;
+        padding-bottom: 5vh;
+    }
+
+    .thx{
+        padding-top: 2vh;
+        font-size: 5vw;
+    }
+
+    .plan{
+        font-size: 5vw;
+    }
+    .plan_line{
+        font-size: 4vw;
+        margin-top: 3vh;
+    }
+    .plan_line > img{
+        width: 7vw;
+    }
+
+    .download{
+        width: 50vw;
+        margin-top: 2vh;
+        font-size: 5vw;
+    }
+    .download > img{
+        width: 5vw;
+    }
+
+    .fq{
+        margin-top: 5vh;
+        font-size: 5vw;
+    }
+
+    .fq1, .fq2{
+
+        font-size: 4vw;
+    }
+    .fq2 > img{
+        width: 7vw;
+    }
+
+}

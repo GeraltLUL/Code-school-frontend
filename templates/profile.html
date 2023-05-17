@@ -187,10 +187,11 @@
                 <form method="post" action="/uploadcheck" class="addfile__form" id="addfile"
                     enctype="multipart/form-data">
                     <div class="addfile__close" onclick="closeAddfile()"><a>X</a></div>
-                    <p>
-                        <input type="file" name="check" accept=".pdf">
-                        <input type="submit" value="Отправить" form="addfile">
-                    </p>
+
+                    <input type="file" name="check" accept=".pdf" id="input__file" class="input__file">
+                    <label for="input__file" class="inp__file"><img src="../static/stylesheets/images/profile/upload.svg"> <a> <span class="input__file-button-text">Выберите файл</span></a></label>
+                    <input type="submit" value="Отправить" form="addfile" class="send__btn">
+
                 </form>
                 <div class="profile__functions">
                     <div class="achievements">

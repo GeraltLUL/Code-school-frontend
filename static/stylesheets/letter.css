@@ -1,0 +1,144 @@
+.header-preview-wrapper{
+    align-items: center;
+}
+
+.profile{
+    border: none;
+}
+
+.prev{
+    position: relative;
+
+    margin-top: 5vh;
+
+    /*margin-top: 27rem;*/
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 75vw;
+
+    padding: 2vw 1vw;
+
+    background: radial-gradient(90.16% 143.01% at 15.32% 21.04%, rgba(105, 59, 147, 0.2) 0%, rgba(110, 191, 244, 0.0447917) 77.08%, rgba(70, 144, 213, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    background-blend-mode: overlay, normal;
+    backdrop-filter: blur(40px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 14px;
+}
+
+.thx{
+    min-width: 60vw;
+    text-align: center;
+    font-family: Montserrat-ExtraBold;
+    font-size: 2vw;
+}
+.plan{
+    margin-top: 5vh;
+
+    min-width: 60vw;
+    text-align: left;
+    font-family: Montserrat-Bold;
+    font-size: 2vw;
+}
+.plan_line{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 2vw;
+
+    margin-top: 5vh;
+
+    min-width: 60vw;
+    max-width: 60vw;
+    text-align: left;
+    font-family: Montserrat-Regular;
+    font-size: 2vw;
+}
+.plan_line > img{
+    width: 5vw;
+}
+
+.download{
+    border-radius: 2vw;
+
+    margin-top: 5vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+
+
+    padding: 2vw 10vw;
+
+    background-color: #0050FF;
+
+    font-family: Montserrat-Medium;
+    font-size: 2vw;
+
+    color: white;
+}
+.download > img{
+    width: 3vw;
+}
+.download:visited, .download:focus, .download:hover {
+    color: white;
+}
+
+.fq{
+    margin-top: 10vh;
+
+    min-width: 60vw;
+    text-align: center;
+    font-family: Montserrat-ExtraBold;
+    font-size: 2vw;
+}
+
+.fq__a{
+    margin-top: 5vh;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+
+    width: 61vw;
+    text-align: left;
+    font-family: Montserrat-Regular;
+    font-size: 2vw;
+}
+
+
+.fq1{
+    text-align: left;
+
+    font-family: Montserrat-Bold;
+    width: 30vw;
+
+}
+.fq2{
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    /*gap: 0.5vw;*/
+
+
+    width: 35vw;
+
+}
+
+.fq__svg{
+    margin-left: 1vw;
+    width: 4vw;
+
+    cursor: url('images/link.cur'), pointer;
+}

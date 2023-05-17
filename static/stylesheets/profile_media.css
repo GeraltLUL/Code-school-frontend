@@ -1,7 +1,7 @@
 @media (max-width: 600px) {
     .header-preview-wrapper{
         width: 100vw;
-        min-height: 200vh;
+        min-height: 119vh;
         overflow-x: hidden;
     }
 
@@ -159,8 +159,13 @@
 
 
 
+
+
+
     .addfile__form{
-        top: 20vh;
+        border-radius: 2vw;
+
+        top: 22vh;
         width: 80vw;
     }
 
@@ -221,6 +226,86 @@
     .functions > div > div{
         padding-top: 5vh;
         padding-bottom: 5vh;
+    }
+
+    .order__form{
+        width: 75vw;
+        left: 2.5vw;
+        top: 22vh;
+    }
+
+    .order__wrapper{
+        padding-top: 7vh;
+
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+
+        gap: 5vh;
+    }
+
+    .order__close{
+        width: 10vw;
+        height: 10vw;
+
+        font-size: 5vw;
+    }
+
+    .order__wrapper > div{
+        padding: 5vh 0.5vw;
+    }
+
+    .order__block{
+
+    }
+
+    .order__top__block{
+        /*padding-top: 5vw;*/
+        padding-bottom: 5vw;
+    }
+    .order__mid__block{
+        padding-top: 5vw;
+        padding-bottom: 5vw ;
+    }
+    .order__mid__block > svg{
+        width: 5vw;
+    }
+    .order__mid__block > a{
+        font-size: 5vw;
+    }
+
+    .order__a{
+        font-size: 5vw;
+    }
+    .order__h1{
+        line-height: 6vw;
+        font-size: 10vw;
+    }
+
+    .order_btn{
+        font-size: 5vw;
+    }
+
+
+
+    .inp__file{
+        margin-top: 5vh;
+        width: 70vw;
+        flex-direction: column;
+    }
+    .inp__file > img{
+        height: 15vw;
+    }
+
+    .inp__file > a{
+        margin-top: 5vh;
+        font-size: 5vw;
+    }
+
+    .send__btn{
+        width: 60vw;
+        height: 10vh;
+
+        font-size: 6vw;
     }
 
 }

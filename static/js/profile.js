@@ -1,3 +1,5 @@
+const windowInnerWidth = document.documentElement.clientWidth
+
 function activateHome(){
     document.querySelector('.home__wrapper').style.display = "flex";
     document.querySelector('.inf__wrapper').style.display = "none";
@@ -113,6 +115,54 @@ document.querySelector("#MM").value = MM;
 
 let YYYY = document.querySelector(".YYYY").textContent;
 document.querySelector("#YYYY").value = YYYY;
+
+
+
+let inputs = document.querySelectorAll('.input__file');
+Array.prototype.forEach.call(inputs, function (input) {
+    let label = input.nextElementSibling,
+        labelVal = label.querySelector('.input__file-button-text').innerText;
+
+    input.addEventListener('change', function (e) {
+        let countFiles = '';
+        if (this.files && this.files.length >= 1)
+            countFiles = this.value;
+
+
+        var reverse = countFiles.split('').reverse().join('');
+
+        var from = reverse.indexOf("\\");
+        var to = reverse.length;
+
+
+        countFiles = reverse.substring(0,from);
+
+        countFiles = countFiles.split('').reverse().join('');
+
+        if (countFiles.length > 15 && windowInnerWidth > 600){
+            document.querySelector(".input__file-button-text").style.fontSize = "1vw";
+        }
+        else if(windowInnerWidth > 600){
+            document.querySelector(".input__file-button-text").style.fontSize = "2vw";
+        }
+        else if(countFiles.length > 15 && windowInnerWidth < 600){
+            document.querySelector(".input__file-button-text").style.fontSize = "3vw";
+        }
+        else{
+            document.querySelector(".input__file-button-text").style.fontSize = "5vw";
+        }
+
+
+        if (countFiles)
+            label.querySelector('.input__file-button-text').innerText = countFiles;
+        else
+            label.querySelector('.input__file-button-text').innerText = labelVal;
+    });
+});
+
+
+
+
 
 
 //

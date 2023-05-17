@@ -818,6 +818,8 @@ input::placeholder{
 
 	color: black;
 
+	border-radius: 0.5vw;
+
 	/*display: none;*/
 
 	width: 100%;
@@ -846,5 +848,86 @@ input::placeholder{
 	border-radius: 50%;
 
 	/*background-color: red;*/
+	cursor: url('images/link.cur'), pointer;
+}
+
+#input__file{
+	display: none;
+}
+.inp__file{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+	border: #0050FF dashed 0.15vw;
+
+	width: 60%;
+	height: 60%;
+
+	border-radius: 2vw;
+
+	gap: 2vw;
+
+	cursor: url('images/link.cur'), pointer;
+	transition: 500ms all;
+
+	/*background-color: red;*/
+
+
+}
+.inp__file:hover{
+	border: #0050FF solid 0.15vw;
+	transition: 500ms all;
+}
+
+.inp__file > a{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+	font-family: Montserrat-Medium;
+	color: #0050FF;
+	font-size: 2vw;
+	height: 5vw;
+
+	line-height: 1vw;
+
+	padding-top: 1vw;
+}
+
+.inp__file > img{
+	height: 5vw;
+}
+
+.send__btn{
+	margin-top: 5vh;
+
+	width: 10vw;
+	height: 5vh;
+
+	border: none;
+	background-color: #0050FF;
+	border-radius: 0.5vw;
+
+	font-size: 1vw;
+	color: white;
+	border: 0.15vw white solid;
+
+	transition: 500ms all;
+
+	cursor: url('images/link.cur'), pointer;
+}
+
+
+.send__btn:hover{
+
+	background-color: white;
+	color: #0050FF;
+	border: 0.15vw #0050FF solid;
+
+	transition: 500ms all;
+
 	cursor: url('images/link.cur'), pointer;
 }
