@@ -1,0 +1,26 @@
+@media (max-width: 600px) {
+    .fq > h1{
+        font-size: 7vw;
+        text-align: center;
+    }
+
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .accordion{
+        width: 80vw;
+    }
+
+
+    .accordion-trigger{
+        font-size: 5vw;
+    }
+
+    .accordion-content > div > p{
+        font-size: 5vw;
+    }
+}
