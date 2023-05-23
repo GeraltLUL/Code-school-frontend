@@ -24,4 +24,36 @@
     .accordion-content > div > p{
         font-size: 5vw;
     }
+
+    .ttt{
+        font-size: 7vw;
+    }
+
+    .line__form > label{
+        font-size: 7vw;
+    }
+
+    .line__form{
+        width: 100%;
+    }
+    .inf__form{
+        width: 90%;
+    }
+
+    .line__form > input{
+        font-size: 5vw;
+        width: 50vw;
+    }
+
+    #message > textarea{
+        width: 75vw;
+        font-size: 5vw;
+    }
+
+    .inf__btn{
+        margin-top: 3vh;
+        font-size: 5vw;
+        width: 60vw;
+        border-radius: 1.5vw;
+    }
 }
