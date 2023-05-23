@@ -978,3 +978,7 @@ body{
 .ft2{
     margin-top: 20vh;
 }
+
+.mobile{
+    display: none;
+}

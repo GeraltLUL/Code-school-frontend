@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="../static/stylesheets/main.css">
     <link rel="stylesheet" href="../static/stylesheets/study.css">
     <link rel="stylesheet" href="../static/stylesheets/media.css">
+    <link rel="stylesheet" href="../static/stylesheets/study_media.css">
 
     <script src="../static/libs/gsap/gsap.min.js" defer></script>
     <script src="../static/libs/gsap/ScrollTrigger.min.js" defer></script>
@@ -44,6 +45,9 @@
 
     <script src="../static/js/study.js" defer></script>
     <script src="../static/js/navbar.js" defer></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
 
 </head>
 
@@ -84,6 +88,29 @@
     </header>
     <section class="preview">
         <h1>Подстроимся под любой уровень знаний!</h1>
+
+
+
+        <swiper-container class="mobile">
+            <swiper-slide class="sw-slide">
+                <img src="../static/stylesheets/images/study/first_arrow.svg">
+                <a class="slide_h1">Базовый</a>
+                <a class="slide_a">основы алгоритмизации и программирования</a>
+            </swiper-slide>
+            <swiper-slide class="sw-slide">
+                <img src="../static/stylesheets/images/study/second_arrow.svg">
+                <a class="slide_h1">Средний</a>
+                <a class="slide_a">программирование <br> на языках высокого уровня</a>
+            </swiper-slide>
+            <swiper-slide class="sw-slide">
+                <img src="../static/stylesheets/images/study/third_arrow.svg">
+                <a class="slide_h2">Продвинутый</a>
+                <a class="slide_a">специальные <br> разделы программирования</a>
+            </swiper-slide>
+        </swiper-container>
+
+
+
         <div class="cards__wrapper">
             <div class="cards" onclick="toEasy()">
                 <div id="left">
