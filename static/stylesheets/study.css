@@ -9,6 +9,10 @@ body{
 }
 
 
+.templ{
+    display: none;
+}
+
 
 .header-preview-wrapper{
     background:none;

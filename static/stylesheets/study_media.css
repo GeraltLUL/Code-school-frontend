@@ -203,6 +203,9 @@
     .medium__lvl{
         align-items: center;
     }
+    .medium__lvl > .data{
+        align-items: center;
+    }
 
     .medium__lvl > .data > .main__h1__medium{
         width: 100%;
@@ -216,6 +219,40 @@
 
 
 
+    .med_h1{
+        margin-left: -15vw;
+    }
+
+
+
+
+
+    .templ{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5vh;
+
+        padding: 5vw 5vw;
+
+        color: white;
+    }
+
+    .templ > h1{
+        margin-top: 5vh;
+        font-size: 6vw;
+
+        text-align: center;
+        width: 80vw;
+    }
+
+    .templ > a{
+        width: 80vw;
+        text-align: justify;
+        font-family: Montserrat-Medium;
+        font-size: 4vw;
+    }
 
 
 
@@ -224,7 +261,13 @@
 
 
 
-    .hard__lvl{
+
+
+
+
+
+
+    .medium__lvl, .hard__lvl{
         display: none;
     }
 }
