@@ -1,0 +1,660 @@
+/*@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";*/
+
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+* {
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-header: #0050FF;
+    --color-text: #3d535f;
+    --color-h1: #162831;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+h1 {
+    font-family: Montserrat-ExtraBold;
+}
+
+@font-face {
+    font-family: Montserrat-Regular;
+    src: url(fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url(fonts/Montserrat-Bold.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-ExtraBold;
+    src: url(fonts/Montserrat-ExtraBold.ttf);
+}
+
+html {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+    font-size: calc(100vw / 1920 * 10);
+}
+
+@media (max-width: 1024px) {
+    html {
+        font-size: calc(100vw / 1920 * 10);
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: calc(100vw / 600 * 10);
+    }
+}
+
+
+
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+    overflow-y: auto;
+    /*-ms-scroll-snap-type: y mandatory;*/
+    /*scroll-snap-type: y mandatory;*/
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-family: Montserrat-Regular;
+    background-color: #162831;
+    background-image: url("images/bg.jpg");
+    overflow-x: hidden;
+    cursor: url('images/pointer.cur'), default;
+}
+
+body>* {
+    scroll-snap-align: start;
+}
+
+body>section {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+    -webkit-text-decoration-skip: ink;
+    text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article>*+* {
+    margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Убираем нижнее подчеркивание у ссылок */
+
+a {
+    text-decoration: none;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        -webkit-animation-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        -webkit-animation-iteration-count: 1 !important;
+        animation-iteration-count: 1 !important;
+        -webkit-transition-duration: 0.01ms !important;
+        -o-transition-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/*.mn{*/
+/*	padding: 0;*/
+/*	!*overflow-y: scroll;*!*/
+/*	scroll-snap-type: y mandatory;*/
+/*}*/
+/*.header-preview-wrapper,*/
+/*about-us{*/
+/*	scroll-snap-align: start;*/
+/*	scroll-snap-stop: always;*/
+/*}*/
+
+
+/* tmp войти в айти */
+
+.tmpsec{
+    display: flex;
+
+
+    width: 100dvw;
+    height: 100dvh;
+    background-color: #162831;
+}
+.tmpwrap{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: #162831;
+    /*background-image: url("images/top-bg.png");*/
+    /*background-size: cover;*/
+    /*background-size: 110%;*/
+    /*background-size: auto 100%;*/
+    background-repeat: no-repeat;
+    color: #FFFFFF;
+}
+
+#voitivit{
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    border-bottom: 0.15vw solid white;
+}
+
+
+
+/* HEADER */
+
+
+.header-preview-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-image: url("images/top-bg.png");
+    background-size: cover;
+    /*background-size: 110%;*/
+    /*background-size: auto 100%;*/
+    background-repeat: no-repeat;
+    color: #FFFFFF;
+}
+
+/*.header {*/
+/*	height: 10rem;*/
+/*	display: flex;*/
+/*	width: 100%;*/
+/*	justify-content: space-around;*/
+/*	align-items:center;*/
+/*}*/
+
+header {
+    width: 100vw;
+    padding-bottom: 2vw;
+    position: relative;
+    /*padding: 0 2rem;*/
+    /*background-color: #0050FF;*/
+    border-bottom: 0.02vw solid #A1A1A1;
+}
+
+.logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 40rem;
+    height: 5rem;
+}
+
+.header__nav-profile-wrapper {
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+
+}
+
+.header__nav {
+    width: 70%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    height: 4.3rem;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: end;
+}
+
+.nav__section {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    color: #FFFFFF;
+}
+
+.profile_icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+}
+
+/* PREVIEW */
+
+.preview {
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    /*background-color: red;*/
+}
+
+.preview-wrapper {
+    width: 40vw;
+    height: 15vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    /*background-color: red;*/
+}
+
+.preview-wrapper__school-title {
+    font-family: Montserrat-Regular;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.7rem;
+    line-height: 1.7rem;
+}
+
+.preview-wrapper__h3 {
+    font-family: Montserrat-Bold;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 4.8rem;
+    line-height: 6.4rem;
+    text-align: center;
+}
+
+
+
+
+.preview-wrapper__button {
+    list-style: none;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: url('images/link.cur'), pointer;
+
+    width: 20vw;
+    height: 3vw;
+    background: #0050FF;
+    border-radius: 2vw;
+    border-color: #0050FF;
+    font-family: Montserrat-Bold;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2vw;
+    line-height: 2vw;
+    color: #FFFFFF;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.preview-wrapper__button:hover {
+    color: #0050FF;
+    background-color: white;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+
+
+
+.navbar {
+    width: 100vw;
+    height: 6rem;
+    max-width: 120rem;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+
+}
+
+.mainlogo {
+    margin-top: 4rem;
+    height: 5rem;
+    z-index: 5;
+}
+
+/* flag!! */
+.links a {
+    padding: 1.3vw 0.8vw;
+
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: Montserrat-Regular;
+
+    /*background-color: red;*/
+}
+
+.links li {
+    /*position: relative;*/
+
+    height: 100%;
+    padding: 1.4vw 0.5vw;
+    margin-top: 3vw;
+    list-style: none;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    /*background-color: red;*/
+
+    /*background-color: #0050FF;*/
+
+}
+.links li a {
+    /*height: 100%;*/
+
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 1.6rem;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.navbar .links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 5rem;
+}
+
+.toggle_btn {
+    z-index: 5;
+}
+
+.navbar .toggle_btn {
+    margin-top: 2rem;
+    color: #FFFFFF;
+    font-size: 3rem;
+    cursor: url('images/link.cur'), pointer;
+    display: none;
+}
+
+.profile {
+    cursor: url('images/link.cur'), pointer;
+    margin-top: 4rem;
+    width: 5.6rem;
+}
+
+.profile1 {
+    margin-top: 2rem;
+    width: 5.6rem;
+}
+
+
+
+
+
+
+
+.action_btn {
+    background-color: #0050FF;
+    color: #FFFFFF;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 2rem;
+    font-size: 2rem;
+    cursor: url('images/link.cur'), pointer;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2vw 2vw 0;
+}
+
+.dropdown_menu.open {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.dropdown_menu {
+    display: none;
+
+    height: 0;
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    /*right: 5rem;*/
+    /*top: 6rem;*/
+    width: 100vw;
+    background: var(--color-h1);
+    /*-webkit-backdrop-filter: blur(15px);*/
+    /*backdrop-filter: blur(15px);*/
+    /*border-radius: 1rem;*/
+    overflow: hidden;
+    -webkit-transition: height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -o-transition: height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu li {
+    padding: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: left;
+    margin-left: 1rem;
+}
+
+
+
+
+.dropdown_menu li:nth-child(1) {
+    margin-top: 20rem;
+    /*border-bottom: 0.5rem white solid;*/
+    /*background-color: var(--color-header);*/
+}
+
+.dropdown_menu>li>a {
+    font-family: Montserrat-Bold;
+    color: white;
+    font-size: 4rem;
+    text-align: left;
+}
+
+.active__page {
+    text-decoration: underline;
+    /*text-underline: 1rem white;*/
+    /*border-bottom: 1rem solid white;*/
+}
+
+.promo {
+    position: absolute;
+    bottom: 15rem;
+
+
+
+    display: -webkit-box;
+
+
+
+    display: -ms-flexbox;
+
+
+
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: left;
+    -ms-flex-pack: left;
+    justify-content: left;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+
+    /*height: 10rem;*/
+    width: 100vw;
+    /*background-color: white;*/
+
+    font-family: Montserrat-Regular;
+    font-size: 2.5rem;
+    text-align: left;
+
+    -webkit-transition: height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -o-transition: height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.promo>a {
+    cursor: url('images/link.cur'), pointer;
+    margin-left: 3rem;
+}
+
+.promo::after {
+    position: absolute;
+    right: 6rem;
+    bottom: 5rem;
+    width: 7rem;
+    height: 7rem;
+    content: "";
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../stylesheets/images/SRL_arrow.svg");
+}
+
+@media (max-width: 992px) {
+
+    .navbar .links,
+    .navbar .action_btn,
+    .profile {
+        display: none;
+    }
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+
+    .dropdown_menu {
+        display: block;
+    }
+
+}
+
+@media (max-width: 576px) {
+    /*.dropdown_menu{*/
+    /*	left: 2rem;*/
+    /*	width: unset;*/
+    /*}*/
+}

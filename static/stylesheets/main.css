@@ -178,6 +178,44 @@ a {
 /*}*/
 
 
+/* tmp войти в айти */
+
+/*.tmpsec{*/
+/*	display: flex;*/
+
+
+/*	width: 100dvw;*/
+/*	height: 100dvh;*/
+/*	background-color: #162831;*/
+/*}*/
+/*.tmpwrap{*/
+/*	display: -webkit-box;*/
+/*	display: -ms-flexbox;*/
+/*	display: flex;*/
+/*	-webkit-box-orient: vertical;*/
+/*	-webkit-box-direction: normal;*/
+/*	-ms-flex-direction: column;*/
+/*	flex-direction: column;*/
+/*	width: 100%;*/
+/*	height: 100vh;*/
+/*	background-color: #162831;*/
+/*	!*background-image: url("images/top-bg.png");*!*/
+/*	!*background-size: cover;*!*/
+/*	!*background-size: 110%;*!*/
+/*	!*background-size: auto 100%;*!*/
+/*	background-repeat: no-repeat;*/
+/*	color: #FFFFFF;*/
+/*}*/
+
+/*#voitivit{*/
+/*	-webkit-transition: 0.5s;*/
+/*	-o-transition: 0.5s;*/
+/*	transition: 0.5s;*/
+/*	border-bottom: 0.15vw solid white;*/
+/*}*/
+
+
+
 /* HEADER */
 
 
