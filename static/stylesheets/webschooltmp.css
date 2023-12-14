@@ -182,11 +182,28 @@ a {
 
 .tmpsec{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 
 
     width: 100dvw;
     height: 100dvh;
     background-color: #162831;
+}
+.h1_accent{
+    color: #0050FF;
+}
+.tmpsec > h1{
+    padding: 1dvw;
+    font-size: 2dvw;
+    /*background-color: rebeccapurple;*/
+}
+.tmpsec > img{
+    margin-top: 4dvh;
+    width: 50dvw;
+    border-radius: 2dvw;
 }
 .tmpwrap{
     display: -webkit-box;
