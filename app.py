@@ -63,7 +63,7 @@ def programs():
 
 @app.route('/webschool')
 def programs():
-    return render_template('webschooltmp.html')
+    return render_template('webschool.html')
 
 # Main page
 @app.route('/')
