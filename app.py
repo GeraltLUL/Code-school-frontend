@@ -61,7 +61,7 @@ def programs():
     return render_template('StudyPrograms.html')
 
 
-@app.route('/webschool')
+@app.route('/web')
 def programs():
     return render_template('webschool.html')
 
