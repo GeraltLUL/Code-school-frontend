@@ -62,7 +62,7 @@ def programs():
 
 
 @app.route('/web')
-def programs():
+def web():
     return render_template('webschool.html')
 
 # Main page
