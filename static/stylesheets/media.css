@@ -105,10 +105,10 @@
         font-size: 10rem;
     }
     .about-as__description{
-        font-size: 2.3rem;
+        font-size: 4.3dvw;
         font-family: Montserrat-Regular;
         font-weight: 1000;
-        width: 45rem;
+        width: 80dvw;
     }
 
     .about-as__scores{

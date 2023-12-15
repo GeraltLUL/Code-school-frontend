@@ -968,8 +968,8 @@ function scrollToNext(){
 
 
 var typingEffect = new Typed(".multiText",{
-    strings:["новое поколение профи в digital-сфере", "креативных специалистов", "будущих гиков",
-         "fullstack разработчиков", "новое поколение профи в digital-сфере"],
+    strings:["новое поколение профи в digital-сфере", "стобалльников", "будущих гиков",
+         "победителей олимпиад", "новое поколение профи в digital-сфере"],
     loop:true,
     typeSpeed:60,
     backSpeed:40,
